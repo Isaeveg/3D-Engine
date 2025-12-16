@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/38097/3D-Engine/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/Game.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\Game.dir\\src\\Engine.cpp.obj -c C:\\Users\\38097\\3D-Engine\\src\\Engine.cpp",
+  "file": "C:/Users/38097/3D-Engine/src/Engine.cpp",
+  "output": "CMakeFiles/Game.dir/src/Engine.cpp.obj"
+},
+{
+  "directory": "C:/Users/38097/3D-Engine/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/Game.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\Game.dir\\src\\main.cpp.obj -c C:\\Users\\38097\\3D-Engine\\src\\main.cpp",
+  "file": "C:/Users/38097/3D-Engine/src/main.cpp",
+  "output": "CMakeFiles/Game.dir/src/main.cpp.obj"
+}
+]
