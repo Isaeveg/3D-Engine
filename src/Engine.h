@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 
+
 // Типы проекций согласно лекции
 enum ProjectionType {
     ORTHOGRAPHIC,
