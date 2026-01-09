@@ -6,61 +6,67 @@
 #include <iostream>
 #include <string>
 
+#include "Camera.h"
 
-// Типы проекций согласно лекции
-enum ProjectionType {
+enum ProjectionType
+{
     ORTHOGRAPHIC,
     PERSPECTIVE
 };
 
-class Engine {
+class Engine
+{
 private:
-    // Параметры окна
     int windowWidth;
     int windowHeight;
     std::string windowTitle;
     int windowHandle;
-
-    // Параметры движка
     int fps;
+
     ProjectionType currentProjection;
-    
-    // Цвета очистки экрана
     float clearColor[4];
 
-    // Статический указатель для callback-функций GLUT (т.к. GLUT написан на C)
-    static Engine* instance;
+    Camera *camera;
 
-    // Внутренние методы для обработки событий
+    // --- Управление вводом ---
+    bool keys[1024]; // Массив состояний клавиш (нажата/отпущена)
+
+    // Для мыши
+    bool firstMouse;
+    float lastX, lastY;
+
+    static Engine *instance;
+
     void render();
     void update(int value);
     void reshape(int w, int h);
-    void keyboard(unsigned char key, int x, int y);
 
-    // Статические обертки (Wrappers) для GLUT
+    // Обработчики событий
+    void keyboard(unsigned char key, int x, int y);
+    void keyboardUp(unsigned char key, int x, int y); // Когда клавишу отпустили
+    void mouseMove(int x, int y);                     // Движение мыши
+
+    // Обработка логики движения (вызывается каждый кадр)
+    void processInput();
+
+    // Статические обертки
     static void renderWrapper();
     static void updateWrapper(int value);
     static void reshapeWrapper(int w, int h);
     static void keyboardWrapper(unsigned char key, int x, int y);
+    static void keyboardUpWrapper(unsigned char key, int x, int y); // New
+    static void mouseMoveWrapper(int x, int y);                     // New
 
 public:
     Engine();
     ~Engine();
 
-    // Инициализация системы [cite: 159]
-    void init(int argc, char** argv, int width, int height, const std::string& title);
-
-    // Главный цикл [cite: 162]
+    void init(int argc, char **argv, int width, int height, const std::string &title);
     void run();
-
-    // Настройка параметров [cite: 160, 161]
     void setClearColor(float r, float g, float b, float a);
     void setFPS(int value);
-    
-    // Переключение проекции 
     void setProjection(ProjectionType type);
 
-    // Задание 7: Обертки для рисования объектов FreeGLUT [cite: 167]
     void drawWireCube(double size);
     void drawWireTeapot(double size);
 };

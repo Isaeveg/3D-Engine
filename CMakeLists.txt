@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # 1. GLM (Header-only)
 # Указываем папку, в которой лежит папка "glm"
 include_directories(${CMAKE_SOURCE_DIR}/libs/glm)
-
+ 
 # 2. FreeGLUT
 # Заголовки (.h)
 include_directories(${CMAKE_SOURCE_DIR}/libs/freeglut/include)
