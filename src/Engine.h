@@ -1,4 +1,7 @@
-#pragma once
+#ifndef ENGINE_H
+#define ENGINE_H
+
+#include <string>
 #include <GL/freeglut.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
