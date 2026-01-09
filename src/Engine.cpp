@@ -1,37 +1,195 @@
 #include "Engine.h"
+#include "Primitives.h"
+#include "Cube.h"
 
-Engine::Engine() : rotationAngle(0.0f), width(1280), height(720) {}
+Engine *Engine::instance = nullptr;
 
-Engine& Engine::getInstance() {
-    static Engine instance;
-    return instance;
+Engine::Engine()
+    : windowWidth(800), windowHeight(600), windowTitle("ESHKERE Engine"),
+      fps(60), currentProjection(PERSPECTIVE), windowHandle(0),
+      firstMouse(true), lastX(400), lastY(300)
+{
+
+    clearColor[0] = 0.0f;
+    clearColor[1] = 0.0f;
+    clearColor[2] = 0.0f;
+    clearColor[3] = 1.0f;
+
+    for (int i = 0; i < 1024; i++)
+        keys[i] = false;
+
+    camera = new Camera(glm::vec3(0.0f, 0.0f, 15.0f));
+
+    instance = this;
 }
 
-void Engine::Init(int argc, char* argv[], const std::string& title, int width, int height) {
-    this->width = width;
-    this->height = height;
+Engine::~Engine()
+{
+    delete camera;
+}
+
+void Engine::init(int argc, char **argv, int width, int height, const std::string &title)
+{
+    windowWidth = width;
+    windowHeight = height;
+    windowTitle = title;
+    lastX = width / 2.0f;
+    lastY = height / 2.0f;
+
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-    glutInitWindowSize(width, height);
-    glutCreateWindow(title.c_str());
-    
-    glutDisplayFunc(DisplayWrapper);
-    glutReshapeFunc(ReshapeWrapper);
-    glutKeyboardFunc(KeyboardWrapper);
-    glutSpecialFunc(SpecialKeysWrapper);
+    glutInitWindowSize(windowWidth, windowHeight);
+    windowHandle = glutCreateWindow(windowTitle.c_str());
 
-    glClearColor(0.02f, 0.02f, 0.05f, 1.0f);
     glEnable(GL_DEPTH_TEST);
+
+    // Захват курсора (чтобы он не вылетал из окна при вращении)
+    glutSetCursor(GLUT_CURSOR_NONE);
+
+    // Регистрация Callback-функций
+    glutDisplayFunc(renderWrapper);
+    glutReshapeFunc(reshapeWrapper);
+    glutKeyboardFunc(keyboardWrapper);       // Нажатие
+    glutKeyboardUpFunc(keyboardUpWrapper);   // Отпускание
+    glutPassiveMotionFunc(mouseMoveWrapper); // Движение мыши без клика
+
+    glutWarpPointer(windowWidth / 2, windowHeight / 2);
 }
 
-void Engine::Start() {
+void Engine::run()
+{
+    glutTimerFunc(1000 / fps, updateWrapper, 0);
     glutMainLoop();
 }
 
-void Engine::Display() {
+void Engine::setClearColor(float r, float g, float b, float a)
+{
+    clearColor[0] = r;
+    clearColor[1] = g;
+    clearColor[2] = b;
+    clearColor[3] = a;
+    glClearColor(r, g, b, a);
+}
+void Engine::setFPS(int value)
+{
+    if (value > 0)
+        fps = value;
+}
+void Engine::setProjection(ProjectionType type)
+{
+    currentProjection = type;
+    reshape(windowWidth, windowHeight);
+}
+
+// --- ЛОГИКА ВВОДА ---
+
+void Engine::keyboard(unsigned char key, int x, int y)
+{
+    // Вывод кода нажатой клавиши в консоль для отладки
+    std::cout << "Key pressed: " << key << " (Code: " << (int)key << ")" << std::endl;
+
+    if (key >= 0 && key < 1024)
+        keys[key] = true;
+
+    if (key == 27)
+        glutLeaveMainLoop();
+    if (key == 'p' || key == 'P')
+        setProjection(PERSPECTIVE);
+    if (key == 'o' || key == 'O')
+        setProjection(ORTHOGRAPHIC);
+}
+
+void Engine::keyboardUp(unsigned char key, int x, int y)
+{
+    if (key >= 0 && key < 1024)
+        keys[key] = false; // Запоминаем, что клавиша отпущена
+}
+
+void Engine::mouseMove(int x, int y)
+{
+    // Находим центр окна
+    int centerX = windowWidth / 2;
+    int centerY = windowHeight / 2;
+
+    // ВАЖНО: glutWarpPointer вызывает событие mouseMove.
+    // Если мышь уже в центре, значит это наш же сброс - игнорируем его,
+    // иначе камера будет дрожать или дрейфовать.
+    if (x == centerX && y == centerY)
+        return;
+
+    // Считаем смещение относительно ЦЕНТРА окна
+    float xoffset = x - centerX;
+    float yoffset = centerY - y; // Инверсия Y (в оконных координатах Y растет вниз)
+
+    // Передаем смещение в камеру
+    camera->ProcessMouseMovement(xoffset, yoffset);
+
+    // Возвращаем курсор принудительно в центр экрана
+    glutWarpPointer(centerX, centerY);
+}
+
+void Engine::processInput()
+{
+    // Вызывается каждый кадр перед отрисовкой
+    float velocity = camera->MovementSpeed;
+
+    // WASD - Движение по горизонтали
+    if (keys['w'] || keys['W'])
+        camera->ProcessKeyboard(FORWARD, velocity);
+    if (keys['s'] || keys['S'])
+        camera->ProcessKeyboard(BACKWARD, velocity);
+    if (keys['a'] || keys['A'])
+        camera->ProcessKeyboard(LEFT, velocity);
+    if (keys['d'] || keys['D'])
+        camera->ProcessKeyboard(RIGHT, velocity);
+
+    // SPACE - Полет вверх (вдоль оси Y или локального вектора Up)
+    if (keys[' '])
+        camera->ProcessKeyboard(UP, velocity);
+
+    // C - Полет вниз (вместо Ctrl, так как GLUT плохо ловит удержание Ctrl)
+    if (keys['c'] || keys['C'])
+        camera->ProcessKeyboard(DOWN, velocity);
+}
+
+void Engine::update(int value)
+{
+    processInput(); // <--- Обрабатываем зажатые клавиши здесь
+
+    glutPostRedisplay();
+    glutTimerFunc(1000 / fps, updateWrapper, 0);
+}
+
+void Engine::render()
+{
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
+
+    // Получаем матрицу вида от камеры
+    glLoadMatrixf(glm::value_ptr(camera->GetViewMatrix()));
+
+    // 1. Куб
+    glPushMatrix();
+    static float a = 0;
+    a += 1.0f;
+    glRotatef(a, 1, 1, 0);
+    Cube::draw();
+    glPopMatrix();
+
+    // 2. Остальное
+    glColor3f(1, 1, 1);
+    glPushMatrix();
+    glTranslatef(-6, 0, 0);
+    Primitives::drawTriangles();
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(6, 0, 0);
+    Primitives::drawPoints();
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0, 5, 0);
+    Primitives::drawLines();
+    glPopMatrix();
 
     observer.apply();
 
@@ -67,42 +225,66 @@ void Engine::Display() {
     glutPostRedisplay();
 }
 
-void Engine::Reshape(int width, int height) {
-    this->width = width; this->height = height;
-    glViewport(0, 0, width, height);
+void Engine::reshape(int w, int h)
+{
+    windowWidth = w;
+    windowHeight = h;
+    if (h == 0)
+        h = 1;
+    float aspect = (float)w / (float)h;
+
+    glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(60.0, (float)width/height, 0.1, 100.0);
+
+    glm::mat4 projection;
+    if (currentProjection == ORTHOGRAPHIC)
+    {
+        float orthoSize = 10.0f;
+        if (w >= h)
+            projection = glm::ortho(-orthoSize * aspect, orthoSize * aspect, -orthoSize, orthoSize, 0.1f, 100.0f);
+        else
+            projection = glm::ortho(-orthoSize, orthoSize, -orthoSize / aspect, orthoSize / aspect, 0.1f, 100.0f);
+    }
+    else
+    {
+        projection = glm::perspective(glm::radians(60.0f), aspect, 0.1f, 100.0f);
+    }
+    glLoadMatrixf(glm::value_ptr(projection));
     glMatrixMode(GL_MODELVIEW);
 }
 
-void Engine::Keyboard(unsigned char key, int x, int y) {
-    switch (key) {
-        case 'w': observer.radius -= 0.5f; break; // Приближение
-        case 's': observer.radius += 0.5f; break; // Отдаление
-        case 'a': observer.theta -= 0.05f; break; // Поворот влево
-        case 'd': observer.theta += 0.05f; break; // Поворот вправо
-        case 'q': observer.phi += 0.05f; break;   // Наклон вверх
-        case 'e': observer.phi -= 0.05f; break;   // Наклон вниз
-        case 27: exit(0); break;
-    }
-    if (observer.radius < 2.0f) observer.radius = 2.0f;
-    observer.updatePosition();
+// Обертки
+void Engine::renderWrapper()
+{
+    if (instance)
+        instance->render();
+}
+void Engine::updateWrapper(int value)
+{
+    if (instance)
+        instance->update(value);
+}
+void Engine::reshapeWrapper(int w, int h)
+{
+    if (instance)
+        instance->reshape(w, h);
+}
+void Engine::keyboardWrapper(unsigned char key, int x, int y)
+{
+    if (instance)
+        instance->keyboard(key, x, y);
+}
+void Engine::keyboardUpWrapper(unsigned char key, int x, int y)
+{
+    if (instance)
+        instance->keyboardUp(key, x, y);
+}
+void Engine::mouseMoveWrapper(int x, int y)
+{
+    if (instance)
+        instance->mouseMove(x, y);
 }
 
-void Engine::SpecialKeys(int key, int x, int y) {
-    float moveStep = 0.5f;
-    // Стрелки позволяют "летать" - смещать точку, куда мы смотрим
-    switch (key) {
-        case GLUT_KEY_UP:    observer.center.y += moveStep; break;
-        case GLUT_KEY_DOWN:  observer.center.y -= moveStep; break;
-        case GLUT_KEY_LEFT:  observer.center.x -= moveStep; break;
-        case GLUT_KEY_RIGHT: observer.center.x += moveStep; break;
-    }
-    observer.updatePosition();
-}
-
-void Engine::DisplayWrapper() { getInstance().Display(); }
-void Engine::ReshapeWrapper(int w, int h) { getInstance().Reshape(w, h); }
-void Engine::KeyboardWrapper(unsigned char k, int x, int y) { getInstance().Keyboard(k, x, y); }
-void Engine::SpecialKeysWrapper(int k, int x, int y) { getInstance().SpecialKeys(k, x, y); }
+void Engine::drawWireCube(double size) { glutWireCube(size); }
+void Engine::drawWireTeapot(double size) { glutWireTeapot(size); }

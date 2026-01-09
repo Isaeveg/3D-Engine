@@ -3,6 +3,18 @@ project(3D_Engine)
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# === НАСТРОЙКА БИБЛИОТЕК (LIBS) ===
+
+# 1. GLM (Header-only)
+# Указываем папку, в которой лежит папка "glm"
+include_directories(${CMAKE_SOURCE_DIR}/libs/glm)
+ 
+# 2. FreeGLUT
+# Заголовки (.h)
+include_directories(${CMAKE_SOURCE_DIR}/libs/freeglut/include)
+
 include_directories(libs/freeglut/include)
 include_directories(libs/glm)
 include_directories(src)
