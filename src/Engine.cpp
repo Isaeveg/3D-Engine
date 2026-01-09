@@ -1,180 +1,108 @@
 #include "Engine.h"
-#include "Primitives.h" 
-#include "Cube.h"
 
-// Инициализация статического указателя
-Engine* Engine::instance = nullptr;
+Engine::Engine() : rotationAngle(0.0f), width(1280), height(720) {}
 
-Engine::Engine() 
-    : windowWidth(800), windowHeight(600), windowTitle("OpenGL Lab 07"), 
-      fps(60), currentProjection(PERSPECTIVE), windowHandle(0) {
-    
-    // Цвет фона по умолчанию (черный)
-    clearColor[0] = 0.0f; clearColor[1] = 0.0f; clearColor[2] = 0.0f; clearColor[3] = 1.0f;
-    instance = this;
+Engine& Engine::getInstance() {
+    static Engine instance;
+    return instance;
 }
 
-Engine::~Engine() {
-    // Деинициализация (если требуется специфическая очистка) [cite: 166]
-}
-
-void Engine::init(int argc, char** argv, int width, int height, const std::string& title) {
-    windowWidth = width;
-    windowHeight = height;
-    windowTitle = title;
-
-    // Инициализация GLUT [cite: 59, 60]
+void Engine::Init(int argc, char* argv[], const std::string& title, int width, int height) {
+    this->width = width;
+    this->height = height;
     glutInit(&argc, argv);
-    
-    // Режим отображения: Двойная буферизация, Цвета RGB, Буфер глубины [cite: 61]
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+    glutInitWindowSize(width, height);
+    glutCreateWindow(title.c_str());
     
-    // Размер и создание окна [cite: 62, 63]
-    glutInitWindowSize(windowWidth, windowHeight);
-    windowHandle = glutCreateWindow(windowTitle.c_str());
+    glutDisplayFunc(DisplayWrapper);
+    glutReshapeFunc(ReshapeWrapper);
+    glutKeyboardFunc(KeyboardWrapper);
+    glutSpecialFunc(SpecialKeysWrapper);
 
-    // Включение теста глубины (Z-buffer) [cite: 161]
+    glClearColor(0.02f, 0.02f, 0.05f, 1.0f);
     glEnable(GL_DEPTH_TEST);
-
-    // Регистрация Callback-функций [cite: 66, 67, 71]
-    glutDisplayFunc(renderWrapper);
-    glutReshapeFunc(reshapeWrapper);
-    glutKeyboardFunc(keyboardWrapper);
 }
 
-void Engine::run() {
-    // Запуск таймера для контроля FPS [cite: 162]
-    glutTimerFunc(1000 / fps, updateWrapper, 0);
-    // Запуск главного цикла [cite: 64]
+void Engine::Start() {
     glutMainLoop();
 }
 
-void Engine::setClearColor(float r, float g, float b, float a) {
-    clearColor[0] = r; clearColor[1] = g; clearColor[2] = b; clearColor[3] = a;
-    // Настройка цвета очистки 
-    glClearColor(r, g, b, a);
-}
-
-void Engine::setFPS(int value) {
-    if (value > 0) fps = value;
-}
-
-void Engine::setProjection(ProjectionType type) {
-    currentProjection = type;
-    // Принудительно вызываем reshape для пересчета матрицы проекции
-    reshape(windowWidth, windowHeight); 
-}
-
-// --- Обработка логики (Реализация) ---
-
-void Engine::render() {
+void Engine::Display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    
-    glTranslatef(0.0f, 0.0f, -15.0f); // Камера назад
 
-    // 1. Куб в центре (вращается)
-    glPushMatrix();
-        static float a = 0; a+=1.0f;
-        glRotatef(a, 1, 1, 0);
-        Cube::draw();
-    glPopMatrix();
+    observer.apply();
 
-    // 2. Примитивы вокруг
-    glColor3f(1,1,1); // Белый цвет для примитивов
-    glPushMatrix(); glTranslatef(-6,0,0); Primitives::drawTriangles(); glPopMatrix();
-    glPushMatrix(); glTranslatef( 6,0,0); Primitives::drawPoints();    glPopMatrix();
-    glPushMatrix(); glTranslatef( 0,5,0); Primitives::drawLines();     glPopMatrix();
+    // Задание 2 & 3: Три объекта с трансформациями GLM
+    glm::mat4 base = glm::mat4(1.0f);
 
+    // 1. Зеленый куб (Вращение + Перемещение)
+    glm::mat4 m1 = glm::rotate(base, glm::radians(rotationAngle), glm::vec3(0, 1, 0));
+    m1 = glm::translate(m1, glm::vec3(5.0f, 0, 0));
+    glLoadMatrixf(glm::value_ptr(m1));
+    glColor3f(0.0f, 1.0f, 0.5f);
+    glutSolidCube(1.2f);
+
+    // 2. Желтый чайник (Вращение + Перемещение + Собственное вращение)
+    glm::mat4 m2 = glm::rotate(base, glm::radians(rotationAngle + 120.0f), glm::vec3(0, 1, 0));
+    m2 = glm::translate(m2, glm::vec3(5.0f, 2.0f * sin(rotationAngle * 0.05f), 0));
+    m2 = glm::rotate(m2, glm::radians(rotationAngle * 2.0f), glm::vec3(1, 1, 0));
+    glLoadMatrixf(glm::value_ptr(m2));
+    glColor3f(1.0f, 1.0f, 0.0f);
+    glutSolidTeapot(1.0f);
+
+    // 3. Синяя сфера (Вращение + Перемещение + Масштабирование)
+    glm::mat4 m3 = glm::rotate(base, glm::radians(rotationAngle + 240.0f), glm::vec3(0, 1, 0));
+    m3 = glm::translate(m3, glm::vec3(5.0f, 0, 0));
+    float scale = 0.8f + 0.4f * sin(rotationAngle * 0.1f);
+    m3 = glm::scale(m3, glm::vec3(scale));
+    glLoadMatrixf(glm::value_ptr(m3));
+    glColor3f(0.2f, 0.5f, 1.0f);
+    glutSolidSphere(1.0f, 20, 20);
+
+    rotationAngle += 0.5f;
     glutSwapBuffers();
+    glutPostRedisplay();
 }
 
-void Engine::reshape(int w, int h) {
-    windowWidth = w;
-    windowHeight = h;
-    if (h == 0) h = 1; // Предотвращение деления на 0
-    float aspect = (float)w / (float)h;
-
-    glViewport(0, 0, w, h);
-    
-    // Работа с матрицей проекции [cite: 88]
+void Engine::Reshape(int width, int height) {
+    this->width = width; this->height = height;
+    glViewport(0, 0, width, height);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-
-    // Использование GLM не обязательно для старого конвейера (glOrtho/gluPerspective),
-    // но инструкция просит использовать GLM[cite: 86, 97, 115].
-    // Здесь мы загружаем матрицу, созданную GLM, в OpenGL.
-
-    glm::mat4 projection;
-    
-    if (currentProjection == ORTHOGRAPHIC) {
-        //  glm::ortho
-        float orthoSize = 3.0f;
-        // Поддерживаем пропорции экрана в ортогональной проекции
-        if (w >= h) {
-            projection = glm::ortho(-orthoSize * aspect, orthoSize * aspect, -orthoSize, orthoSize, 0.1f, 100.0f);
-        } else {
-            projection = glm::ortho(-orthoSize, orthoSize, -orthoSize / aspect, orthoSize / aspect, 0.1f, 100.0f);
-        }
-    } else {
-        //  glm::perspective
-        // FOV = 60 градусов, zNear = 0.1, zFar = 100.0 [cite: 118, 120]
-        projection = glm::perspective(glm::radians(60.0f), aspect, 0.1f, 100.0f);
-    }
-
-    // Загрузка матрицы GLM в OpenGL (Legacy mode)
-    glLoadMatrixf(glm::value_ptr(projection));
-    
+    gluPerspective(60.0, (float)width/height, 0.1, 100.0);
     glMatrixMode(GL_MODELVIEW);
 }
 
-void Engine::update(int value) {
-    // Запрос на перерисовку кадра [cite: 73]
-    glutPostRedisplay();
-    // Перезапуск таймера
-    glutTimerFunc(1000 / fps, updateWrapper, 0);
-}
-
-void Engine::keyboard(unsigned char key, int x, int y) {
+void Engine::Keyboard(unsigned char key, int x, int y) {
     switch (key) {
-    case 27: 
-        glutLeaveMainLoop(); 
-        break;
-    case 'p':
-    case 'P':
-        std::cout << "Switching to Perspective Projection" << std::endl;
-        setProjection(PERSPECTIVE); // 
-        break;
-    case 'o':
-    case 'O':
-        std::cout << "Switching to Orthogonal Projection" << std::endl;
-        setProjection(ORTHOGRAPHIC); // 
-        break;
+        case 'w': observer.radius -= 0.5f; break; // Приближение
+        case 's': observer.radius += 0.5f; break; // Отдаление
+        case 'a': observer.theta -= 0.05f; break; // Поворот влево
+        case 'd': observer.theta += 0.05f; break; // Поворот вправо
+        case 'q': observer.phi += 0.05f; break;   // Наклон вверх
+        case 'e': observer.phi -= 0.05f; break;   // Наклон вниз
+        case 27: exit(0); break;
     }
+    if (observer.radius < 2.0f) observer.radius = 2.0f;
+    observer.updatePosition();
 }
 
-// Обертки для FreeGLUT (Static wrappers)
-
-void Engine::renderWrapper() {
-    if (instance) instance->render();
-}
-void Engine::updateWrapper(int value) {
-    if (instance) instance->update(value);
-}
-void Engine::reshapeWrapper(int w, int h) {
-    if (instance) instance->reshape(w, h);
-}
-void Engine::keyboardWrapper(unsigned char key, int x, int y) {
-    if (instance) instance->keyboard(key, x, y);
+void Engine::SpecialKeys(int key, int x, int y) {
+    float moveStep = 0.5f;
+    // Стрелки позволяют "летать" - смещать точку, куда мы смотрим
+    switch (key) {
+        case GLUT_KEY_UP:    observer.center.y += moveStep; break;
+        case GLUT_KEY_DOWN:  observer.center.y -= moveStep; break;
+        case GLUT_KEY_LEFT:  observer.center.x -= moveStep; break;
+        case GLUT_KEY_RIGHT: observer.center.x += moveStep; break;
+    }
+    observer.updatePosition();
 }
 
-
-
-void Engine::drawWireCube(double size) {
-    glutWireCube(size);
-}
-
-void Engine::drawWireTeapot(double size) {
-    glutWireTeapot(size);
-}
+void Engine::DisplayWrapper() { getInstance().Display(); }
+void Engine::ReshapeWrapper(int w, int h) { getInstance().Reshape(w, h); }
+void Engine::KeyboardWrapper(unsigned char k, int x, int y) { getInstance().Keyboard(k, x, y); }
+void Engine::SpecialKeysWrapper(int k, int x, int y) { getInstance().SpecialKeys(k, x, y); }
