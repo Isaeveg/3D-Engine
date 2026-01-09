@@ -1,4 +1,6 @@
 #include "Engine.h"
+#include "Primitives.h" 
+#include "Cube.h"
 
 // Инициализация статического указателя
 Engine* Engine::instance = nullptr;
@@ -66,26 +68,25 @@ void Engine::setProjection(ProjectionType type) {
 // --- Обработка логики (Реализация) ---
 
 void Engine::render() {
-    // Очистка буферов цвета и глубины
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    // Установка матрицы модели-вида (Camera View)
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-
-    // Сдвигаем камеру назад, чтобы видеть объекты
-    glTranslatef(0.0f, 0.0f, -5.0f);
     
-    // Небольшое вращение для наглядности 3D
-    static float angle = 0.0f;
-    angle += 1.0f;
-    glRotatef(angle, 1.0f, 1.0f, 0.0f);
+    glTranslatef(0.0f, 0.0f, -15.0f); // Камера назад
 
-    // Рисуем объекты (Задание 7)
-    glColor3f(1.0f, 1.0f, 1.0f); // Белый цвет
-    drawWireTeapot(1.0);
+    // 1. Куб в центре (вращается)
+    glPushMatrix();
+        static float a = 0; a+=1.0f;
+        glRotatef(a, 1, 1, 0);
+        Cube::draw();
+    glPopMatrix();
 
-    // Смена буферов [cite: 75]
+    // 2. Примитивы вокруг
+    glColor3f(1,1,1); // Белый цвет для примитивов
+    glPushMatrix(); glTranslatef(-6,0,0); Primitives::drawTriangles(); glPopMatrix();
+    glPushMatrix(); glTranslatef( 6,0,0); Primitives::drawPoints();    glPopMatrix();
+    glPushMatrix(); glTranslatef( 0,5,0); Primitives::drawLines();     glPopMatrix();
+
     glutSwapBuffers();
 }
 

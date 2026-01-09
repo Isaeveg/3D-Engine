@@ -26,7 +26,7 @@ link_directories(${CMAKE_SOURCE_DIR}/libs/freeglut/lib/x64)
 # Находим все исходники в папке src
 file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.h")
 
-# Создаем исполняемый файл Game.exe
+# 2. Создаем проект из найденных файлов
 add_executable(Game ${SOURCES})
 
 # Добавляем папку src в пути поиска заголовков (чтобы Engine.h виделся в main.cpp)
