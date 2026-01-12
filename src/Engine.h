@@ -10,6 +10,7 @@
 #include <string>
 
 #include "Camera.h"
+#include "Observer.h" // <--- Добавлено: нужно для использования класса Observer
 
 enum ProjectionType
 {
@@ -30,6 +31,8 @@ private:
     float clearColor[4];
 
     Camera *camera;
+    Observer observer;          // <--- Добавлено: поле observer, которое используется в cpp
+    float rotationAngle = 0.0f; // <--- Добавлено: переменная для вращения объектов
 
     // --- Управление вводом ---
     bool keys[1024]; // Массив состояний клавиш (нажата/отпущена)
@@ -57,12 +60,18 @@ private:
     static void updateWrapper(int value);
     static void reshapeWrapper(int w, int h);
     static void keyboardWrapper(unsigned char key, int x, int y);
-    static void keyboardUpWrapper(unsigned char key, int x, int y); // New
-    static void mouseMoveWrapper(int x, int y);                     // New
+    static void keyboardUpWrapper(unsigned char key, int x, int y);
+    static void mouseMoveWrapper(int x, int y);
 
 public:
     Engine();
     ~Engine();
+
+    static Engine &getInstance()
+    {
+        static Engine instance;
+        return instance;
+    }
 
     void init(int argc, char **argv, int width, int height, const std::string &title);
     void run();
@@ -73,3 +82,5 @@ public:
     void drawWireCube(double size);
     void drawWireTeapot(double size);
 };
+
+#endif // <--- Добавлено: закрывающий endif

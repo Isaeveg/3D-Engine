@@ -31,6 +31,8 @@ add_executable(Game
     src/Cube.h
     src/Primitives.cpp
     src/Primitives.h
+    src/Camera.cpp
+    src/Camera.h
 )
 
 target_link_libraries(Game freeglut opengl32 glu32)

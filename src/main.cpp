@@ -1,8 +1,10 @@
 #include "Engine.h"
 
-int main(int argc, char* argv[]) {
-    Engine& engine = Engine::getInstance();
-    engine.Init(argc, argv, "3D Fly Engine - Lab 9", 1280, 720);
-    engine.Start();
+int main(int argc, char *argv[])
+{
+    Engine &engine = Engine::getInstance();
+    engine.init(argc, argv, 1280, 720, "3D Engine");
+    engine.run();
+
     return 0;
 }
