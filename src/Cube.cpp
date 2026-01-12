@@ -1,32 +1,36 @@
 #include "Cube.h"
 
-float vert[] = {
-    -1, -1, 1, 1, -1, 1, 1, 1, 1, -1, 1, 1,    // Передняя грань
-    -1, -1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1 // Задняя грань
+float cube_v[] = {
+    -1,-1,1, 1,-1,1, 1,1,1, -1,1,1,   // Front
+    -1,-1,-1, 1,-1,-1, 1,1,-1, -1,1,-1 // Back
 };
 
-float cols[] = {
-    1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0,
-    1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0};
+float cube_n[] = {
+    0,0,1, 0,0,1, 0,0,1, 0,0,1,
+    0,0,-1, 0,0,-1, 0,0,-1, 0,0,-1
+};
 
-unsigned char ind[] = {
-    0, 1, 2, 2, 3, 0,
-    1, 5, 6, 6, 2, 1,
-    7, 6, 5, 5, 4, 7,
-    4, 0, 3, 3, 7, 4,
-    3, 2, 6, 6, 7, 3,
-    4, 5, 1, 1, 0, 4};
+float cube_uv[] = {
+    0,0, 1,0, 1,1, 0,1,
+    0,0, 1,0, 1,1, 0,1
+};
 
-void Cube::draw()
-{
+unsigned char cube_i[] = {
+    0,1,2, 2,3,0, 1,5,6, 6,2,1, 7,6,5, 5,4,7, 4,0,3, 3,7,4, 3,2,6, 6,7,3, 4,5,1, 1,0,4
+};
+
+void Cube::draw() {
     glEnableClientState(GL_VERTEX_ARRAY);
-    glEnableClientState(GL_COLOR_ARRAY);
+    glEnableClientState(GL_NORMAL_ARRAY);
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 
-    glVertexPointer(3, GL_FLOAT, 0, vert);
-    glColorPointer(3, GL_FLOAT, 0, cols);
+    glVertexPointer(3, GL_FLOAT, 0, cube_v);
+    glNormalPointer(GL_FLOAT, 0, cube_n);
+    glTexCoordPointer(2, GL_FLOAT, 0, cube_uv);
 
-    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_BYTE, ind);
+    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_BYTE, cube_i);
 
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    glDisableClientState(GL_NORMAL_ARRAY);
     glDisableClientState(GL_VERTEX_ARRAY);
-    glDisableClientState(GL_COLOR_ARRAY);
 }
