@@ -27,7 +27,6 @@ private:
     std::vector<GameObject> objects;
     int selectedIdx;
     
-    // ПЕРЕМЕННЫЕ ДЛЯ СВЕТА И ТЕНИ
     bool lightEnabled;
     bool smoothShading;
     GLuint crateTexture;

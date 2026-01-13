@@ -4,7 +4,7 @@
 #include <iostream>
 #include <glm/gtc/type_ptr.hpp>
 
-// Реализация загрузчика текстур
+
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
