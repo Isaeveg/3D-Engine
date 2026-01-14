@@ -1,43 +1,43 @@
 # 3D-Engine
-3D графический движок, написанный на C++ с использованием OpenGL. Проект предназначен для визуализации 3D сцен с поддержкой камеры, примитивов и системы наблюдателей.
+Silnik grafiki 3D napisany w C++ z wykorzystaniem OpenGL. Projekt przeznaczony do wizualizacji scen 3D z obsługą kamery, prymitywów i systemu obserwatorów.
 
-## Особенности
+## Cechy
 
-- **OpenGL графика** - современный 3D рендеринг
-- **Система камер** - полная поддержка навигации в 3D пространстве
-- **Примитивы** - встроенные 3D объекты (кубы, сферы и др.)
-- **Система событий** - паттерн Observer для управления событиями
-- **GLM математика** - линейная алгебра для 3D вычислений
-- **Кроссплатформенность** - поддержка Windows/Linux/macOS
+- **Grafika OpenGL** - nowoczesny rendering 3D
+- **System kamer** - pełna obsługa nawigacji w przestrzeni 3D
+- **Prymitywy** - wbudowane obiekty 3D (sześciany, sfery itp.)
+- **System zdarzeń** - wzorzec Observer do zarządzania zdarzeniami
+- **Matematyka GLM** - algebra liniowa do obliczeń 3D
+- **Kompatybilność wieloplatformowa** - obsługa Windows/Linux/macOS
 
-## Требования
+## Wymagania
 
-- C++17 или выше
+- C++17 lub nowszy
 - CMake 3.10+
 - OpenGL 3.3+
 - FreeGLUT 3.0+
 - GLM 0.9+
 
-## Структура проекта
+## Struktura projektu
 
 ```
-├── src/                    # Исходный код
-│   ├── main.cpp           # Точка входа
-│   ├── Engine.h/cpp       # Основной движок
-│   ├── Camera.h/cpp       # Система камер
-│   ├── Primitives.h/cpp   # 3D примитивы
-│   ├── Cube.h/cpp         # Куб
-│   ├── Observer.h/cpp     # Система событий
+├── src/                    # Kod źródłowy
+│   ├── main.cpp           # Punkt wejścia
+│   ├── Engine.h/cpp       # Główny silnik
+│   ├── Camera.h/cpp       # System kamer
+│   ├── Primitives.h/cpp   # Prymitywy 3D
+│   ├── Cube.h/cpp         # Sześcian
+│   ├── Observer.h/cpp     # System zdarzeń
 │   └── ...
-├── libs/                  # Внешние библиотеки
-│   ├── freeglut/         # OpenGL утилиты
-│   └── glm/              # Математика
-├── build/                 # Собранный проект
-├── CMakeLists.txt        # Конфигурация CMake
-└── stb_image.h           # Загрузка изображений
+├── libs/                  # Biblioteki zewnętrzne
+│   ├── freeglut/         # Narzędzia OpenGL
+│   └── glm/              # Matematyka
+├── build/                 # Skompilowany projekt
+├── CMakeLists.txt        # Konfiguracja CMake
+└── stb_image.h           # Ładowanie obrazów
 ```
 
-## Сборка
+## Kompilacja
 
 ### Windows (MSVC)
 
@@ -57,9 +57,9 @@ cmake ..
 make -j$(nproc)
 ```
 
-## Запуск
+## Uruchomienie
 
-После сборки запустите исполняемый файл:
+Po kompilacji uruchom plik wykonywalny:
 
 ```bash
 # Windows
@@ -69,24 +69,24 @@ make -j$(nproc)
 ./build/Game
 ```
 
-## Основные компоненты
+## Główne komponenty
 
 ### Engine
-Главный класс движка, управляющий инициализацией OpenGL и основным циклом обновления.
+Główna klasa silnika zarządzająca inicjalizacją OpenGL i główną pętlą aktualizacji.
 
 ### Camera
-Система камер для навигации в 3D сцене. Поддерживает матрицы проекции и вида.
+System kamer do nawigacji w scenie 3D. Obsługuje macierze projekcji i widoku.
 
 ### Primitives
-Базовый класс для всех 3D объектов в сцене.
+Klasa bazowa dla wszystkich obiektów 3D w scenie.
 
 ### Cube
-Реализация куба как примитива сцены.
+Implementacja sześcianu jako prymitywu sceny.
 
 ### Observer
-Паттерн Observer для системы событий и уведомлений.
+Wzorzec Observer dla systemu zdarzeń i powiadomień.
 
-## Использование
+## Użycie
 
 ```cpp
 #include "Engine.h"
@@ -103,16 +103,16 @@ int main() {
 }
 ```
 
-## Зависимости
+## Zależności
 
-- **FreeGLUT** - управление окном и входом
-- **GLM** - векторная математика и матрицы
-- **STB Image** - загрузка текстур
+- **FreeGLUT** - zarządzanie oknem i wejściem
+- **GLM** - matematyka wektorowa i macierze
+- **STB Image** - ładowanie tekstur
 
-## Лицензия
+## Licencja
 
-Свободное использование в образовательных и коммерческих целях.
+Swobodne użytkowanie w celach edukacyjnych i komercyjnych.
 
-## Разработка
+## Rozwój
 
-Проект находится в активной разработке. Приветствуются улучшения и оптимизации.
+Projekt jest w aktywnym rozwoju. Powitane są ulepszenia i optymalizacje.
