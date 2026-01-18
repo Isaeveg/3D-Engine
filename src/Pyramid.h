@@ -1,8 +1,7 @@
 #pragma once
 #include <GL/freeglut.h>
 
-class Cube
-{
+class Pyramid {
 public:
     static void draw();
 };
