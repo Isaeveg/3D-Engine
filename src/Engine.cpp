@@ -84,12 +84,10 @@ void Engine::keyboard(unsigned char key, int x, int y) {
     if (key == '4') spawnObject(TEAPOT);
     if (key == '5') spawnObject(TORUS);
     
-    // TAB для переключения
     if (key == 9) {
         if (!objects.empty()) selectedIdx = (selectedIdx + 1) % objects.size();
     }
 
-    // FPS
     if (key == ']') targetFPS += 5;
     if (key == '[') targetFPS = std::max(5, targetFPS - 5);
 }
@@ -99,7 +97,7 @@ void Engine::keyboardUp(unsigned char key, int x, int y) {
 }
 
 void Engine::processInput() {
-    float s = 0.15f; // Скорость камеры
+    float s = 0.15f; 
     if (keys['w'] || keys['W']) camera->ProcessKeyboard(FORWARD, s);
     if (keys['s'] || keys['S']) camera->ProcessKeyboard(BACKWARD, s);
     if (keys['a'] || keys['A']) camera->ProcessKeyboard(LEFT, s);
