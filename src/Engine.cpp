@@ -1,129 +1,170 @@
 #include "Engine.h"
 #include "Cube.h"
-#include "Primitives.h"
+#include "Pyramid.h"
 #include <iostream>
 #include <glm/gtc/type_ptr.hpp>
-
+#include <algorithm>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
+void CubeObject::drawGeometry() {
+    Cube::draw(); 
+}
+
+void PyramidObject::drawGeometry() {
+    Pyramid::draw();
+}
+
+void SphereObject::drawGeometry() {
+    glutSolidSphere(1.0, 30, 30);
+}
+
+void TeapotObject::drawGeometry() {
+    glutSolidTeapot(1.0);
+}
+
+void TorusObject::drawGeometry() {
+    glutSolidTorus(0.3, 0.7, 20, 20);
+}
+
 Engine* Engine::instance = nullptr;
 
 Engine::Engine() : 
-    windowWidth(1280), 
-    windowHeight(720), 
-    targetFPS(60), 
-    selectedIdx(-1), 
-    lightEnabled(true), 
-    smoothShading(true) 
+    windowWidth(1280), windowHeight(720), targetFPS(60), selectedIdx(-1), 
+    lightEnabled(true), smoothShading(true), textureCrate(nullptr), textureWall(nullptr)
 {
     camera = new Camera(glm::vec3(0.0f, 2.0f, 15.0f));
     for(int i=0; i<256; i++) { keys[i] = false; specialKeys[i] = false; }
     instance = this;
 }
 
-Engine::~Engine() { delete camera; }
-
-void Engine::loadTexture() {
-    glGenTextures(1, &crateTexture);
-    glBindTexture(GL_TEXTURE_2D, crateTexture);
-    
-    int width, height, nrChannels;
-    stbi_set_flip_vertically_on_load(true);
-    
-    // Пытаемся найти текстуру в разных папках
-    unsigned char *data = stbi_load("assets/crate.jpg", &width, &height, &nrChannels, 0);
-    if (!data) data = stbi_load("crate.jpg", &width, &height, &nrChannels, 0);
-    
-    if (data) {
-        GLenum format = (nrChannels == 4) ? GL_RGBA : GL_RGB;
-        gluBuild2DMipmaps(GL_TEXTURE_2D, format, width, height, format, GL_UNSIGNED_BYTE, data);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-        std::cout << "Tekstura zaladowana!" << std::endl;
-    } else {
-        std::cout << "Blad: Nie znaleziono crate.jpg!" << std::endl;
-    }
-    stbi_image_free(data);
+Engine::~Engine() { 
+    delete camera; 
+    delete textureCrate;
+    delete textureWall;
+    for(auto obj : objects) delete obj;
+    objects.clear();
 }
 
-// РЕАЛИЗАЦИЯ ФУНКЦИИ, КОТОРОЙ НЕ ХВАТАЛО
-void Engine::spawnObject(ShapeType type) {
-    GameObject obj;
-    obj.pos = camera->Position + camera->Front * 7.0f;
-    obj.rot = glm::vec3(0.0f);
-    obj.scale = 1.0f;
-    obj.color = glm::vec3((rand()%100)/100.f, (rand()%100)/100.f, (rand()%100)/100.f);
-    obj.type = type;
-    obj.useTexture = (type == CUBE); 
+void Engine::loadTexture() {
+    std::cout << "Loading textures..." << std::endl;
+    textureCrate = new BitmapHandler("assets/crate.jpg");
+    textureWall = new BitmapHandler("assets/wall.jpg");  
+}
+
+void Engine::spawnCube() {
+    CubeObject* obj = new CubeObject(textureCrate);
+    obj->pos = camera->Position + camera->Front * 5.0f;
     objects.push_back(obj);
     selectedIdx = (int)objects.size() - 1;
-    std::cout << "Obiekt dodany. Typ: " << type << std::endl;
+}
+
+void Engine::spawnPyramid() {
+    PyramidObject* obj = new PyramidObject(textureWall);
+    obj->pos = camera->Position + camera->Front * 5.0f;
+    objects.push_back(obj);
+    selectedIdx = (int)objects.size() - 1;
+}
+
+void Engine::spawnSphere() {
+    SphereObject* obj = new SphereObject();
+    obj->pos = camera->Position + camera->Front * 5.0f;
+    obj->color = glm::vec3((rand()%100)/100.f, (rand()%100)/100.f, (rand()%100)/100.f);
+    objects.push_back(obj);
+    selectedIdx = (int)objects.size() - 1;
+}
+
+void Engine::spawnTeapot() {
+    TeapotObject* obj = new TeapotObject();
+    obj->pos = camera->Position + camera->Front * 5.0f;
+    obj->color = glm::vec3((rand()%100)/100.f, (rand()%100)/100.f, (rand()%100)/100.f);
+    objects.push_back(obj);
+    selectedIdx = (int)objects.size() - 1;
+}
+
+void Engine::spawnTorus() {
+    TorusObject* obj = new TorusObject();
+    obj->pos = camera->Position + camera->Front * 5.0f;
+    obj->color = glm::vec3((rand()%100)/100.f, (rand()%100)/100.f, (rand()%100)/100.f);
+    objects.push_back(obj);
+    selectedIdx = (int)objects.size() - 1;
 }
 
 void Engine::keyboard(unsigned char key, int x, int y) {
-    keys[key] = true; // Запоминаем нажатие для WASD
-    
-    if (key == 27) glutLeaveMainLoop(); // ESC
+    keys[key] = true;
+    if (key == 27) glutLeaveMainLoop(); 
 
-    // Управление светом и тенями
-    if (key == 'l' || key == 'L') {
-        lightEnabled = !lightEnabled;
-        std::cout << "Swiatlo: " << (lightEnabled ? "ON" : "OFF") << std::endl;
-    }
-    if (key == 'k' || key == 'K') {
-        smoothShading = !smoothShading;
-        std::cout << "Cieniowanie: " << (smoothShading ? "SMOOTH" : "FLAT") << std::endl;
-    }
+    if (key == 'l' || key == 'L') lightEnabled = !lightEnabled;
+    if (key == 'k' || key == 'K') smoothShading = !smoothShading;
 
-    // Создание фигур
-    if (key == '1') spawnObject(CUBE);
-    if (key == '2') spawnObject(PYRAMID);
-    if (key == '3') spawnObject(SPHERE);
-    if (key == '4') spawnObject(TEAPOT);
-    if (key == '5') spawnObject(TORUS);
+    if (key == '1') spawnCube();
+    if (key == '2') spawnPyramid();
+    if (key == '3') spawnSphere();
+    if (key == '4') spawnTeapot();
+    if (key == '5') spawnTorus();
     
-    // TAB для переключения
-    if (key == 9) {
+    if (key == 9) { 
         if (!objects.empty()) selectedIdx = (selectedIdx + 1) % objects.size();
     }
 
-    // FPS
     if (key == ']') targetFPS += 5;
     if (key == '[') targetFPS = std::max(5, targetFPS - 5);
+
+    if (key == 127) { 
+        if (!objects.empty() && selectedIdx != -1) {
+            
+            delete objects[selectedIdx];
+            objects.erase(objects.begin() + selectedIdx);
+            
+            std::cout << "Obiekt usuniety (Deleted)" << std::endl;
+
+            if (objects.empty()) {
+                selectedIdx = -1;
+            } else {
+                if (selectedIdx >= objects.size()) {
+                    selectedIdx = (int)objects.size() - 1;
+                }
+            }
+        }
+    }
 }
 
 void Engine::keyboardUp(unsigned char key, int x, int y) {
-    keys[key] = false; // Сбрасываем нажатие
+    keys[key] = false;
 }
 
-void Engine::processInput() {
-    float s = 0.15f; // Скорость камеры
-    if (keys['w'] || keys['W']) camera->ProcessKeyboard(FORWARD, s);
-    if (keys['s'] || keys['S']) camera->ProcessKeyboard(BACKWARD, s);
-    if (keys['a'] || keys['A']) camera->ProcessKeyboard(LEFT, s);
-    if (keys['d'] || keys['D']) camera->ProcessKeyboard(RIGHT, s);
+void Engine::specialFunc(int key, int x, int y) { specialKeys[key] = true; }
+void Engine::specialUpFunc(int key, int x, int y) { specialKeys[key] = false; }
 
-    if (selectedIdx != -1) {
-        float mS = 0.1f;
-        // Векторы движения относительно взгляда
+void Engine::processInput() {
+    float camSpeed = 0.15f; 
+    if (keys['w'] || keys['W']) camera->ProcessKeyboard(FORWARD, camSpeed);
+    if (keys['s'] || keys['S']) camera->ProcessKeyboard(BACKWARD, camSpeed);
+    if (keys['a'] || keys['A']) camera->ProcessKeyboard(LEFT, camSpeed);
+    if (keys['d'] || keys['D']) camera->ProcessKeyboard(RIGHT, camSpeed);
+
+    if (selectedIdx != -1 && selectedIdx < objects.size()) {
+        float objSpeed = 0.1f;
+        GameObject* obj = objects[selectedIdx];
+        
         glm::vec3 forward = glm::normalize(glm::vec3(camera->Front.x, 0, camera->Front.z));
         glm::vec3 right = camera->Right;
 
-        if (specialKeys[GLUT_KEY_UP])    objects[selectedIdx].pos += forward * mS;
-        if (specialKeys[GLUT_KEY_DOWN])  objects[selectedIdx].pos -= forward * mS;
-        if (specialKeys[GLUT_KEY_LEFT])  objects[selectedIdx].pos -= right * mS;
-        if (specialKeys[GLUT_KEY_RIGHT]) objects[selectedIdx].pos += right * mS;
+        if (specialKeys[GLUT_KEY_UP])    obj->pos += forward * objSpeed;
+        if (specialKeys[GLUT_KEY_DOWN])  obj->pos -= forward * objSpeed;
+        if (specialKeys[GLUT_KEY_LEFT])  obj->pos -= right * objSpeed;
+        if (specialKeys[GLUT_KEY_RIGHT]) obj->pos += right * objSpeed;
 
-        // Вращение R, T, Y
-        if (keys['r'] || keys['R']) objects[selectedIdx].rot.y += 2.0f;
-        if (keys['t'] || keys['T']) objects[selectedIdx].rot.x += 2.0f;
-        if (keys['y'] || keys['Y']) objects[selectedIdx].rot.z += 2.0f;
+        if (keys[32])                obj->pos.y += objSpeed; 
+        if (keys['c'] || keys['C'])  obj->pos.y -= objSpeed; 
 
-        // Масштаб
-        if (keys['+'] || keys['=']) objects[selectedIdx].scale += 0.05f;
-        if (keys['-'] || keys['_']) objects[selectedIdx].scale -= 0.05f;
+        if (keys['r'] || keys['R']) obj->rot.y += 2.0f;
+        if (keys['t'] || keys['T']) obj->rot.x += 2.0f;
+        if (keys['y'] || keys['Y']) obj->rot.z += 2.0f;
+
+        if (keys['+'] || keys['=']) obj->scale += 0.05f;
+        if (keys['-'] || keys['_']) obj->scale -= 0.05f;
     }
 }
 
@@ -139,33 +180,39 @@ void Engine::render() {
     GLfloat lp[] = { 0.0f, 10.0f, 5.0f, 1.0f };
     glLightfv(GL_LIGHT0, GL_POSITION, lp);
 
-    for (int i = 0; i < (int)objects.size(); ++i) {
+    for (int i = 0; i < objects.size(); ++i) {
         glPushMatrix();
-        glTranslatef(objects[i].pos.x, objects[i].pos.y, objects[i].pos.z);
-        glRotatef(objects[i].rot.x, 1, 0, 0);
-        glRotatef(objects[i].rot.y, 0, 1, 0);
-        glRotatef(objects[i].rot.z, 0, 0, 1);
-        glScalef(objects[i].scale, objects[i].scale, objects[i].scale);
+        GameObject* obj = objects[i];
+
+        glTranslatef(obj->pos.x, obj->pos.y, obj->pos.z);
+        glRotatef(obj->rot.x, 1, 0, 0);
+        glRotatef(obj->rot.y, 0, 1, 0);
+        glRotatef(obj->rot.z, 0, 0, 1);
+        glScalef(obj->scale, obj->scale, obj->scale);
         
-        if (i == selectedIdx) glColor3f(1.0f, 1.0f, 1.0f);
-        else glColor3f(objects[i].color.r, objects[i].color.g, objects[i].color.b);
+        glColor3f(obj->color.r, obj->color.g, obj->color.b);
+        obj->draw(); 
         
-        if (objects[i].useTexture) {
-            glEnable(GL_TEXTURE_2D);
-            glBindTexture(GL_TEXTURE_2D, crateTexture);
-            Cube::draw();
-            glDisable(GL_TEXTURE_2D);
-        } else {
-            switch(objects[i].type) {
-                case CUBE: Cube::draw(); break;
-                case PYRAMID: Primitives::drawTriangles(); break;
-                case SPHERE: glutSolidSphere(1.0, 30, 30); break;
-                case TEAPOT: glutSolidTeapot(1.0); break;
-                case TORUS: glutSolidTorus(0.3, 0.7, 20, 20); break;
-            }
+        if (i == selectedIdx) {
+            glDisable(GL_LIGHTING);     
+            glDisable(GL_TEXTURE_2D);   
+            glEnable(GL_BLEND);         
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            
+            glColor4f(1.0f, 1.0f, 1.0f, 0.25f); 
+            
+            glDepthFunc(GL_LEQUAL); 
+            
+            obj->drawGeometry();
+            
+            glDepthFunc(GL_LESS);
+            glDisable(GL_BLEND);
+            if (lightEnabled) glEnable(GL_LIGHTING);
         }
+        
         glPopMatrix();
     }
+
     drawInterface();
     glutSwapBuffers();
 }
@@ -204,10 +251,14 @@ void Engine::drawInterface() {
     glMatrixMode(GL_PROJECTION); glPushMatrix(); glLoadIdentity();
     gluOrtho2D(0, windowWidth, 0, windowHeight);
     glMatrixMode(GL_MODELVIEW); glPushMatrix(); glLoadIdentity();
+    
     glColor3f(1, 1, 1);
     glRasterPos2i(10, windowHeight - 20);
-    std::string s = "FPS: " + std::to_string(targetFPS) + " | Obiekt: " + (selectedIdx == -1 ? "None" : std::to_string(selectedIdx));
+    std::string s = "FPS: " + std::to_string(targetFPS) + 
+                    " | Objects: " + std::to_string(objects.size()) + 
+                    " | Sel: " + (selectedIdx == -1 ? "None" : std::to_string(selectedIdx));
     for (char c : s) glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12, c);
+    
     glPopMatrix(); glMatrixMode(GL_PROJECTION); glPopMatrix(); glMatrixMode(GL_MODELVIEW);
     if(lightEnabled) glEnable(GL_LIGHTING);
 }
@@ -218,8 +269,8 @@ void Engine::updateWrapper(int v) { instance->update(v); }
 void Engine::reshapeWrapper(int w, int h) { instance->reshape(w, h); }
 void Engine::kbWrapper(unsigned char k, int x, int y) { instance->keyboard(k,x,y); }
 void Engine::kbUpWrapper(unsigned char k, int x, int y) { instance->keyboardUp(k,x,y); }
-void Engine::specWrapper(int k, int x, int y) { instance->specialKeys[k]=true; }
-void Engine::specUpWrapper(int k, int x, int y) { instance->specialKeys[k]=false; }
+void Engine::specWrapper(int k, int x, int y) { instance->specialFunc(k,x,y); }
+void Engine::specUpWrapper(int k, int x, int y) { instance->specialUpFunc(k,x,y); }
 void Engine::mouseWrapper(int x, int y) {
     int cx = glutGet(GLUT_WINDOW_WIDTH)/2, cy = glutGet(GLUT_WINDOW_HEIGHT)/2;
     if(x==cx && y==cy) return;

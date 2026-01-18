@@ -115,4 +115,86 @@ Swobodne użytkowanie w celach edukacyjnych i komercyjnych.
 
 ## Rozwój
 
-Projekt jest w aktywnym rozwoju. Powitane są ulepszenia i optymalizacje.
+Projekt jest w aktywnym rozwoju. Powitane są ulepszenia i optymalizacje.# 3D-Engine
+
+## Opis projektu
+3D-Engine to autorski silnik graficzny napisany w języku C++, przeznaczony do tworzenia i wizualizacji scen trójwymiarowych. Projekt demonstruje kluczowe zagadnienia grafiki komputerowej, takie jak transformacje macierzowe, oświetlenie Phonga, cieniowanie, teksturowanie obiektów oraz obsługa kamery swobodnej (Free Camera). Silnik wykorzystuje biblioteki OpenGL i FreeGLUT.
+
+## Główne cechy
+* **Renderowanie prymitywów 3D:** Obsługa brył proceduralnych (Sfera, Czajnik, Torus) oraz definiowanych przez wierzchołki (Sześcian, Piramida).
+* **Zaawansowane oświetlenie:** Implementacja modelu oświetlenia (Ambient, Diffuse, Specular) z możliwością dynamicznego włączania/wyłączania.
+* **Cieniowanie:** Przełączanie w czasie rzeczywistym między cieniowaniem płaskim (Flat) a gładkim (Smooth).
+* **Obsługa tekstur:** Ładowanie obrazów (JPG/PNG) i mapowanie UV na obiektach złożonych.
+* **Interakcja i Edycja:** System wyboru obiektów (Highlighting) oraz ich transformacja (przesuwanie, obrót, skalowanie).
+* **Kamera:** Swobodna kamera typu "FPS" sterowana myszą i klawiaturą.
+* **Architektura obiektowa:** Rozbudowana hierarchia klas z wykorzystaniem polimorfizmu.
+
+## Architektura
+
+### Katalogi
+* `src/Core/` - Główna pętla silnika i zarządzanie oknem (Engine).
+* `src/Graphics/` - Obsługa renderowania, tekstur (BitmapHandler) i kamery.
+* `src/Objects/` - Klasy reprezentujące obiekty na scenie (Cube, Pyramid, Sphere).
+
+### Główne klasy
+* **Engine** - Klasa typu Singleton zarządzająca cyklem życia aplikacji, inicjalizacją GLUT i listą obiektów.
+* **Camera** - Odpowiada za obliczanie macierzy widoku (View Matrix) i obsługę wejścia sterującego widokiem.
+* **BitmapHandler** - Wrapper dla biblioteki `stb_image`, zarządzający ładowaniem i bindowaniem tekstur.
+* **GameObject** - Abstrakcyjna klasa bazowa dla wszystkich obiektów sceny, posiadająca właściwości transformacji.
+* **TexturedObject** - Rozszerzenie klasy bazowej o obsługę tekstur, dziedziczone przez Sześcian i Piramidę.
+
+### Schemat hierarchii klas
+```text
+GameObject
+├── SphereObject
+├── TeapotObject
+├── TorusObject
+└── TexturedObject
+    ├── CubeObject
+    └── PyramidObject
+
+Użyte biblioteki
+
+    FreeGLUT - Zarządzanie oknem, kontekstem OpenGL i wejściem (klawiatura/mysz).
+
+    OpenGL - Niskopoziomowe API do renderowania grafiki 3D.
+
+    GLM - Matematyka wektorowa i macierzowa.
+
+    stb_image - Lekka biblioteka do ładowania plików graficznych.
+
+Kompilacja
+
+Projekt wykorzystuje system CMake. Aby zbudować projekt:
+Bash
+
+mkdir build
+cd build
+cmake ..
+cmake --build .
+
+Sterowanie (Demo)
+Klawisz	Funkcja
+WSAD / Mysz	Sterowanie kamerą (ruch i rozglądanie się)
+TAB	Wybór obiektu (Highlighting)
+DEL	Usunięcie wybranego obiektu
+1 - 5	Dodanie obiektu (Cube, Pyramid, Sphere, Teapot, Torus)
+L	Włącz/Wyłącz oświetlenie
+K	Zmień tryb cieniowania (Flat/Smooth)
+Strzałki	Przesuwanie wybranego obiektu (X/Z)
+R / T / Y	Obrót wybranego obiektu
++ / -	Skalowanie wybranego obiektu
+Dokumentacja
+
+Dokumentacja techniczna kodu jest generowana za pomocą narzędzia Doxygen w języku polskim. Aby wygenerować dokumentację:
+Bash
+
+doxygen Doxyfile
+
+Dokumentacja HTML będzie dostępna w katalogu doc/html/index.html.
+Autor
+    Khoprov Yakiv 
+
+Wersja
+
+1.0

@@ -6,16 +6,70 @@
 #include <GL/freeglut.h>
 #include <glm/glm.hpp>
 #include "Camera.h"
+#include "BitmapHandler.h"
 
-enum ShapeType { CUBE, PYRAMID, SPHERE, TEAPOT, TORUS };
-
-struct GameObject {
+class GameObject {
+public:
     glm::vec3 pos;
     glm::vec3 rot;
     float scale;
     glm::vec3 color;
-    ShapeType type;
-    bool useTexture;
+    
+    GameObject() : pos(0), rot(0), scale(1.0f), color(1) {}
+    virtual ~GameObject() {}
+  
+    virtual void draw() {
+        drawGeometry();
+    }
+    virtual void drawGeometry() = 0; 
+};
+
+class TexturedObject : public GameObject {
+protected:
+    BitmapHandler* texture;
+public:
+    TexturedObject(BitmapHandler* tex) : texture(tex) {}
+    
+    void draw() override {
+        if(texture) {
+            glEnable(GL_TEXTURE_2D);
+            glBindTexture(GL_TEXTURE_2D, texture->getTextureID());
+            glColor3f(1,1,1); 
+        }
+        
+        drawGeometry(); 
+        
+        if(texture) {
+            glDisable(GL_TEXTURE_2D);
+        }
+    }
+};
+
+class CubeObject : public TexturedObject {
+public:
+    CubeObject(BitmapHandler* tex) : TexturedObject(tex) {}
+    void drawGeometry() override; 
+};
+
+class PyramidObject : public TexturedObject {
+public:
+    PyramidObject(BitmapHandler* tex) : TexturedObject(tex) {}
+    void drawGeometry() override; 
+};
+
+class SphereObject : public GameObject {
+public:
+    void drawGeometry() override;
+};
+
+class TeapotObject : public GameObject {
+public:
+    void drawGeometry() override;
+};
+
+class TorusObject : public GameObject {
+public:
+    void drawGeometry() override;
 };
 
 class Engine {
@@ -24,12 +78,15 @@ private:
     int targetFPS;
     bool keys[256], specialKeys[256];
     Camera* camera;
-    std::vector<GameObject> objects;
+    
+    std::vector<GameObject*> objects;
     int selectedIdx;
     
     bool lightEnabled;
     bool smoothShading;
-    GLuint crateTexture;
+   
+    BitmapHandler* textureCrate;
+    BitmapHandler* textureWall;
 
     static Engine* instance;
 
@@ -53,8 +110,15 @@ public:
 
     void init(int argc, char** argv, int w, int h, const std::string& title);
     void run();
-    void spawnObject(ShapeType type);
 
+    // Tworzenie obiektów
+    void spawnCube();
+    void spawnPyramid();
+    void spawnSphere();
+    void spawnTeapot();
+    void spawnTorus();
+
+    // Wrapper functions dla FreeGLUT callbacks
     static void renderWrapper();
     static void updateWrapper(int v);
     static void reshapeWrapper(int w, int h);
