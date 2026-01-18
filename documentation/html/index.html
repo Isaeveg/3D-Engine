@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>3D-Engine: 3D-Engine</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">3D-Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik grafiki 3D napisany w C++ z wykorzystaniem OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('index.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">3D-Engine </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<p>Silnik grafiki 3D napisany w C++ z wykorzystaniem OpenGL. Projekt przeznaczony do wizualizacji scen 3D z obsługą kamery, prymitywów i systemu obserwatorów.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+Cechy</h1>
+<ul>
+<li><b>Grafika OpenGL</b> - nowoczesny rendering 3D</li>
+<li><b>System kamer</b> - pełna obsługa nawigacji w przestrzeni 3D</li>
+<li><b>Prymitywy</b> - wbudowane obiekty 3D (sześciany, sfery itp.)</li>
+<li><b>System zdarzeń</b> - wzorzec Observer do zarządzania zdarzeniami</li>
+<li><b>Matematyka GLM</b> - algebra liniowa do obliczeń 3D</li>
+<li><b>Kompatybilność wieloplatformowa</b> - obsługa Windows/Linux/macOS</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Wymagania</h1>
+<ul>
+<li>C++17 lub nowszy</li>
+<li>CMake 3.10+</li>
+<li>OpenGL 3.3+</li>
+<li>FreeGLUT 3.0+</li>
+<li>GLM 0.9+</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+Struktura projektu</h1>
+<div class="fragment"><div class="line">├── src/                    # Kod źródłowy</div>
+<div class="line">│   ├── main.cpp           # Punkt wejścia</div>
+<div class="line">│   ├── Engine.h/cpp       # Główny silnik</div>
+<div class="line">│   ├── Camera.h/cpp       # System kamer</div>
+<div class="line">│   ├── Primitives.h/cpp   # Prymitywy 3D</div>
+<div class="line">│   ├── Cube.h/cpp         # Sześcian</div>
+<div class="line">│   ├── Observer.h/cpp     # System zdarzeń</div>
+<div class="line">│   └── ...</div>
+<div class="line">├── libs/                  # Biblioteki zewnętrzne</div>
+<div class="line">│   ├── freeglut/         # Narzędzia OpenGL</div>
+<div class="line">│   └── glm/              # Matematyka</div>
+<div class="line">├── build/                 # Skompilowany projekt</div>
+<div class="line">├── CMakeLists.txt        # Konfiguracja CMake</div>
+<div class="line">└── stb_image.h           # Ładowanie obrazów</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Kompilacja</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Windows (MSVC)</h2>
+<div class="fragment"><div class="line">mkdir build</div>
+<div class="line">cd build</div>
+<div class="line">cmake .. -G &quot;Visual Studio 17 2022&quot;</div>
+<div class="line">cmake --build . --config Release</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Linux/macOS (GCC/Clang)</h2>
+<div class="fragment"><div class="line">mkdir build</div>
+<div class="line">cd build</div>
+<div class="line">cmake ..</div>
+<div class="line">make -j$(nproc)</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Uruchomienie</h1>
+<p>Po kompilacji uruchom plik wykonywalny:</p>
+<div class="fragment"><div class="line"># Windows</div>
+<div class="line">./build/Release/Game.exe</div>
+<div class="line"> </div>
+<div class="line"># Linux/macOS</div>
+<div class="line">./build/Game</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Główne komponenty</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+Engine</h2>
+<p>Główna klasa silnika zarządzająca inicjalizacją OpenGL i główną pętlą aktualizacji.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Camera</h2>
+<p>System kamer do nawigacji w scenie 3D. Obsługuje macierze projekcji i widoku.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Primitives</h2>
+<p>Klasa bazowa dla wszystkich obiektów 3D w scenie.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+Cube</h2>
+<p>Implementacja sześcianu jako prymitywu sceny.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+Observer</h2>
+<p>Wzorzec Observer dla systemu zdarzeń i powiadomień.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+Użycie</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_engine_8h.html">Engine.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>() {</div>
+<div class="line">    <a class="code hl_class" href="class_engine.html">Engine</a> engine;</div>
+<div class="line">    <span class="keywordflow">if</span> (!engine.Initialize()) {</div>
+<div class="line">        <span class="keywordflow">return</span> -1;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    engine.Run();</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="a_engine_8h_html"><div class="ttname"><a href="_engine_8h.html">Engine.h</a></div><div class="ttdoc">Główny silnik 3D projektu.</div></div>
+<div class="ttc" id="aclass_engine_html"><div class="ttname"><a href="class_engine.html">Engine</a></div><div class="ttdoc">Główny silnik grafiki 3D.</div><div class="ttdef"><b>Definicja</b> <a href="_engine_8h_source.html#l00136">Engine.h:136</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdoc">Główna funkcja aplikacji.</div><div class="ttdef"><b>Definicja</b> <a href="main_8cpp_source.html#l00024">main.cpp:24</a></div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+Zależności</h1>
+<ul>
+<li><b>FreeGLUT</b> - zarządzanie oknem i wejściem</li>
+<li><b>GLM</b> - matematyka wektorowa i macierze</li>
+<li><b>STB Image</b> - ładowanie tekstur</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+Licencja</h1>
+<p>Swobodne użytkowanie w celach edukacyjnych i komercyjnych.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+Rozwój</h1>
+<p>Projekt jest w aktywnym rozwoju. Powitane są ulepszenia i optymalizacje.# 3D-Engine</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+Opis projektu</h1>
+<p>3D-Engine to autorski silnik graficzny napisany w języku C++, przeznaczony do tworzenia i wizualizacji scen trójwymiarowych. Projekt demonstruje kluczowe zagadnienia grafiki komputerowej, takie jak transformacje macierzowe, oświetlenie Phonga, cieniowanie, teksturowanie obiektów oraz obsługa kamery swobodnej (Free <a class="el" href="class_camera.html" title="Kamera do obserwacji sceny 3D.">Camera</a>). Silnik wykorzystuje biblioteki OpenGL i FreeGLUT.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+Główne cechy</h1>
+<ul>
+<li><b>Renderowanie prymitywów 3D:</b> Obsługa brył proceduralnych (Sfera, Czajnik, Torus) oraz definiowanych przez wierzchołki (Sześcian, Piramida).</li>
+<li><b>Zaawansowane oświetlenie:</b> Implementacja modelu oświetlenia (Ambient, Diffuse, Specular) z możliwością dynamicznego włączania/wyłączania.</li>
+<li><b>Cieniowanie:</b> Przełączanie w czasie rzeczywistym między cieniowaniem płaskim (Flat) a gładkim (Smooth).</li>
+<li><b>Obsługa tekstur:</b> Ładowanie obrazów (JPG/PNG) i mapowanie UV na obiektach złożonych.</li>
+<li><b>Interakcja i Edycja:</b> System wyboru obiektów (Highlighting) oraz ich transformacja (przesuwanie, obrót, skalowanie).</li>
+<li><b>Kamera:</b> Swobodna kamera typu "FPS" sterowana myszą i klawiaturą.</li>
+<li><b>Architektura obiektowa:</b> Rozbudowana hierarchia klas z wykorzystaniem polimorfizmu.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+Architektura</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+Katalogi</h2>
+<ul>
+<li><span class="tt">src/Core/</span> - Główna pętla silnika i zarządzanie oknem (<a class="el" href="class_engine.html" title="Główny silnik grafiki 3D.">Engine</a>).</li>
+<li><span class="tt">src/Graphics/</span> - Obsługa renderowania, tekstur (<a class="el" href="class_bitmap_handler.html" title="Menedżer tekstur do renderowania OpenGL.">BitmapHandler</a>) i kamery.</li>
+<li><span class="tt">src/Objects/</span> - Klasy reprezentujące obiekty na scenie (<a class="el" href="class_cube.html" title="Klasa pomocnicza do renderowania sześcianu.">Cube</a>, <a class="el" href="class_pyramid.html" title="Klasa pomocnicza do renderowania piramidy.">Pyramid</a>, Sphere).</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+Główne klasy</h2>
+<ul>
+<li><b><a class="el" href="class_engine.html" title="Główny silnik grafiki 3D.">Engine</a></b> - Klasa typu Singleton zarządzająca cyklem życia aplikacji, inicjalizacją GLUT i listą obiektów.</li>
+<li><b><a class="el" href="class_camera.html" title="Kamera do obserwacji sceny 3D.">Camera</a></b> - Odpowiada za obliczanie macierzy widoku (View Matrix) i obsługę wejścia sterującego widokiem.</li>
+<li><b><a class="el" href="class_bitmap_handler.html" title="Menedżer tekstur do renderowania OpenGL.">BitmapHandler</a></b> - Wrapper dla biblioteki <span class="tt">stb_image</span>, zarządzający ładowaniem i bindowaniem tekstur.</li>
+<li><b><a class="el" href="class_game_object.html" title="Bazowa klasa dla wszystkich obiektów w scenie 3D.">GameObject</a></b> - Abstrakcyjna klasa bazowa dla wszystkich obiektów sceny, posiadająca właściwości transformacji.</li>
+<li><b><a class="el" href="class_textured_object.html" title="Klasa reprezentująca obiekt z teksturą">TexturedObject</a></b> - Rozszerzenie klasy bazowej o obsługę tekstur, dziedziczone przez Sześcian i Piramidę.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
+Schemat hierarchii klas</h2>
+<div class="fragment"><div class="line">GameObject</div>
+<div class="line">├── SphereObject</div>
+<div class="line">├── TeapotObject</div>
+<div class="line">├── TorusObject</div>
+<div class="line">└── TexturedObject</div>
+<div class="line">    ├── CubeObject</div>
+<div class="line">    └── PyramidObject</div>
+</div><!-- fragment --><p>Użyte biblioteki </p><pre class="fragment">FreeGLUT - Zarządzanie oknem, kontekstem OpenGL i wejściem (klawiatura/mysz).
+
+OpenGL - Niskopoziomowe API do renderowania grafiki 3D.
+
+GLM - Matematyka wektorowa i macierzowa.
+
+stb_image - Lekka biblioteka do ładowania plików graficznych.
+</pre><p>Kompilacja</p>
+<p>Projekt wykorzystuje system CMake. Aby zbudować projekt: Bash</p>
+<p>mkdir build cd build cmake .. cmake &ndash;build .</p>
+<p>Sterowanie (Demo) Klawisz Funkcja WSAD / Mysz Sterowanie kamerą (ruch i rozglądanie się) TAB Wybór obiektu (Highlighting) DEL Usunięcie wybranego obiektu 1 - 5 Dodanie obiektu (<a class="el" href="class_cube.html" title="Klasa pomocnicza do renderowania sześcianu.">Cube</a>, <a class="el" href="class_pyramid.html" title="Klasa pomocnicza do renderowania piramidy.">Pyramid</a>, Sphere, Teapot, Torus) L Włącz/Wyłącz oświetlenie K Zmień tryb cieniowania (Flat/Smooth) Strzałki Przesuwanie wybranego obiektu (X/Z) R / T / Y Obrót wybranego obiektu</p><ul>
+<li>/ - Skalowanie wybranego obiektu Dokumentacja</li>
+</ul>
+<p>Dokumentacja techniczna kodu jest generowana za pomocą narzędzia Doxygen w języku polskim. Aby wygenerować dokumentację: Bash</p>
+<p>doxygen Doxyfile</p>
+<p>Dokumentacja HTML będzie dostępna w katalogu documentation/html/index.html.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
+Autorzy</h1>
+<ul>
+<li>Khoprov Yakiv</li>
+<li>Isaiev Yehor</li>
+<li>Mykyta Romanenko</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
+Wersja</h1>
+<p>1.0 </p>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+\doxysection{Pyramid.\+cpp}
+\hypertarget{_pyramid_8cpp_source}{}\label{_pyramid_8cpp_source}\index{src/Pyramid.cpp@{src/Pyramid.cpp}}
+\mbox{\hyperlink{_pyramid_8cpp}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pyramid_8h}{Pyramid.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00003}\mbox{\hyperlink{_pyramid_8cpp_a35b6ec22545957a0933831f14900bdc8}{00003}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_pyramid_8cpp_a35b6ec22545957a0933831f14900bdc8}{pyramid\_v}}[]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00004}00004\ \ \ \ \ 0,1,0,\ -\/1,-\/1,1,\ 1,-\/1,1,}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00005}00005\ \ \ \ \ 0,1,0,\ 1,-\/1,1,\ 1,-\/1,-\/1,}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00006}00006\ \ \ \ \ 0,1,0,\ 1,-\/1,-\/1,\ -\/1,-\/1,-\/1,}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00007}00007\ \ \ \ \ 0,1,0,\ -\/1,-\/1,-\/1,\ -\/1,-\/1,1,}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00008}00008\ \ \ \ \ -\/1,-\/1,\ 1,\ \ \ 1,-\/1,\ 1,\ \ \ 1,-\/1,-\/1,}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00009}00009\ \ \ \ \ 1,-\/1,-\/1,\ \ -\/1,-\/1,-\/1,\ \ -\/1,-\/1,\ 1}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00010}00010\ \};}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00012}\mbox{\hyperlink{_pyramid_8cpp_ad857d1558a1912ce3c22a6ff3c32944a}{00012}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_pyramid_8cpp_ad857d1558a1912ce3c22a6ff3c32944a}{pyramid\_uv}}[]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00013}00013\ \ \ \ \ 0.5f,\ 1.0f,\ \ 0.0f,\ 0.0f,\ \ 1.0f,\ 0.0f,\ }
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00014}00014\ \ \ \ \ 0.5f,\ 1.0f,\ \ 0.0f,\ 0.0f,\ \ 1.0f,\ 0.0f,\ }
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00015}00015\ \ \ \ \ 0.5f,\ 1.0f,\ \ 0.0f,\ 0.0f,\ \ 1.0f,\ 0.0f,\ }
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00016}00016\ \ \ \ \ 0.5f,\ 1.0f,\ \ 0.0f,\ 0.0f,\ \ 1.0f,\ 0.0f,\ }
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00017}00017\ \ \ \ \ 0.0f,\ 0.0f,\ \ 1.0f,\ 0.0f,\ \ 1.0f,\ 1.0f,}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00018}00018\ \ \ \ \ 1.0f,\ 1.0f,\ \ 0.0f,\ 1.0f,\ \ 0.0f,\ 0.0f}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00019}00019\ \};}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00021}\mbox{\hyperlink{class_pyramid_a8f1531943f3bd499ce5883b6af5a779e}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pyramid_a8f1531943f3bd499ce5883b6af5a779e}{Pyramid::draw}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00022}00022\ \ \ \ \ glEnableClientState(GL\_VERTEX\_ARRAY);}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00023}00023\ \ \ \ \ glEnableClientState(GL\_TEXTURE\_COORD\_ARRAY);}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00025}00025\ \ \ \ \ glVertexPointer(3,\ GL\_FLOAT,\ 0,\ \mbox{\hyperlink{_pyramid_8cpp_a35b6ec22545957a0933831f14900bdc8}{pyramid\_v}});}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00026}00026\ \ \ \ \ glTexCoordPointer(2,\ GL\_FLOAT,\ 0,\ \mbox{\hyperlink{_pyramid_8cpp_ad857d1558a1912ce3c22a6ff3c32944a}{pyramid\_uv}});}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00028}00028\ \ \ \ \ glDrawArrays(GL\_TRIANGLES,\ 0,\ 18);}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00030}00030\ \ \ \ \ glDisableClientState(GL\_TEXTURE\_COORD\_ARRAY);}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00031}00031\ \ \ \ \ glDisableClientState(GL\_VERTEX\_ARRAY);}
+\DoxyCodeLine{\Hypertarget{_pyramid_8cpp_source_l00032}00032\ \}}
+
+\end{DoxyCode}

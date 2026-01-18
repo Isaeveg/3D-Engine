@@ -1,0 +1,544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>3D-Engine: Dokumentacja klasy Camera</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">3D-Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik grafiki 3D napisany w C++ z wykorzystaniem OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_camera.html','','class_camera-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy Camera</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Kamera do obserwacji sceny 3D.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_camera_8h_source.html">Camera.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:adad6423186f3d7e4c461cff7274f2c87" id="r_adad6423186f3d7e4c461cff7274f2c87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adad6423186f3d7e4c461cff7274f2c87">Camera</a> (glm::vec3 position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up=glm::vec3(0.0f, 1.0f, 0.0f), float yaw=<a class="el" href="_camera_8h.html#a57aec1b0a28f813c2d4b84a11af5f08d">YAW</a>, float pitch=<a class="el" href="_camera_8h.html#ab32939bf039c742431f67a815575ed21">PITCH</a>)</td></tr>
+<tr class="memdesc:adad6423186f3d7e4c461cff7274f2c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor kamery.  <br /></td></tr>
+<tr class="memitem:affa333055635aed96518c4c66be9a70c" id="r_affa333055635aed96518c4c66be9a70c"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affa333055635aed96518c4c66be9a70c">GetViewMatrix</a> ()</td></tr>
+<tr class="memdesc:affa333055635aed96518c4c66be9a70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oblicza i zwraca macierz widoku.  <br /></td></tr>
+<tr class="memitem:aac6b3608f197242a8e459ef89a58e36f" id="r_aac6b3608f197242a8e459ef89a58e36f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac6b3608f197242a8e459ef89a58e36f">ProcessKeyboard</a> (<a class="el" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcb">Camera_Movement</a> direction, float velocity)</td></tr>
+<tr class="memdesc:aac6b3608f197242a8e459ef89a58e36f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przetwarza wejście klawiatury.  <br /></td></tr>
+<tr class="memitem:a12293c3b3d9d162523c94afadb1c11c4" id="r_a12293c3b3d9d162523c94afadb1c11c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12293c3b3d9d162523c94afadb1c11c4">ProcessMouseMovement</a> (float xoffset, float yoffset, bool constrainPitch=true)</td></tr>
+<tr class="memdesc:a12293c3b3d9d162523c94afadb1c11c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przetwarza ruch myszy.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atrybuty publiczne</h2></td></tr>
+<tr class="memitem:a9733b59f5340f6f1bca24d52a6679039" id="r_a9733b59f5340f6f1bca24d52a6679039"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9733b59f5340f6f1bca24d52a6679039">Position</a></td></tr>
+<tr class="memdesc:a9733b59f5340f6f1bca24d52a6679039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozycja kamery w przestrzeni 3D.  <br /></td></tr>
+<tr class="memitem:ac95b3737115ffe9a6ff9128344d5b963" id="r_ac95b3737115ffe9a6ff9128344d5b963"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac95b3737115ffe9a6ff9128344d5b963">Front</a></td></tr>
+<tr class="memdesc:ac95b3737115ffe9a6ff9128344d5b963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor kierunku przodu kamery.  <br /></td></tr>
+<tr class="memitem:ad74c4a490bc8865e67e27a2036d0a72d" id="r_ad74c4a490bc8865e67e27a2036d0a72d"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad74c4a490bc8865e67e27a2036d0a72d">Up</a></td></tr>
+<tr class="memdesc:ad74c4a490bc8865e67e27a2036d0a72d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor kierunku góry kamery.  <br /></td></tr>
+<tr class="memitem:a6624f9f4228f6299a3d4ccb81e28da0a" id="r_a6624f9f4228f6299a3d4ccb81e28da0a"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6624f9f4228f6299a3d4ccb81e28da0a">Right</a></td></tr>
+<tr class="memdesc:a6624f9f4228f6299a3d4ccb81e28da0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor kierunku prawa kamery.  <br /></td></tr>
+<tr class="memitem:a340d30b833954b87fd016ce0e724c723" id="r_a340d30b833954b87fd016ce0e724c723"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a340d30b833954b87fd016ce0e724c723">WorldUp</a></td></tr>
+<tr class="memdesc:a340d30b833954b87fd016ce0e724c723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globalny wektor kierunku góry.  <br /></td></tr>
+<tr class="memitem:a1a1354a2bd2df7f18ef82924e671d241" id="r_a1a1354a2bd2df7f18ef82924e671d241"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a1354a2bd2df7f18ef82924e671d241">Yaw</a></td></tr>
+<tr class="memdesc:a1a1354a2bd2df7f18ef82924e671d241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kąt odchylenia kamery (lewo-prawo).  <br /></td></tr>
+<tr class="memitem:af9c8f223bb06bb74fc77c586545e7e67" id="r_af9c8f223bb06bb74fc77c586545e7e67"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9c8f223bb06bb74fc77c586545e7e67">Pitch</a></td></tr>
+<tr class="memdesc:af9c8f223bb06bb74fc77c586545e7e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kąt nachylenia kamery (góra-dół).  <br /></td></tr>
+<tr class="memitem:a63221392d762df6a74f45bc9d43a2f61" id="r_a63221392d762df6a74f45bc9d43a2f61"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63221392d762df6a74f45bc9d43a2f61">MovementSpeed</a></td></tr>
+<tr class="memdesc:a63221392d762df6a74f45bc9d43a2f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prędkość ruchu kamery.  <br /></td></tr>
+<tr class="memitem:a73e88844b31d5111eeb76327dfbb2d68" id="r_a73e88844b31d5111eeb76327dfbb2d68"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73e88844b31d5111eeb76327dfbb2d68">MouseSensitivity</a></td></tr>
+<tr class="memdesc:a73e88844b31d5111eeb76327dfbb2d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Czułość myszy.  <br /></td></tr>
+<tr class="memitem:a2becf27d08eb7e6da9c597c73ea95b5d" id="r_a2becf27d08eb7e6da9c597c73ea95b5d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2becf27d08eb7e6da9c597c73ea95b5d">Zoom</a></td></tr>
+<tr class="memdesc:a2becf27d08eb7e6da9c597c73ea95b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kąt pola widzenia (FOV).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:ad424b8b92e580508caf21337b69b93fa" id="r_ad424b8b92e580508caf21337b69b93fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad424b8b92e580508caf21337b69b93fa">updateCameraVectors</a> ()</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Kamera do obserwacji sceny 3D. </p>
+<p>Klasa <a class="el" href="class_camera.html" title="Kamera do obserwacji sceny 3D.">Camera</a> implementuje system kamery perspektywicznej z obsługą ruchu klawiatury i myszy. Wykorzystuje macierze widoku OpenGL do transformacji sceny. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00052">52</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="adad6423186f3d7e4c461cff7274f2c87" name="adad6423186f3d7e4c461cff7274f2c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adad6423186f3d7e4c461cff7274f2c87">&#9670;&#160;</a></span>Camera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Camera::Camera </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec3</td>          <td class="paramname"><span class="paramname"><em>position</em></span><span class="paramdefsep"> = </span><span class="paramdefval">glm::vec3(0.0f,&#160;0.0f,&#160;0.0f)</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">glm::vec3</td>          <td class="paramname"><span class="paramname"><em>up</em></span><span class="paramdefsep"> = </span><span class="paramdefval">glm::vec3(0.0f,&#160;1.0f,&#160;0.0f)</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>yaw</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_camera_8h.html#a57aec1b0a28f813c2d4b84a11af5f08d">YAW</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>pitch</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="_camera_8h.html#ab32939bf039c742431f67a815575ed21">PITCH</a></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor kamery. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Początkowa pozycja kamery </td></tr>
+    <tr><td class="paramname">up</td><td>Globalny wektor góry </td></tr>
+    <tr><td class="paramname">yaw</td><td>Początkowy kąt odchylenia </td></tr>
+    <tr><td class="paramname">pitch</td><td>Początkowy kąt nachylenia </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8cpp_source.html#l00004">4</a> pliku <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_camera_8h_source.html#l00056">Front</a>, <a class="el" href="_camera_8h_source.html#l00065">MouseSensitivity</a>, <a class="el" href="_camera_8h_source.html#l00064">MovementSpeed</a>, <a class="el" href="_camera_8h_source.html#l00062">Pitch</a>, <a class="el" href="_camera_8h_source.html#l00055">Position</a>, <a class="el" href="_camera_8h_source.html#l00039">SENSITIVITY</a>, <a class="el" href="_camera_8h_source.html#l00036">SPEED</a>, <a class="el" href="_camera_8cpp_source.html#l00054">updateCameraVectors()</a>, <a class="el" href="_camera_8h_source.html#l00059">WorldUp</a>, <a class="el" href="_camera_8h_source.html#l00061">Yaw</a>, <a class="el" href="_camera_8h_source.html#l00042">ZOOM</a> i <a class="el" href="_camera_8h_source.html#l00066">Zoom</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="affa333055635aed96518c4c66be9a70c" name="affa333055635aed96518c4c66be9a70c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affa333055635aed96518c4c66be9a70c">&#9670;&#160;</a></span>GetViewMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4 Camera::GetViewMatrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Oblicza i zwraca macierz widoku. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Macierz widoku (view matrix) </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8cpp_source.html#l00014">14</a> pliku <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_camera_8h_source.html#l00056">Front</a>, <a class="el" href="_camera_8h_source.html#l00055">Position</a> i <a class="el" href="_camera_8h_source.html#l00057">Up</a>.</p>
+
+</div>
+</div>
+<a id="aac6b3608f197242a8e459ef89a58e36f" name="aac6b3608f197242a8e459ef89a58e36f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac6b3608f197242a8e459ef89a58e36f">&#9670;&#160;</a></span>ProcessKeyboard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::ProcessKeyboard </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcb">Camera_Movement</a></td>          <td class="paramname"><span class="paramname"><em>direction</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>velocity</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Przetwarza wejście klawiatury. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">direction</td><td>Kierunek ruchu kamery </td></tr>
+    <tr><td class="paramname">velocity</td><td>Prędkość ruchu </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8cpp_source.html#l00019">19</a> pliku <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_camera_8h_source.html#l00022">BACKWARD</a>, <a class="el" href="_camera_8h_source.html#l00026">DOWN</a>, <a class="el" href="_camera_8h_source.html#l00021">FORWARD</a>, <a class="el" href="_camera_8h_source.html#l00056">Front</a>, <a class="el" href="_camera_8h_source.html#l00023">LEFT</a>, <a class="el" href="_camera_8h_source.html#l00055">Position</a>, <a class="el" href="_camera_8h_source.html#l00024">RIGHT</a>, <a class="el" href="_camera_8h_source.html#l00058">Right</a>, <a class="el" href="_camera_8h_source.html#l00025">UP</a> i <a class="el" href="_camera_8h_source.html#l00059">WorldUp</a>.</p>
+
+</div>
+</div>
+<a id="a12293c3b3d9d162523c94afadb1c11c4" name="a12293c3b3d9d162523c94afadb1c11c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12293c3b3d9d162523c94afadb1c11c4">&#9670;&#160;</a></span>ProcessMouseMovement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::ProcessMouseMovement </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>xoffset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>yoffset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>constrainPitch</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Przetwarza ruch myszy. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xoffset</td><td>Przesunięcie X myszy </td></tr>
+    <tr><td class="paramname">yoffset</td><td>Przesunięcie Y myszy </td></tr>
+    <tr><td class="paramname">constrainPitch</td><td>Czy ograniczyć pitch do [-90, 90] stopni </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8cpp_source.html#l00035">35</a> pliku <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_camera_8h_source.html#l00065">MouseSensitivity</a>, <a class="el" href="_camera_8h_source.html#l00062">Pitch</a>, <a class="el" href="_camera_8cpp_source.html#l00054">updateCameraVectors()</a> i <a class="el" href="_camera_8h_source.html#l00061">Yaw</a>.</p>
+
+</div>
+</div>
+<a id="ad424b8b92e580508caf21337b69b93fa" name="ad424b8b92e580508caf21337b69b93fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad424b8b92e580508caf21337b69b93fa">&#9670;&#160;</a></span>updateCameraVectors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::updateCameraVectors </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8cpp_source.html#l00054">54</a> pliku <a class="el" href="_camera_8cpp_source.html">Camera.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_camera_8h_source.html#l00056">Front</a>, <a class="el" href="_camera_8h_source.html#l00062">Pitch</a>, <a class="el" href="_camera_8h_source.html#l00058">Right</a>, <a class="el" href="_camera_8h_source.html#l00057">Up</a>, <a class="el" href="_camera_8h_source.html#l00059">WorldUp</a> i <a class="el" href="_camera_8h_source.html#l00061">Yaw</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_camera_8cpp_source.html#l00004">Camera()</a> i <a class="el" href="_camera_8cpp_source.html#l00035">ProcessMouseMovement()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="ac95b3737115ffe9a6ff9128344d5b963" name="ac95b3737115ffe9a6ff9128344d5b963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac95b3737115ffe9a6ff9128344d5b963">&#9670;&#160;</a></span>Front</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Camera::Front</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wektor kierunku przodu kamery. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00056">56</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_camera_8cpp_source.html#l00004">Camera()</a>, <a class="el" href="_camera_8cpp_source.html#l00014">GetViewMatrix()</a>, <a class="el" href="_camera_8cpp_source.html#l00019">ProcessKeyboard()</a> i <a class="el" href="_camera_8cpp_source.html#l00054">updateCameraVectors()</a>.</p>
+
+</div>
+</div>
+<a id="a73e88844b31d5111eeb76327dfbb2d68" name="a73e88844b31d5111eeb76327dfbb2d68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e88844b31d5111eeb76327dfbb2d68">&#9670;&#160;</a></span>MouseSensitivity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Camera::MouseSensitivity</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Czułość myszy. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00065">65</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_camera_8cpp_source.html#l00004">Camera()</a> i <a class="el" href="_camera_8cpp_source.html#l00035">ProcessMouseMovement()</a>.</p>
+
+</div>
+</div>
+<a id="a63221392d762df6a74f45bc9d43a2f61" name="a63221392d762df6a74f45bc9d43a2f61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63221392d762df6a74f45bc9d43a2f61">&#9670;&#160;</a></span>MovementSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Camera::MovementSpeed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prędkość ruchu kamery. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00064">64</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_camera_8cpp_source.html#l00004">Camera()</a>.</p>
+
+</div>
+</div>
+<a id="af9c8f223bb06bb74fc77c586545e7e67" name="af9c8f223bb06bb74fc77c586545e7e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c8f223bb06bb74fc77c586545e7e67">&#9670;&#160;</a></span>Pitch</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Camera::Pitch</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Kąt nachylenia kamery (góra-dół). </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00062">62</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_camera_8cpp_source.html#l00004">Camera()</a>, <a class="el" href="_camera_8cpp_source.html#l00035">ProcessMouseMovement()</a> i <a class="el" href="_camera_8cpp_source.html#l00054">updateCameraVectors()</a>.</p>
+
+</div>
+</div>
+<a id="a9733b59f5340f6f1bca24d52a6679039" name="a9733b59f5340f6f1bca24d52a6679039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9733b59f5340f6f1bca24d52a6679039">&#9670;&#160;</a></span>Position</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Camera::Position</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pozycja kamery w przestrzeni 3D. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00055">55</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_camera_8cpp_source.html#l00004">Camera()</a>, <a class="el" href="_camera_8cpp_source.html#l00014">GetViewMatrix()</a> i <a class="el" href="_camera_8cpp_source.html#l00019">ProcessKeyboard()</a>.</p>
+
+</div>
+</div>
+<a id="a6624f9f4228f6299a3d4ccb81e28da0a" name="a6624f9f4228f6299a3d4ccb81e28da0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6624f9f4228f6299a3d4ccb81e28da0a">&#9670;&#160;</a></span>Right</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Camera::Right</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wektor kierunku prawa kamery. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00058">58</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_camera_8cpp_source.html#l00019">ProcessKeyboard()</a> i <a class="el" href="_camera_8cpp_source.html#l00054">updateCameraVectors()</a>.</p>
+
+</div>
+</div>
+<a id="ad74c4a490bc8865e67e27a2036d0a72d" name="ad74c4a490bc8865e67e27a2036d0a72d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad74c4a490bc8865e67e27a2036d0a72d">&#9670;&#160;</a></span>Up</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Camera::Up</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wektor kierunku góry kamery. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00057">57</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_camera_8cpp_source.html#l00014">GetViewMatrix()</a> i <a class="el" href="_camera_8cpp_source.html#l00054">updateCameraVectors()</a>.</p>
+
+</div>
+</div>
+<a id="a340d30b833954b87fd016ce0e724c723" name="a340d30b833954b87fd016ce0e724c723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a340d30b833954b87fd016ce0e724c723">&#9670;&#160;</a></span>WorldUp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Camera::WorldUp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Globalny wektor kierunku góry. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00059">59</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_camera_8cpp_source.html#l00004">Camera()</a>, <a class="el" href="_camera_8cpp_source.html#l00019">ProcessKeyboard()</a> i <a class="el" href="_camera_8cpp_source.html#l00054">updateCameraVectors()</a>.</p>
+
+</div>
+</div>
+<a id="a1a1354a2bd2df7f18ef82924e671d241" name="a1a1354a2bd2df7f18ef82924e671d241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a1354a2bd2df7f18ef82924e671d241">&#9670;&#160;</a></span>Yaw</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Camera::Yaw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Kąt odchylenia kamery (lewo-prawo). </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00061">61</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_camera_8cpp_source.html#l00004">Camera()</a>, <a class="el" href="_camera_8cpp_source.html#l00035">ProcessMouseMovement()</a> i <a class="el" href="_camera_8cpp_source.html#l00054">updateCameraVectors()</a>.</p>
+
+</div>
+</div>
+<a id="a2becf27d08eb7e6da9c597c73ea95b5d" name="a2becf27d08eb7e6da9c597c73ea95b5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2becf27d08eb7e6da9c597c73ea95b5d">&#9670;&#160;</a></span>Zoom</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Camera::Zoom</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Kąt pola widzenia (FOV). </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_camera_8h_source.html#l00066">66</a> pliku <a class="el" href="_camera_8h_source.html">Camera.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_camera_8cpp_source.html#l00004">Camera()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>src/<a class="el" href="_camera_8h_source.html">Camera.h</a></li>
+<li>src/<a class="el" href="_camera_8cpp_source.html">Camera.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_camera.html">Camera</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

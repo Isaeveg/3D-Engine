@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>3D-Engine: Plik źródłowy src/Camera.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">3D-Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik grafiki 3D napisany w C++ z wykorzystaniem OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_camera_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Camera.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_camera_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file Camera.h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @brief System kamery do nawigacji w przestrzeni 3D</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @author Khoprov Yakiv, Isaiev Yehor, Mykyta Romanenko</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @version 1.0</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * @date 2026</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;glm/gtc/matrix_transform.hpp&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"></span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * @enum Camera_Movement</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * @brief Możliwe kierunki ruchu kamery</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcb">   19</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcb">Camera_Movement</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbaa26736999186daf8146f809e863712a1">   21</a></span>    <a class="code hl_enumvalue" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbaa26736999186daf8146f809e863712a1">FORWARD</a>,    <span class="comment">///&lt; Ruch do przodu</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbafed2fca77e454294d6b8bda1bf2c9fd6">   22</a></span>    <a class="code hl_enumvalue" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbafed2fca77e454294d6b8bda1bf2c9fd6">BACKWARD</a>,   <span class="comment">///&lt; Ruch do tyłu</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbadb45120aafd37a973140edee24708065">   23</a></span>    <a class="code hl_enumvalue" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbadb45120aafd37a973140edee24708065">LEFT</a>,       <span class="comment">///&lt; Ruch w lewo</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbaec8379af7490bb9eaaf579cf17876f38">   24</a></span>    <a class="code hl_enumvalue" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbaec8379af7490bb9eaaf579cf17876f38">RIGHT</a>,      <span class="comment">///&lt; Ruch w prawo</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbaba595d8bca8bc5e67c37c0a9d89becfa">   25</a></span>    <a class="code hl_enumvalue" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbaba595d8bca8bc5e67c37c0a9d89becfa">UP</a>,         <span class="comment">///&lt; Ruch w górę</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcba9b0b4a95b99523966e0e34ffdadac9da">   26</a></span>    <a class="code hl_enumvalue" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcba9b0b4a95b99523966e0e34ffdadac9da">DOWN</a>        <span class="comment">///&lt; Ruch w dół</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"></span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/// Domyślny kąt odchylenia kamery (yaw) w stopniach</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="_camera_8h.html#a57aec1b0a28f813c2d4b84a11af5f08d">   30</a></span><span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="_camera_8h.html#a57aec1b0a28f813c2d4b84a11af5f08d">YAW</a> = -90.0f;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"></span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/// Domyślny kąt nachylenia kamery (pitch) w stopniach</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="_camera_8h.html#ab32939bf039c742431f67a815575ed21">   33</a></span><span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="_camera_8h.html#ab32939bf039c742431f67a815575ed21">PITCH</a> = 0.0f;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"></span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/// Domyślna prędkość ruchu kamery</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="_camera_8h.html#a6a2935f139d2e8f1ba438d98773d0d66">   36</a></span><span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="_camera_8h.html#a6a2935f139d2e8f1ba438d98773d0d66">SPEED</a> = 0.05f;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"></span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/// Domyślna czułość myszy</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="_camera_8h.html#a48264de497b9f41df4c556f9321fe315">   39</a></span><span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="_camera_8h.html#a48264de497b9f41df4c556f9321fe315">SENSITIVITY</a> = 0.1f;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"></span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/// Domyślny zoom kamery</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_camera_8h.html#ad53f4ea4bad2000e469a9b538c39878f">   42</a></span><span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="_camera_8h.html#ad53f4ea4bad2000e469a9b538c39878f">ZOOM</a> = 45.0f;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"></span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> * @class Camera</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> * @brief Kamera do obserwacji sceny 3D</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> * Klasa Camera implementuje system kamery perspektywicznej</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"> * z obsługą ruchu klawiatury i myszy. Wykorzystuje macierze</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> * widoku OpenGL do transformacji sceny.</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_camera.html">   52</a></span><span class="keyword">class </span><a class="code hl_function" href="class_camera.html#adad6423186f3d7e4c461cff7274f2c87">Camera</a></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_camera.html#a9733b59f5340f6f1bca24d52a6679039">   55</a></span>    glm::vec3 <a class="code hl_variable" href="class_camera.html#a9733b59f5340f6f1bca24d52a6679039">Position</a>;     <span class="comment">///&lt; Pozycja kamery w przestrzeni 3D</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_camera.html#ac95b3737115ffe9a6ff9128344d5b963">   56</a></span>    glm::vec3 <a class="code hl_variable" href="class_camera.html#ac95b3737115ffe9a6ff9128344d5b963">Front</a>;        <span class="comment">///&lt; Wektor kierunku przodu kamery</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_camera.html#ad74c4a490bc8865e67e27a2036d0a72d">   57</a></span>    glm::vec3 <a class="code hl_variable" href="class_camera.html#ad74c4a490bc8865e67e27a2036d0a72d">Up</a>;           <span class="comment">///&lt; Wektor kierunku góry kamery</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_camera.html#a6624f9f4228f6299a3d4ccb81e28da0a">   58</a></span>    glm::vec3 <a class="code hl_variable" href="class_camera.html#a6624f9f4228f6299a3d4ccb81e28da0a">Right</a>;        <span class="comment">///&lt; Wektor kierunku prawa kamery</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_camera.html#a340d30b833954b87fd016ce0e724c723">   59</a></span>    glm::vec3 <a class="code hl_variable" href="class_camera.html#a340d30b833954b87fd016ce0e724c723">WorldUp</a>;      <span class="comment">///&lt; Globalny wektor kierunku góry</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_camera.html#a1a1354a2bd2df7f18ef82924e671d241">   61</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera.html#a1a1354a2bd2df7f18ef82924e671d241">Yaw</a>;              <span class="comment">///&lt; Kąt odchylenia kamery (lewo-prawo)</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_camera.html#af9c8f223bb06bb74fc77c586545e7e67">   62</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera.html#af9c8f223bb06bb74fc77c586545e7e67">Pitch</a>;            <span class="comment">///&lt; Kąt nachylenia kamery (góra-dół)</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_camera.html#a63221392d762df6a74f45bc9d43a2f61">   64</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera.html#a63221392d762df6a74f45bc9d43a2f61">MovementSpeed</a>;    <span class="comment">///&lt; Prędkość ruchu kamery</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_camera.html#a73e88844b31d5111eeb76327dfbb2d68">   65</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera.html#a73e88844b31d5111eeb76327dfbb2d68">MouseSensitivity</a>; <span class="comment">///&lt; Czułość myszy</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_camera.html#a2becf27d08eb7e6da9c597c73ea95b5d">   66</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera.html#a2becf27d08eb7e6da9c597c73ea95b5d">Zoom</a>;             <span class="comment">///&lt; Kąt pola widzenia (FOV)</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"></span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">    /**</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">     * @brief Konstruktor kamery</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">     * @param position Początkowa pozycja kamery</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">     * @param up Globalny wektor góry</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">     * @param yaw Początkowy kąt odchylenia</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">     * @param pitch Początkowy kąt nachylenia</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_function" href="class_camera.html#adad6423186f3d7e4c461cff7274f2c87">Camera</a>(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f),</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>           glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f),</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>           <span class="keywordtype">float</span> yaw = <a class="code hl_variable" href="_camera_8h.html#a57aec1b0a28f813c2d4b84a11af5f08d">YAW</a>,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>           <span class="keywordtype">float</span> pitch = <a class="code hl_variable" href="_camera_8h.html#ab32939bf039c742431f67a815575ed21">PITCH</a>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="comment">// Metody do obsługi kamery</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment"></span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">    /**</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">     * @brief Oblicza i zwraca macierz widoku</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">     * @return Macierz widoku (view matrix)</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    glm::mat4 <a class="code hl_function" href="class_camera.html#affa333055635aed96518c4c66be9a70c">GetViewMatrix</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="comment"></span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">    /**</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">     * @brief Przetwarza wejście klawiatury</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">     * @param direction Kierunek ruchu kamery</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">     * @param velocity Prędkość ruchu</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_camera.html#aac6b3608f197242a8e459ef89a58e36f">ProcessKeyboard</a>(<a class="code hl_enumeration" href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcb">Camera_Movement</a> direction, <span class="keywordtype">float</span> velocity);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="comment"></span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">    /**</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">     * @brief Przetwarza ruch myszy</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">     * @param xoffset Przesunięcie X myszy</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">     * @param yoffset Przesunięcie Y myszy</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">     * @param constrainPitch Czy ograniczyć pitch do [-90, 90] stopni</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_camera.html#a12293c3b3d9d162523c94afadb1c11c4">ProcessMouseMovement</a>(<span class="keywordtype">float</span> xoffset, <span class="keywordtype">float</span> yoffset, <span class="keywordtype">bool</span> constrainPitch = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_camera.html#ad424b8b92e580508caf21337b69b93fa">updateCameraVectors</a>();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>};</div>
+</div>
+<div class="ttc" id="a_camera_8h_html_a48264de497b9f41df4c556f9321fe315"><div class="ttname"><a href="_camera_8h.html#a48264de497b9f41df4c556f9321fe315">SENSITIVITY</a></div><div class="ttdeci">const float SENSITIVITY</div><div class="ttdoc">Domyślna czułość myszy.</div><div class="ttdef"><b>Definicja</b> <a href="#l00039">Camera.h:39</a></div></div>
+<div class="ttc" id="a_camera_8h_html_a57aec1b0a28f813c2d4b84a11af5f08d"><div class="ttname"><a href="_camera_8h.html#a57aec1b0a28f813c2d4b84a11af5f08d">YAW</a></div><div class="ttdeci">const float YAW</div><div class="ttdoc">Domyślny kąt odchylenia kamery (yaw) w stopniach.</div><div class="ttdef"><b>Definicja</b> <a href="#l00030">Camera.h:30</a></div></div>
+<div class="ttc" id="a_camera_8h_html_a605494501af59c9191e7e4d6f9a0ebcb"><div class="ttname"><a href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcb">Camera_Movement</a></div><div class="ttdeci">Camera_Movement</div><div class="ttdoc">Możliwe kierunki ruchu kamery.</div><div class="ttdef"><b>Definicja</b> <a href="#l00019">Camera.h:20</a></div></div>
+<div class="ttc" id="a_camera_8h_html_a605494501af59c9191e7e4d6f9a0ebcba9b0b4a95b99523966e0e34ffdadac9da"><div class="ttname"><a href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcba9b0b4a95b99523966e0e34ffdadac9da">DOWN</a></div><div class="ttdeci">@ DOWN</div><div class="ttdoc">Ruch w dół</div><div class="ttdef"><b>Definicja</b> <a href="#l00026">Camera.h:26</a></div></div>
+<div class="ttc" id="a_camera_8h_html_a605494501af59c9191e7e4d6f9a0ebcbaa26736999186daf8146f809e863712a1"><div class="ttname"><a href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbaa26736999186daf8146f809e863712a1">FORWARD</a></div><div class="ttdeci">@ FORWARD</div><div class="ttdoc">Ruch do przodu.</div><div class="ttdef"><b>Definicja</b> <a href="#l00021">Camera.h:21</a></div></div>
+<div class="ttc" id="a_camera_8h_html_a605494501af59c9191e7e4d6f9a0ebcbaba595d8bca8bc5e67c37c0a9d89becfa"><div class="ttname"><a href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbaba595d8bca8bc5e67c37c0a9d89becfa">UP</a></div><div class="ttdeci">@ UP</div><div class="ttdoc">Ruch w górę</div><div class="ttdef"><b>Definicja</b> <a href="#l00025">Camera.h:25</a></div></div>
+<div class="ttc" id="a_camera_8h_html_a605494501af59c9191e7e4d6f9a0ebcbadb45120aafd37a973140edee24708065"><div class="ttname"><a href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbadb45120aafd37a973140edee24708065">LEFT</a></div><div class="ttdeci">@ LEFT</div><div class="ttdoc">Ruch w lewo.</div><div class="ttdef"><b>Definicja</b> <a href="#l00023">Camera.h:23</a></div></div>
+<div class="ttc" id="a_camera_8h_html_a605494501af59c9191e7e4d6f9a0ebcbaec8379af7490bb9eaaf579cf17876f38"><div class="ttname"><a href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbaec8379af7490bb9eaaf579cf17876f38">RIGHT</a></div><div class="ttdeci">@ RIGHT</div><div class="ttdoc">Ruch w prawo.</div><div class="ttdef"><b>Definicja</b> <a href="#l00024">Camera.h:24</a></div></div>
+<div class="ttc" id="a_camera_8h_html_a605494501af59c9191e7e4d6f9a0ebcbafed2fca77e454294d6b8bda1bf2c9fd6"><div class="ttname"><a href="_camera_8h.html#a605494501af59c9191e7e4d6f9a0ebcbafed2fca77e454294d6b8bda1bf2c9fd6">BACKWARD</a></div><div class="ttdeci">@ BACKWARD</div><div class="ttdoc">Ruch do tyłu.</div><div class="ttdef"><b>Definicja</b> <a href="#l00022">Camera.h:22</a></div></div>
+<div class="ttc" id="a_camera_8h_html_a6a2935f139d2e8f1ba438d98773d0d66"><div class="ttname"><a href="_camera_8h.html#a6a2935f139d2e8f1ba438d98773d0d66">SPEED</a></div><div class="ttdeci">const float SPEED</div><div class="ttdoc">Domyślna prędkość ruchu kamery.</div><div class="ttdef"><b>Definicja</b> <a href="#l00036">Camera.h:36</a></div></div>
+<div class="ttc" id="a_camera_8h_html_ab32939bf039c742431f67a815575ed21"><div class="ttname"><a href="_camera_8h.html#ab32939bf039c742431f67a815575ed21">PITCH</a></div><div class="ttdeci">const float PITCH</div><div class="ttdoc">Domyślny kąt nachylenia kamery (pitch) w stopniach.</div><div class="ttdef"><b>Definicja</b> <a href="#l00033">Camera.h:33</a></div></div>
+<div class="ttc" id="a_camera_8h_html_ad53f4ea4bad2000e469a9b538c39878f"><div class="ttname"><a href="_camera_8h.html#ad53f4ea4bad2000e469a9b538c39878f">ZOOM</a></div><div class="ttdeci">const float ZOOM</div><div class="ttdoc">Domyślny zoom kamery.</div><div class="ttdef"><b>Definicja</b> <a href="#l00042">Camera.h:42</a></div></div>
+<div class="ttc" id="aclass_camera_html_a12293c3b3d9d162523c94afadb1c11c4"><div class="ttname"><a href="class_camera.html#a12293c3b3d9d162523c94afadb1c11c4">Camera::ProcessMouseMovement</a></div><div class="ttdeci">void ProcessMouseMovement(float xoffset, float yoffset, bool constrainPitch=true)</div><div class="ttdoc">Przetwarza ruch myszy.</div><div class="ttdef"><b>Definicja</b> <a href="_camera_8cpp_source.html#l00035">Camera.cpp:35</a></div></div>
+<div class="ttc" id="aclass_camera_html_a1a1354a2bd2df7f18ef82924e671d241"><div class="ttname"><a href="class_camera.html#a1a1354a2bd2df7f18ef82924e671d241">Camera::Yaw</a></div><div class="ttdeci">float Yaw</div><div class="ttdoc">Kąt odchylenia kamery (lewo-prawo).</div><div class="ttdef"><b>Definicja</b> <a href="#l00061">Camera.h:61</a></div></div>
+<div class="ttc" id="aclass_camera_html_a2becf27d08eb7e6da9c597c73ea95b5d"><div class="ttname"><a href="class_camera.html#a2becf27d08eb7e6da9c597c73ea95b5d">Camera::Zoom</a></div><div class="ttdeci">float Zoom</div><div class="ttdoc">Kąt pola widzenia (FOV).</div><div class="ttdef"><b>Definicja</b> <a href="#l00066">Camera.h:66</a></div></div>
+<div class="ttc" id="aclass_camera_html_a340d30b833954b87fd016ce0e724c723"><div class="ttname"><a href="class_camera.html#a340d30b833954b87fd016ce0e724c723">Camera::WorldUp</a></div><div class="ttdeci">glm::vec3 WorldUp</div><div class="ttdoc">Globalny wektor kierunku góry.</div><div class="ttdef"><b>Definicja</b> <a href="#l00059">Camera.h:59</a></div></div>
+<div class="ttc" id="aclass_camera_html_a63221392d762df6a74f45bc9d43a2f61"><div class="ttname"><a href="class_camera.html#a63221392d762df6a74f45bc9d43a2f61">Camera::MovementSpeed</a></div><div class="ttdeci">float MovementSpeed</div><div class="ttdoc">Prędkość ruchu kamery.</div><div class="ttdef"><b>Definicja</b> <a href="#l00064">Camera.h:64</a></div></div>
+<div class="ttc" id="aclass_camera_html_a6624f9f4228f6299a3d4ccb81e28da0a"><div class="ttname"><a href="class_camera.html#a6624f9f4228f6299a3d4ccb81e28da0a">Camera::Right</a></div><div class="ttdeci">glm::vec3 Right</div><div class="ttdoc">Wektor kierunku prawa kamery.</div><div class="ttdef"><b>Definicja</b> <a href="#l00058">Camera.h:58</a></div></div>
+<div class="ttc" id="aclass_camera_html_a73e88844b31d5111eeb76327dfbb2d68"><div class="ttname"><a href="class_camera.html#a73e88844b31d5111eeb76327dfbb2d68">Camera::MouseSensitivity</a></div><div class="ttdeci">float MouseSensitivity</div><div class="ttdoc">Czułość myszy.</div><div class="ttdef"><b>Definicja</b> <a href="#l00065">Camera.h:65</a></div></div>
+<div class="ttc" id="aclass_camera_html_a9733b59f5340f6f1bca24d52a6679039"><div class="ttname"><a href="class_camera.html#a9733b59f5340f6f1bca24d52a6679039">Camera::Position</a></div><div class="ttdeci">glm::vec3 Position</div><div class="ttdoc">Pozycja kamery w przestrzeni 3D.</div><div class="ttdef"><b>Definicja</b> <a href="#l00055">Camera.h:55</a></div></div>
+<div class="ttc" id="aclass_camera_html_aac6b3608f197242a8e459ef89a58e36f"><div class="ttname"><a href="class_camera.html#aac6b3608f197242a8e459ef89a58e36f">Camera::ProcessKeyboard</a></div><div class="ttdeci">void ProcessKeyboard(Camera_Movement direction, float velocity)</div><div class="ttdoc">Przetwarza wejście klawiatury.</div><div class="ttdef"><b>Definicja</b> <a href="_camera_8cpp_source.html#l00019">Camera.cpp:19</a></div></div>
+<div class="ttc" id="aclass_camera_html_ac95b3737115ffe9a6ff9128344d5b963"><div class="ttname"><a href="class_camera.html#ac95b3737115ffe9a6ff9128344d5b963">Camera::Front</a></div><div class="ttdeci">glm::vec3 Front</div><div class="ttdoc">Wektor kierunku przodu kamery.</div><div class="ttdef"><b>Definicja</b> <a href="#l00056">Camera.h:56</a></div></div>
+<div class="ttc" id="aclass_camera_html_ad424b8b92e580508caf21337b69b93fa"><div class="ttname"><a href="class_camera.html#ad424b8b92e580508caf21337b69b93fa">Camera::updateCameraVectors</a></div><div class="ttdeci">void updateCameraVectors()</div><div class="ttdef"><b>Definicja</b> <a href="_camera_8cpp_source.html#l00054">Camera.cpp:54</a></div></div>
+<div class="ttc" id="aclass_camera_html_ad74c4a490bc8865e67e27a2036d0a72d"><div class="ttname"><a href="class_camera.html#ad74c4a490bc8865e67e27a2036d0a72d">Camera::Up</a></div><div class="ttdeci">glm::vec3 Up</div><div class="ttdoc">Wektor kierunku góry kamery.</div><div class="ttdef"><b>Definicja</b> <a href="#l00057">Camera.h:57</a></div></div>
+<div class="ttc" id="aclass_camera_html_adad6423186f3d7e4c461cff7274f2c87"><div class="ttname"><a href="class_camera.html#adad6423186f3d7e4c461cff7274f2c87">Camera::Camera</a></div><div class="ttdeci">Camera(glm::vec3 position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up=glm::vec3(0.0f, 1.0f, 0.0f), float yaw=YAW, float pitch=PITCH)</div><div class="ttdoc">Konstruktor kamery.</div><div class="ttdef"><b>Definicja</b> <a href="_camera_8cpp_source.html#l00004">Camera.cpp:4</a></div></div>
+<div class="ttc" id="aclass_camera_html_af9c8f223bb06bb74fc77c586545e7e67"><div class="ttname"><a href="class_camera.html#af9c8f223bb06bb74fc77c586545e7e67">Camera::Pitch</a></div><div class="ttdeci">float Pitch</div><div class="ttdoc">Kąt nachylenia kamery (góra-dół).</div><div class="ttdef"><b>Definicja</b> <a href="#l00062">Camera.h:62</a></div></div>
+<div class="ttc" id="aclass_camera_html_affa333055635aed96518c4c66be9a70c"><div class="ttname"><a href="class_camera.html#affa333055635aed96518c4c66be9a70c">Camera::GetViewMatrix</a></div><div class="ttdeci">glm::mat4 GetViewMatrix()</div><div class="ttdoc">Oblicza i zwraca macierz widoku.</div><div class="ttdef"><b>Definicja</b> <a href="_camera_8cpp_source.html#l00014">Camera.cpp:14</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="_camera_8h.html">Camera.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+\doxysection{Camera.\+h}
+\hypertarget{_camera_8h_source}{}\label{_camera_8h_source}\index{src/Camera.h@{src/Camera.h}}
+\mbox{\hyperlink{_camera_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00001}00001\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00002}00002\ \textcolor{comment}{\ *\ @file\ Camera.h}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ System\ kamery\ do\ nawigacji\ w\ przestrzeni\ 3D}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00004}00004\ \textcolor{comment}{\ *\ @author\ 3D\ Engine\ Project}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00005}00005\ \textcolor{comment}{\ *\ @version\ 1.0}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00006}00006\ \textcolor{comment}{\ *\ @date\ 2026}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00007}00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00009}00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <glm/gtc/matrix\_transform.hpp>}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00014}00014\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00015}00015\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00016}00016\ \textcolor{comment}{\ *\ @enum\ Camera\_Movement}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00017}00017\ \textcolor{comment}{\ *\ @brief\ Możliwe\ kierunki\ ruchu\ kamery}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00018}00018\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00019}\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}{00019}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}{Camera\_Movement}}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00021}\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaa26736999186daf8146f809e863712a1}{00021}}\ \ \ \ \ \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaa26736999186daf8146f809e863712a1}{FORWARD}},\ \ \ \ \textcolor{comment}{///<\ Ruch\ do\ przodu}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00022}\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbafed2fca77e454294d6b8bda1bf2c9fd6}{00022}}\ \ \ \ \ \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbafed2fca77e454294d6b8bda1bf2c9fd6}{BACKWARD}},\ \ \ \textcolor{comment}{///<\ Ruch\ do\ tyłu}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00023}\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbadb45120aafd37a973140edee24708065}{00023}}\ \ \ \ \ \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbadb45120aafd37a973140edee24708065}{LEFT}},\ \ \ \ \ \ \ \textcolor{comment}{///<\ Ruch\ w\ lewo}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00024}\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaec8379af7490bb9eaaf579cf17876f38}{00024}}\ \ \ \ \ \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaec8379af7490bb9eaaf579cf17876f38}{RIGHT}},\ \ \ \ \ \ \textcolor{comment}{///<\ Ruch\ w\ prawo}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00025}\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaba595d8bca8bc5e67c37c0a9d89becfa}{00025}}\ \ \ \ \ \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaba595d8bca8bc5e67c37c0a9d89becfa}{UP}},\ \ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Ruch\ w\ górę}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00026}\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcba9b0b4a95b99523966e0e34ffdadac9da}{00026}}\ \ \ \ \ \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcba9b0b4a95b99523966e0e34ffdadac9da}{DOWN}}\ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Ruch\ w\ dół}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00027}00027\ \};}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00028}00028\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00029}00029\ \textcolor{comment}{///\ Domyślny\ kąt\ odchylenia\ kamery\ (yaw)\ w\ stopniach}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00030}\mbox{\hyperlink{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d}{00030}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d}{YAW}}\ =\ -\/90.0f;}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00031}00031\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00032}00032\ \textcolor{comment}{///\ Domyślny\ kąt\ nachylenia\ kamery\ (pitch)\ w\ stopniach}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00033}\mbox{\hyperlink{_camera_8h_ab32939bf039c742431f67a815575ed21}{00033}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_camera_8h_ab32939bf039c742431f67a815575ed21}{PITCH}}\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00034}00034\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00035}00035\ \textcolor{comment}{///\ Domyślna\ prędkość\ ruchu\ kamery}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00036}\mbox{\hyperlink{_camera_8h_a6a2935f139d2e8f1ba438d98773d0d66}{00036}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_camera_8h_a6a2935f139d2e8f1ba438d98773d0d66}{SPEED}}\ =\ 0.05f;}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00037}00037\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00038}00038\ \textcolor{comment}{///\ Domyślna\ czułość\ myszy}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00039}\mbox{\hyperlink{_camera_8h_a48264de497b9f41df4c556f9321fe315}{00039}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_camera_8h_a48264de497b9f41df4c556f9321fe315}{SENSITIVITY}}\ =\ 0.1f;}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00040}00040\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00041}00041\ \textcolor{comment}{///\ Domyślny\ zoom\ kamery}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00042}\mbox{\hyperlink{_camera_8h_ad53f4ea4bad2000e469a9b538c39878f}{00042}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_camera_8h_ad53f4ea4bad2000e469a9b538c39878f}{ZOOM}}\ =\ 45.0f;}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00043}00043\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00044}00044\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00045}00045\ \textcolor{comment}{\ *\ @class\ Camera}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00046}00046\ \textcolor{comment}{\ *\ @brief\ Kamera\ do\ obserwacji\ sceny\ 3D}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00047}00047\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00048}00048\ \textcolor{comment}{\ *\ Klasa\ Camera\ implementuje\ system\ kamery\ perspektywicznej}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00049}00049\ \textcolor{comment}{\ *\ z\ obsługą\ ruchu\ klawiatury\ i\ myszy.\ Wykorzystuje\ macierze}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00050}00050\ \textcolor{comment}{\ *\ widoku\ OpenGL\ do\ transformacji\ sceny.}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00051}00051\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00052}\mbox{\hyperlink{class_camera}{00052}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_camera_adad6423186f3d7e4c461cff7274f2c87}{Camera}}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00053}00053\ \{}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00054}00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00055}\mbox{\hyperlink{class_camera_a9733b59f5340f6f1bca24d52a6679039}{00055}}\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_camera_a9733b59f5340f6f1bca24d52a6679039}{Position}};\ \ \ \ \ \textcolor{comment}{///<\ Pozycja\ kamery\ w\ przestrzeni\ 3D}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00056}\mbox{\hyperlink{class_camera_ac95b3737115ffe9a6ff9128344d5b963}{00056}}\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_camera_ac95b3737115ffe9a6ff9128344d5b963}{Front}};\ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Wektor\ kierunku\ przodu\ kamery}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00057}\mbox{\hyperlink{class_camera_ad74c4a490bc8865e67e27a2036d0a72d}{00057}}\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_camera_ad74c4a490bc8865e67e27a2036d0a72d}{Up}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Wektor\ kierunku\ góry\ kamery}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00058}\mbox{\hyperlink{class_camera_a6624f9f4228f6299a3d4ccb81e28da0a}{00058}}\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_camera_a6624f9f4228f6299a3d4ccb81e28da0a}{Right}};\ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Wektor\ kierunku\ prawa\ kamery}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00059}\mbox{\hyperlink{class_camera_a340d30b833954b87fd016ce0e724c723}{00059}}\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_camera_a340d30b833954b87fd016ce0e724c723}{WorldUp}};\ \ \ \ \ \ \textcolor{comment}{///<\ Globalny\ wektor\ kierunku\ góry}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00061}\mbox{\hyperlink{class_camera_a1a1354a2bd2df7f18ef82924e671d241}{00061}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_a1a1354a2bd2df7f18ef82924e671d241}{Yaw}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Kąt\ odchylenia\ kamery\ (lewo-\/prawo)}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00062}\mbox{\hyperlink{class_camera_af9c8f223bb06bb74fc77c586545e7e67}{00062}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_af9c8f223bb06bb74fc77c586545e7e67}{Pitch}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Kąt\ nachylenia\ kamery\ (góra-\/dół)}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00064}\mbox{\hyperlink{class_camera_a63221392d762df6a74f45bc9d43a2f61}{00064}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_a63221392d762df6a74f45bc9d43a2f61}{MovementSpeed}};\ \ \ \ \textcolor{comment}{///<\ Prędkość\ ruchu\ kamery}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00065}\mbox{\hyperlink{class_camera_a73e88844b31d5111eeb76327dfbb2d68}{00065}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_a73e88844b31d5111eeb76327dfbb2d68}{MouseSensitivity}};\ \textcolor{comment}{///<\ Czułość\ myszy}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00066}\mbox{\hyperlink{class_camera_a2becf27d08eb7e6da9c597c73ea95b5d}{00066}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_a2becf27d08eb7e6da9c597c73ea95b5d}{Zoom}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Kąt\ pola\ widzenia\ (FOV)}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00067}00067\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00068}00068\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00069}00069\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Konstruktor\ kamery}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00070}00070\ \textcolor{comment}{\ \ \ \ \ *\ @param\ position\ Początkowa\ pozycja\ kamery}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00071}00071\ \textcolor{comment}{\ \ \ \ \ *\ @param\ up\ Globalny\ wektor\ góry}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00072}00072\ \textcolor{comment}{\ \ \ \ \ *\ @param\ yaw\ Początkowy\ kąt\ odchylenia}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00073}00073\ \textcolor{comment}{\ \ \ \ \ *\ @param\ pitch\ Początkowy\ kąt\ nachylenia}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00074}00074\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{class_camera_adad6423186f3d7e4c461cff7274f2c87}{Camera}}(glm::vec3\ position\ =\ glm::vec3(0.0f,\ 0.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ glm::vec3\ up\ =\ glm::vec3(0.0f,\ 1.0f,\ 0.0f),}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ yaw\ =\ \mbox{\hyperlink{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d}{YAW}},}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pitch\ =\ \mbox{\hyperlink{_camera_8h_ab32939bf039c742431f67a815575ed21}{PITCH}});}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00080}00080\ \ \ \ \ \textcolor{comment}{//\ Metody\ do\ obsługi\ kamery}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00081}00081\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00082}00082\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00083}00083\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Oblicza\ i\ zwraca\ macierz\ widoku}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00084}00084\ \textcolor{comment}{\ \ \ \ \ *\ @return\ Macierz\ widoku\ (view\ matrix)}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00085}00085\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00086}00086\ \ \ \ \ glm::mat4\ \mbox{\hyperlink{class_camera_affa333055635aed96518c4c66be9a70c}{GetViewMatrix}}();}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00087}00087\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00088}00088\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00089}00089\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Przetwarza\ wejście\ klawiatury}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00090}00090\ \textcolor{comment}{\ \ \ \ \ *\ @param\ direction\ Kierunek\ ruchu\ kamery}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00091}00091\ \textcolor{comment}{\ \ \ \ \ *\ @param\ velocity\ Prędkość\ ruchu}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00092}00092\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00093}00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_aac6b3608f197242a8e459ef89a58e36f}{ProcessKeyboard}}(\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}{Camera\_Movement}}\ direction,\ \textcolor{keywordtype}{float}\ velocity);}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00094}00094\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00095}00095\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00096}00096\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Przetwarza\ ruch\ myszy}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00097}00097\ \textcolor{comment}{\ \ \ \ \ *\ @param\ xoffset\ Przesunięcie\ X\ myszy}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00098}00098\ \textcolor{comment}{\ \ \ \ \ *\ @param\ yoffset\ Przesunięcie\ Y\ myszy}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00099}00099\ \textcolor{comment}{\ \ \ \ \ *\ @param\ constrainPitch\ Czy\ ograniczyć\ pitch\ do\ [-\/90,\ 90]\ stopni}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00100}00100\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_a12293c3b3d9d162523c94afadb1c11c4}{ProcessMouseMovement}}(\textcolor{keywordtype}{float}\ xoffset,\ \textcolor{keywordtype}{float}\ yoffset,\ \textcolor{keywordtype}{bool}\ constrainPitch\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00103}00103\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_ad424b8b92e580508caf21337b69b93fa}{updateCameraVectors}}();}
+\DoxyCodeLine{\Hypertarget{_camera_8h_source_l00105}00105\ \};}
+
+\end{DoxyCode}

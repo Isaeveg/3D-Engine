@@ -1,0 +1,129 @@
+\doxysection{Dokumentacja klasy Textured\+Object}
+\hypertarget{class_textured_object}{}\label{class_textured_object}\index{TexturedObject@{TexturedObject}}
+
+
+Klasa reprezentująca obiekt z teksturą  
+
+
+
+
+{\ttfamily \#include $<$Engine.\+h$>$}
+
+Diagram dziedziczenia dla Textured\+Object\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_textured_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_textured_object_a0cf5e97a2c630b87090072b300d003ae}{Textured\+Object}} (\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*}tex)
+\item 
+void \mbox{\hyperlink{class_textured_object_a8bdc512831bcc43c802457e7f5cfab95}{draw}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{Game\+Object}} ()
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\item 
+virtual void \mbox{\hyperlink{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a}{draw\+Geometry}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty chronione}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_textured_object_a585a0a5377fcc08ab607e26dbdc82fd1}{texture}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Dodatkowe dziedziczone składowe}
+\doxysubsection*{Atrybuty publiczne dziedziczone z \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_object_a6f153bcbb96d97edae09db51ebf824c3}{pos}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_object_a1b4631038a8c760183c259e385b260c7}{rot}}
+\item 
+float \mbox{\hyperlink{class_game_object_a27fda2aabd44d4bc0dd2ed3bfe9a503b}{scale}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_object_a3a3cb49f7d67386167bbe9049ce2d3fd}{color}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa reprezentująca obiekt z teksturą 
+
+Rozszerza \doxylink{class_game_object}{Game\+Object} o obsługę tekstur. Umożliwia rysowanie obiektów 3D z nałożonymi teksturami. 
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00050}{50}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_textured_object_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_textured_object_a0cf5e97a2c630b87090072b300d003ae}\index{TexturedObject@{TexturedObject}!TexturedObject@{TexturedObject}}
+\index{TexturedObject@{TexturedObject}!TexturedObject@{TexturedObject}}
+\doxysubsubsection{\texorpdfstring{TexturedObject()}{TexturedObject()}}
+{\footnotesize\ttfamily \label{class_textured_object_a0cf5e97a2c630b87090072b300d003ae} 
+Textured\+Object\+::\+Textured\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*}}]{tex}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00054}{54}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00052}{texture}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8h_source_l00079}{Cube\+Object\+::\+Cube\+Object()}} i \mbox{\hyperlink{_engine_8h_source_l00091}{Pyramid\+Object\+::\+Pyramid\+Object()}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_textured_object_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_textured_object_a8bdc512831bcc43c802457e7f5cfab95}\index{TexturedObject@{TexturedObject}!draw@{draw}}
+\index{draw@{draw}!TexturedObject@{TexturedObject}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_textured_object_a8bdc512831bcc43c802457e7f5cfab95} 
+void Textured\+Object\+::draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplementowana z \mbox{\hyperlink{class_game_object_a1e6ed94137e78089b2413fe2e2a0b91f}{Game\+Object}}.
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00056}{56}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a}{Game\+Object\+::draw\+Geometry()}} i \mbox{\hyperlink{_engine_8h_source_l00052}{texture}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_textured_object_doc-variable-members}
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{class_textured_object_a585a0a5377fcc08ab607e26dbdc82fd1}\index{TexturedObject@{TexturedObject}!texture@{texture}}
+\index{texture@{texture}!TexturedObject@{TexturedObject}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily \label{class_textured_object_a585a0a5377fcc08ab607e26dbdc82fd1} 
+\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}}\texorpdfstring{$\ast$}{*} Textured\+Object\+::texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00052}{52}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8h_source_l00056}{draw()}} i \mbox{\hyperlink{_engine_8h_source_l00054}{Textured\+Object()}}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_engine_8h}{Engine.\+h}}\end{DoxyCompactItemize}

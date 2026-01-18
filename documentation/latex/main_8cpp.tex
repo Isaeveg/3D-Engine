@@ -1,0 +1,66 @@
+\doxysection{Dokumentacja pliku src/main.cpp}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+
+
+Punkt wejścia do aplikacji 3D \doxylink{class_engine}{Engine}.  
+
+
+{\ttfamily \#include "{}Engine.\+h"{}}\newline
+\doxysubsubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Główna funkcja aplikacji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Punkt wejścia do aplikacji 3D \doxylink{class_engine}{Engine}. 
+
+\begin{DoxyAuthor}{Autor}
+3D \doxylink{class_engine}{Engine} Project 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Wersja}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Data}
+2026
+\end{DoxyDate}
+Główny plik źródłowy aplikacji zawierający funkcję \doxylink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main()}. Inicjalizuje silnik grafiki i uruchamia główną pętlę. 
+
+Definicja w pliku \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{main_8cpp_doc-func-members}
+\doxysubsection{Dokumentacja funkcji}
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Główna funkcja aplikacji. 
+
+Inicjalizuje silnik 3D z domyślnymi parametrami (rozdzielczość 1280x720) i uruchamia główną pętlę aplikacji.
+
+
+\begin{DoxyParams}{Parametry}
+{\em argc} & Liczba argumentów wiersza poleceń \\
+\hline
+{\em argv} & Tablica argumentów wiersza poleceń \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Kod wyjścia programu (0 -\/ sukces) 
+\end{DoxyReturn}
+
+
+Definicja w linii \mbox{\hyperlink{main_8cpp_source_l00024}{24}} pliku \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00210}{Engine\+::get\+Instance()}}, \mbox{\hyperlink{_engine_8cpp_source_l00243}{Engine\+::init()}} i \mbox{\hyperlink{_engine_8cpp_source_l00289}{Engine\+::run()}}.
+

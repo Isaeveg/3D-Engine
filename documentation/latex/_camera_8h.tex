@@ -1,0 +1,191 @@
+\doxysection{Dokumentacja pliku src/\+Camera.h}
+\hypertarget{_camera_8h}{}\label{_camera_8h}\index{src/Camera.h@{src/Camera.h}}
+
+
+System kamery do nawigacji w przestrzeni 3D.  
+
+
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/matrix\+\_\+transform.\+hpp$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_camera}{Camera}}
+\begin{DoxyCompactList}\small\item\em Kamera do obserwacji sceny 3D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Wyliczenia}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}{Camera\+\_\+\+Movement}} \{ \newline
+\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaa26736999186daf8146f809e863712a1}{FORWARD}}
+, \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbafed2fca77e454294d6b8bda1bf2c9fd6}{BACKWARD}}
+, \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbadb45120aafd37a973140edee24708065}{LEFT}}
+, \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaec8379af7490bb9eaaf579cf17876f38}{RIGHT}}
+, \newline
+\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaba595d8bca8bc5e67c37c0a9d89becfa}{UP}}
+, \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcba9b0b4a95b99523966e0e34ffdadac9da}{DOWN}}
+ \}
+\begin{DoxyCompactList}\small\item\em Możliwe kierunki ruchu kamery. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+const float \mbox{\hyperlink{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d}{YAW}} = -\/90.\+0f
+\begin{DoxyCompactList}\small\item\em Domyślny kąt odchylenia kamery (yaw) w stopniach. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{_camera_8h_ab32939bf039c742431f67a815575ed21}{PITCH}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Domyślny kąt nachylenia kamery (pitch) w stopniach. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{_camera_8h_a6a2935f139d2e8f1ba438d98773d0d66}{SPEED}} = 0.\+05f
+\begin{DoxyCompactList}\small\item\em Domyślna prędkość ruchu kamery. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{_camera_8h_a48264de497b9f41df4c556f9321fe315}{SENSITIVITY}} = 0.\+1f
+\begin{DoxyCompactList}\small\item\em Domyślna czułość myszy. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{_camera_8h_ad53f4ea4bad2000e469a9b538c39878f}{ZOOM}} = 45.\+0f
+\begin{DoxyCompactList}\small\item\em Domyślny zoom kamery. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+System kamery do nawigacji w przestrzeni 3D. 
+
+\begin{DoxyAuthor}{Autor}
+3D \doxylink{class_engine}{Engine} Project 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Wersja}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Data}
+2026 
+\end{DoxyDate}
+
+
+Definicja w pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{_camera_8h_doc-enum-members}
+\doxysubsection{Dokumentacja typów wyliczanych}
+\Hypertarget{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}\index{Camera.h@{Camera.h}!Camera\_Movement@{Camera\_Movement}}
+\index{Camera\_Movement@{Camera\_Movement}!Camera.h@{Camera.h}}
+\doxysubsubsection{\texorpdfstring{Camera\_Movement}{Camera\_Movement}}
+{\footnotesize\ttfamily \label{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb} 
+enum \mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}{Camera\+\_\+\+Movement}}}
+
+
+
+Możliwe kierunki ruchu kamery. 
+
+\begin{DoxyEnumFields}[2]{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FORWARD@{FORWARD}!Camera.h@{Camera.h}}\index{Camera.h@{Camera.h}!FORWARD@{FORWARD}}}\Hypertarget{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaa26736999186daf8146f809e863712a1}\label{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaa26736999186daf8146f809e863712a1} 
+FORWARD&Ruch do przodu. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BACKWARD@{BACKWARD}!Camera.h@{Camera.h}}\index{Camera.h@{Camera.h}!BACKWARD@{BACKWARD}}}\Hypertarget{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbafed2fca77e454294d6b8bda1bf2c9fd6}\label{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbafed2fca77e454294d6b8bda1bf2c9fd6} 
+BACKWARD&Ruch do tyłu. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!Camera.h@{Camera.h}}\index{Camera.h@{Camera.h}!LEFT@{LEFT}}}\Hypertarget{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbadb45120aafd37a973140edee24708065}\label{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbadb45120aafd37a973140edee24708065} 
+LEFT&Ruch w lewo. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!Camera.h@{Camera.h}}\index{Camera.h@{Camera.h}!RIGHT@{RIGHT}}}\Hypertarget{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaec8379af7490bb9eaaf579cf17876f38}\label{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaec8379af7490bb9eaaf579cf17876f38} 
+RIGHT&Ruch w prawo. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!Camera.h@{Camera.h}}\index{Camera.h@{Camera.h}!UP@{UP}}}\Hypertarget{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaba595d8bca8bc5e67c37c0a9d89becfa}\label{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcbaba595d8bca8bc5e67c37c0a9d89becfa} 
+UP&Ruch w górę \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOWN@{DOWN}!Camera.h@{Camera.h}}\index{Camera.h@{Camera.h}!DOWN@{DOWN}}}\Hypertarget{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcba9b0b4a95b99523966e0e34ffdadac9da}\label{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcba9b0b4a95b99523966e0e34ffdadac9da} 
+DOWN&Ruch w dół \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00019}{19}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+\label{doc-var-members}
+\Hypertarget{_camera_8h_doc-var-members}
+\doxysubsection{Dokumentacja zmiennych}
+\Hypertarget{_camera_8h_ab32939bf039c742431f67a815575ed21}\index{Camera.h@{Camera.h}!PITCH@{PITCH}}
+\index{PITCH@{PITCH}!Camera.h@{Camera.h}}
+\doxysubsubsection{\texorpdfstring{PITCH}{PITCH}}
+{\footnotesize\ttfamily \label{_camera_8h_ab32939bf039c742431f67a815575ed21} 
+const float PITCH = 0.\+0f}
+
+
+
+Domyślny kąt nachylenia kamery (pitch) w stopniach. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00033}{33}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+\Hypertarget{_camera_8h_a48264de497b9f41df4c556f9321fe315}\index{Camera.h@{Camera.h}!SENSITIVITY@{SENSITIVITY}}
+\index{SENSITIVITY@{SENSITIVITY}!Camera.h@{Camera.h}}
+\doxysubsubsection{\texorpdfstring{SENSITIVITY}{SENSITIVITY}}
+{\footnotesize\ttfamily \label{_camera_8h_a48264de497b9f41df4c556f9321fe315} 
+const float SENSITIVITY = 0.\+1f}
+
+
+
+Domyślna czułość myszy. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00039}{39}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00004}{Camera\+::\+Camera()}}.
+
+\Hypertarget{_camera_8h_a6a2935f139d2e8f1ba438d98773d0d66}\index{Camera.h@{Camera.h}!SPEED@{SPEED}}
+\index{SPEED@{SPEED}!Camera.h@{Camera.h}}
+\doxysubsubsection{\texorpdfstring{SPEED}{SPEED}}
+{\footnotesize\ttfamily \label{_camera_8h_a6a2935f139d2e8f1ba438d98773d0d66} 
+const float SPEED = 0.\+05f}
+
+
+
+Domyślna prędkość ruchu kamery. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00036}{36}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00004}{Camera\+::\+Camera()}}.
+
+\Hypertarget{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d}\index{Camera.h@{Camera.h}!YAW@{YAW}}
+\index{YAW@{YAW}!Camera.h@{Camera.h}}
+\doxysubsubsection{\texorpdfstring{YAW}{YAW}}
+{\footnotesize\ttfamily \label{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d} 
+const float YAW = -\/90.\+0f}
+
+
+
+Domyślny kąt odchylenia kamery (yaw) w stopniach. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00030}{30}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+\Hypertarget{_camera_8h_ad53f4ea4bad2000e469a9b538c39878f}\index{Camera.h@{Camera.h}!ZOOM@{ZOOM}}
+\index{ZOOM@{ZOOM}!Camera.h@{Camera.h}}
+\doxysubsubsection{\texorpdfstring{ZOOM}{ZOOM}}
+{\footnotesize\ttfamily \label{_camera_8h_ad53f4ea4bad2000e469a9b538c39878f} 
+const float ZOOM = 45.\+0f}
+
+
+
+Domyślny zoom kamery. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00042}{42}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00004}{Camera\+::\+Camera()}}.
+

@@ -1,0 +1,116 @@
+\doxysection{Dokumentacja klasy Cube\+Object}
+\hypertarget{class_cube_object}{}\label{class_cube_object}\index{CubeObject@{CubeObject}}
+
+
+Obiekt sześcianu z teksturą  
+
+
+
+
+{\ttfamily \#include $<$Engine.\+h$>$}
+
+Diagram dziedziczenia dla Cube\+Object\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_cube_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cube_object_a61f2b828b000403012c699b192f1a05f}{Cube\+Object}} (\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*}tex)
+\item 
+void \mbox{\hyperlink{class_cube_object_a29b7b9105a1a82992a32d77fae1a70ed}{draw\+Geometry}} () override
+\begin{DoxyCompactList}\small\item\em Rysuje geometrię sześcianu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_textured_object}{Textured\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_textured_object_a0cf5e97a2c630b87090072b300d003ae}{Textured\+Object}} (\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*}tex)
+\item 
+void \mbox{\hyperlink{class_textured_object_a8bdc512831bcc43c802457e7f5cfab95}{draw}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{Game\+Object}} ()
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Dodatkowe dziedziczone składowe}
+\doxysubsection*{Atrybuty publiczne dziedziczone z \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_object_a6f153bcbb96d97edae09db51ebf824c3}{pos}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_object_a1b4631038a8c760183c259e385b260c7}{rot}}
+\item 
+float \mbox{\hyperlink{class_game_object_a27fda2aabd44d4bc0dd2ed3bfe9a503b}{scale}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_object_a3a3cb49f7d67386167bbe9049ce2d3fd}{color}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty chronione dziedziczone z \mbox{\hyperlink{class_textured_object}{Textured\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_textured_object_a585a0a5377fcc08ab607e26dbdc82fd1}{texture}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Obiekt sześcianu z teksturą 
+
+Reprezentuje sześcian 3D z możliwością nałożenia tekstury. 
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00077}{77}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_cube_object_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_cube_object_a61f2b828b000403012c699b192f1a05f}\index{CubeObject@{CubeObject}!CubeObject@{CubeObject}}
+\index{CubeObject@{CubeObject}!CubeObject@{CubeObject}}
+\doxysubsubsection{\texorpdfstring{CubeObject()}{CubeObject()}}
+{\footnotesize\ttfamily \label{class_cube_object_a61f2b828b000403012c699b192f1a05f} 
+Cube\+Object\+::\+Cube\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*}}]{tex}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00079}{79}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00054}{Textured\+Object\+::\+Textured\+Object()}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_cube_object_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_cube_object_a29b7b9105a1a82992a32d77fae1a70ed}\index{CubeObject@{CubeObject}!drawGeometry@{drawGeometry}}
+\index{drawGeometry@{drawGeometry}!CubeObject@{CubeObject}}
+\doxysubsubsection{\texorpdfstring{drawGeometry()}{drawGeometry()}}
+{\footnotesize\ttfamily \label{class_cube_object_a29b7b9105a1a82992a32d77fae1a70ed} 
+void Cube\+Object\+::draw\+Geometry (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Rysuje geometrię sześcianu. 
+
+
+
+Implementuje \mbox{\hyperlink{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a}{Game\+Object}}.
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00022}{22}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_cube_8cpp_source_l00041}{Cube\+::draw()}}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_engine_8h}{Engine.\+h}}\item 
+src/\mbox{\hyperlink{_engine_8cpp}{Engine.\+cpp}}\end{DoxyCompactItemize}

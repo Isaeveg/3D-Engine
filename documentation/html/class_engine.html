@@ -1,0 +1,1424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>3D-Engine: Dokumentacja klasy Engine</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">3D-Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik grafiki 3D napisany w C++ z wykorzystaniem OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_engine.html','','class_engine-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy Engine</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Główny silnik grafiki 3D.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_engine_8h_source.html">Engine.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a8c98683b0a3aa28d8ab72a8bcd0d52f2" id="r_a8c98683b0a3aa28d8ab72a8bcd0d52f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c98683b0a3aa28d8ab72a8bcd0d52f2">Engine</a> ()</td></tr>
+<tr class="memdesc:a8c98683b0a3aa28d8ab72a8bcd0d52f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor <a class="el" href="class_engine.html" title="Główny silnik grafiki 3D.">Engine</a>.  <br /></td></tr>
+<tr class="memitem:a8ef7030a089ecb30bbfcb9e43094717a" id="r_a8ef7030a089ecb30bbfcb9e43094717a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ef7030a089ecb30bbfcb9e43094717a">~Engine</a> ()</td></tr>
+<tr class="memdesc:a8ef7030a089ecb30bbfcb9e43094717a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor <a class="el" href="class_engine.html" title="Główny silnik grafiki 3D.">Engine</a>.  <br /></td></tr>
+<tr class="memitem:a1befa06d8ceae1c190010809dc5f0bcb" id="r_a1befa06d8ceae1c190010809dc5f0bcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1befa06d8ceae1c190010809dc5f0bcb">init</a> (int argc, char **argv, int w, int h, const std::string &amp;title)</td></tr>
+<tr class="memdesc:a1befa06d8ceae1c190010809dc5f0bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicjalizuje silnik.  <br /></td></tr>
+<tr class="memitem:a1a210cf30d6bd330b3649439ecd6d6cc" id="r_a1a210cf30d6bd330b3649439ecd6d6cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a210cf30d6bd330b3649439ecd6d6cc">run</a> ()</td></tr>
+<tr class="memdesc:a1a210cf30d6bd330b3649439ecd6d6cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uruchamia główną pętlę silnika.  <br /></td></tr>
+<tr class="memitem:ga488effead8a74c9e7d69f3f1b09d1ae6" id="r_ga488effead8a74c9e7d69f3f1b09d1ae6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___spawn_functions.html#ga488effead8a74c9e7d69f3f1b09d1ae6">spawnCube</a> ()</td></tr>
+<tr class="memdesc:ga488effead8a74c9e7d69f3f1b09d1ae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy sześcian i dodaje go do sceny.  <br /></td></tr>
+<tr class="memitem:ga6eec716a49b05f66d14b782d15a00ad9" id="r_ga6eec716a49b05f66d14b782d15a00ad9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___spawn_functions.html#ga6eec716a49b05f66d14b782d15a00ad9">spawnPyramid</a> ()</td></tr>
+<tr class="memdesc:ga6eec716a49b05f66d14b782d15a00ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy piramidę i dodaje ją do sceny.  <br /></td></tr>
+<tr class="memitem:gaf3e12291a10deaa16074dc79caf71f22" id="r_gaf3e12291a10deaa16074dc79caf71f22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___spawn_functions.html#gaf3e12291a10deaa16074dc79caf71f22">spawnSphere</a> ()</td></tr>
+<tr class="memdesc:gaf3e12291a10deaa16074dc79caf71f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy sferę i dodaje ją do sceny.  <br /></td></tr>
+<tr class="memitem:ga5952e27fba1f42211350b82b2b9beb01" id="r_ga5952e27fba1f42211350b82b2b9beb01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___spawn_functions.html#ga5952e27fba1f42211350b82b2b9beb01">spawnTeapot</a> ()</td></tr>
+<tr class="memdesc:ga5952e27fba1f42211350b82b2b9beb01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy czajnik Utah i dodaje go do sceny.  <br /></td></tr>
+<tr class="memitem:gae26858ce255c5fd23b52bedb194a813a" id="r_gae26858ce255c5fd23b52bedb194a813a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___spawn_functions.html#gae26858ce255c5fd23b52bedb194a813a">spawnTorus</a> ()</td></tr>
+<tr class="memdesc:gae26858ce255c5fd23b52bedb194a813a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy torus i dodaje go do sceny.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Statyczne metody publiczne</h2></td></tr>
+<tr class="memitem:accfdaedded34d223576bea363effa1e0" id="r_accfdaedded34d223576bea363effa1e0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_engine.html">Engine</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accfdaedded34d223576bea363effa1e0">getInstance</a> ()</td></tr>
+<tr class="memdesc:accfdaedded34d223576bea363effa1e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera instancję singletona <a class="el" href="class_engine.html" title="Główny silnik grafiki 3D.">Engine</a>.  <br /></td></tr>
+<tr class="memitem:a87ea1cf40a002568437c2b407dd979aa" id="r_a87ea1cf40a002568437c2b407dd979aa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87ea1cf40a002568437c2b407dd979aa">renderWrapper</a> ()</td></tr>
+<tr class="memitem:a8a4bb856bcf1f397db3f2243b8439901" id="r_a8a4bb856bcf1f397db3f2243b8439901"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a4bb856bcf1f397db3f2243b8439901">updateWrapper</a> (int v)</td></tr>
+<tr class="memitem:aa4f3992de607c6d030ac456e47003bc3" id="r_aa4f3992de607c6d030ac456e47003bc3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4f3992de607c6d030ac456e47003bc3">reshapeWrapper</a> (int w, int h)</td></tr>
+<tr class="memitem:a40a31727e31c2d56ae5f6665e2611dc2" id="r_a40a31727e31c2d56ae5f6665e2611dc2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40a31727e31c2d56ae5f6665e2611dc2">kbWrapper</a> (unsigned char k, int x, int y)</td></tr>
+<tr class="memitem:ad2aba00209f3c36f21ec6b91335811ce" id="r_ad2aba00209f3c36f21ec6b91335811ce"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2aba00209f3c36f21ec6b91335811ce">kbUpWrapper</a> (unsigned char k, int x, int y)</td></tr>
+<tr class="memitem:a677842e4ffa6561b707665fb2c190ab4" id="r_a677842e4ffa6561b707665fb2c190ab4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a677842e4ffa6561b707665fb2c190ab4">specWrapper</a> (int k, int x, int y)</td></tr>
+<tr class="memitem:ae2e05884849e469bd884676c464ba70a" id="r_ae2e05884849e469bd884676c464ba70a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2e05884849e469bd884676c464ba70a">specUpWrapper</a> (int k, int x, int y)</td></tr>
+<tr class="memitem:a1126d1c569b052cf9c04769d1b66ce2e" id="r_a1126d1c569b052cf9c04769d1b66ce2e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1126d1c569b052cf9c04769d1b66ce2e">mouseWrapper</a> (int x, int y)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:a7960743aefd62e846e7f3cd92c18bc73" id="r_a7960743aefd62e846e7f3cd92c18bc73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7960743aefd62e846e7f3cd92c18bc73">render</a> ()</td></tr>
+<tr class="memdesc:a7960743aefd62e846e7f3cd92c18bc73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renderuje scenę  <br /></td></tr>
+<tr class="memitem:a829f8269b1c0fd26748eaedd04ebc47b" id="r_a829f8269b1c0fd26748eaedd04ebc47b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a829f8269b1c0fd26748eaedd04ebc47b">update</a> (int value)</td></tr>
+<tr class="memdesc:a829f8269b1c0fd26748eaedd04ebc47b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje stan silnika.  <br /></td></tr>
+<tr class="memitem:ab89b0964c80e43695a030b8093750f84" id="r_ab89b0964c80e43695a030b8093750f84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab89b0964c80e43695a030b8093750f84">reshape</a> (int w, int h)</td></tr>
+<tr class="memdesc:ab89b0964c80e43695a030b8093750f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienia rozmiar okna.  <br /></td></tr>
+<tr class="memitem:aa1aec35d59f1364a79c7a62c29640226" id="r_aa1aec35d59f1364a79c7a62c29640226"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1aec35d59f1364a79c7a62c29640226">processInput</a> ()</td></tr>
+<tr class="memdesc:aa1aec35d59f1364a79c7a62c29640226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przetwarza wejście użytkownika.  <br /></td></tr>
+<tr class="memitem:a46ae0bb0f7cd96354503f2a69f5cb7d9" id="r_a46ae0bb0f7cd96354503f2a69f5cb7d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46ae0bb0f7cd96354503f2a69f5cb7d9">loadTexture</a> ()</td></tr>
+<tr class="memdesc:a46ae0bb0f7cd96354503f2a69f5cb7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ładuje tekstury z plików.  <br /></td></tr>
+<tr class="memitem:ae179eea3b1578db6eac14c817ef5b866" id="r_ae179eea3b1578db6eac14c817ef5b866"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae179eea3b1578db6eac14c817ef5b866">drawInterface</a> ()</td></tr>
+<tr class="memdesc:ae179eea3b1578db6eac14c817ef5b866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje interfejs użytkownika.  <br /></td></tr>
+<tr class="memitem:a23f86b2a9ddd50e49f61a9ca22998efc" id="r_a23f86b2a9ddd50e49f61a9ca22998efc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23f86b2a9ddd50e49f61a9ca22998efc">keyboard</a> (unsigned char key, int x, int y)</td></tr>
+<tr class="memitem:ac0a89024d843d71e9c6f72dde0fcf996" id="r_ac0a89024d843d71e9c6f72dde0fcf996"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0a89024d843d71e9c6f72dde0fcf996">keyboardUp</a> (unsigned char key, int x, int y)</td></tr>
+<tr class="memitem:abaf6dd0375fcfeb33079ae7d0e63b689" id="r_abaf6dd0375fcfeb33079ae7d0e63b689"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abaf6dd0375fcfeb33079ae7d0e63b689">specialFunc</a> (int key, int x, int y)</td></tr>
+<tr class="memitem:a086fe548346df5666cf6b755a77dcf1a" id="r_a086fe548346df5666cf6b755a77dcf1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a086fe548346df5666cf6b755a77dcf1a">specialUpFunc</a> (int key, int x, int y)</td></tr>
+<tr class="memitem:a663340eb9d199b16179037bc0ffeb637" id="r_a663340eb9d199b16179037bc0ffeb637"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a663340eb9d199b16179037bc0ffeb637">mouseMove</a> (int x, int y)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a541d921b6b97e8756522958a58814344" id="r_a541d921b6b97e8756522958a58814344"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a541d921b6b97e8756522958a58814344">windowWidth</a></td></tr>
+<tr class="memdesc:a541d921b6b97e8756522958a58814344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szerokość okna aplikacji.  <br /></td></tr>
+<tr class="memitem:a0ac480c63e98dd9b1fe4c4a3c9e6a7ca" id="r_a0ac480c63e98dd9b1fe4c4a3c9e6a7ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ac480c63e98dd9b1fe4c4a3c9e6a7ca">windowHeight</a></td></tr>
+<tr class="memdesc:a0ac480c63e98dd9b1fe4c4a3c9e6a7ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wysokość okna aplikacji.  <br /></td></tr>
+<tr class="memitem:a04c0191a54fc9baa22cbe96bc481557a" id="r_a04c0191a54fc9baa22cbe96bc481557a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04c0191a54fc9baa22cbe96bc481557a">targetFPS</a></td></tr>
+<tr class="memdesc:a04c0191a54fc9baa22cbe96bc481557a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Docelowa liczba klatek na sekundę  <br /></td></tr>
+<tr class="memitem:a4ecc1d75cbe50953b43759686ce21b83" id="r_a4ecc1d75cbe50953b43759686ce21b83"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ecc1d75cbe50953b43759686ce21b83">keys</a> [256]</td></tr>
+<tr class="memdesc:a4ecc1d75cbe50953b43759686ce21b83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tablica stanu klawiszy zwykłych.  <br /></td></tr>
+<tr class="memitem:a686b5b209aa7fd4d0073f3e14736efc6" id="r_a686b5b209aa7fd4d0073f3e14736efc6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a686b5b209aa7fd4d0073f3e14736efc6">specialKeys</a> [256]</td></tr>
+<tr class="memdesc:a686b5b209aa7fd4d0073f3e14736efc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tablica stanu klawiszy specjalnych.  <br /></td></tr>
+<tr class="memitem:a922e7ff328db4522ed555911627dcb8f" id="r_a922e7ff328db4522ed555911627dcb8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_camera.html">Camera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a922e7ff328db4522ed555911627dcb8f">camera</a></td></tr>
+<tr class="memdesc:a922e7ff328db4522ed555911627dcb8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wskaźnik na instancję kamery.  <br /></td></tr>
+<tr class="memitem:a8d483ecdc54d8fd999c0384dedebecea" id="r_a8d483ecdc54d8fd999c0384dedebecea"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d483ecdc54d8fd999c0384dedebecea">objects</a></td></tr>
+<tr class="memdesc:a8d483ecdc54d8fd999c0384dedebecea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor wszystkich obiektów w scenie.  <br /></td></tr>
+<tr class="memitem:addc3357ad9068350a461cd666ff46c4b" id="r_addc3357ad9068350a461cd666ff46c4b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addc3357ad9068350a461cd666ff46c4b">selectedIdx</a></td></tr>
+<tr class="memdesc:addc3357ad9068350a461cd666ff46c4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indeks obecnie wybranego obiektu.  <br /></td></tr>
+<tr class="memitem:ad793397bd96300483ddc8a493814560e" id="r_ad793397bd96300483ddc8a493814560e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad793397bd96300483ddc8a493814560e">lightEnabled</a></td></tr>
+<tr class="memdesc:ad793397bd96300483ddc8a493814560e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flaga włączenia oświetlenia.  <br /></td></tr>
+<tr class="memitem:a675c54b3df57926dd20349d9fe906512" id="r_a675c54b3df57926dd20349d9fe906512"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a675c54b3df57926dd20349d9fe906512">smoothShading</a></td></tr>
+<tr class="memdesc:a675c54b3df57926dd20349d9fe906512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flaga włączenia smooth shadingu.  <br /></td></tr>
+<tr class="memitem:a29c168f4d05145a4a3280b0fcd8d2cdd" id="r_a29c168f4d05145a4a3280b0fcd8d2cdd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bitmap_handler.html">BitmapHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29c168f4d05145a4a3280b0fcd8d2cdd">textureCrate</a></td></tr>
+<tr class="memdesc:a29c168f4d05145a4a3280b0fcd8d2cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura skrzyni.  <br /></td></tr>
+<tr class="memitem:ad25708e637a9e9c1908fefcb0c62fcac" id="r_ad25708e637a9e9c1908fefcb0c62fcac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bitmap_handler.html">BitmapHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad25708e637a9e9c1908fefcb0c62fcac">textureWall</a></td></tr>
+<tr class="memdesc:ad25708e637a9e9c1908fefcb0c62fcac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura ściany.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Statyczne atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a51493b63c58390f775dd2bc6f72a2b75" id="r_a51493b63c58390f775dd2bc6f72a2b75"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_engine.html">Engine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51493b63c58390f775dd2bc6f72a2b75">instance</a> = nullptr</td></tr>
+<tr class="memdesc:a51493b63c58390f775dd2bc6f72a2b75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Statyczna instancja singletona.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Główny silnik grafiki 3D. </p>
+<p>Singleton zarządzający całym systemem renderowania OpenGL. Odpowiada za inicjalizację, pętlę główną, obsługę zdarzeń oraz zarządzanie sceną 3D i obiektami. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00136">136</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a8c98683b0a3aa28d8ab72a8bcd0d52f2" name="a8c98683b0a3aa28d8ab72a8bcd0d52f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c98683b0a3aa28d8ab72a8bcd0d52f2">&#9670;&#160;</a></span>Engine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Engine::Engine </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor <a class="el" href="class_engine.html" title="Główny silnik grafiki 3D.">Engine</a>. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00061">61</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00143">camera</a>, <a class="el" href="_engine_8h_source.html#l00154">instance</a>, <a class="el" href="_engine_8h_source.html#l00141">keys</a>, <a class="el" href="_engine_8h_source.html#l00148">lightEnabled</a>, <a class="el" href="_engine_8h_source.html#l00146">selectedIdx</a>, <a class="el" href="_engine_8h_source.html#l00149">smoothShading</a>, <a class="el" href="_engine_8h_source.html#l00142">specialKeys</a>, <a class="el" href="_engine_8h_source.html#l00140">targetFPS</a>, <a class="el" href="_engine_8h_source.html#l00151">textureCrate</a>, <a class="el" href="_engine_8h_source.html#l00152">textureWall</a>, <a class="el" href="_engine_8h_source.html#l00139">windowHeight</a> i <a class="el" href="_engine_8h_source.html#l00138">windowWidth</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8h_source.html#l00210">getInstance()</a>.</p>
+
+</div>
+</div>
+<a id="a8ef7030a089ecb30bbfcb9e43094717a" name="a8ef7030a089ecb30bbfcb9e43094717a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ef7030a089ecb30bbfcb9e43094717a">&#9670;&#160;</a></span>~Engine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Engine::~Engine </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destruktor <a class="el" href="class_engine.html" title="Główny silnik grafiki 3D.">Engine</a>. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00070">70</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00143">camera</a>, <a class="el" href="_engine_8h_source.html#l00145">objects</a>, <a class="el" href="_engine_8h_source.html#l00151">textureCrate</a> i <a class="el" href="_engine_8h_source.html#l00152">textureWall</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="ae179eea3b1578db6eac14c817ef5b866" name="ae179eea3b1578db6eac14c817ef5b866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae179eea3b1578db6eac14c817ef5b866">&#9670;&#160;</a></span>drawInterface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::drawInterface </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rysuje interfejs użytkownika. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00277">277</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00148">lightEnabled</a>, <a class="el" href="_engine_8h_source.html#l00145">objects</a>, <a class="el" href="_engine_8h_source.html#l00146">selectedIdx</a>, <a class="el" href="_engine_8h_source.html#l00140">targetFPS</a>, <a class="el" href="_engine_8h_source.html#l00139">windowHeight</a> i <a class="el" href="_engine_8h_source.html#l00138">windowWidth</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00199">render()</a>.</p>
+
+</div>
+</div>
+<a id="accfdaedded34d223576bea363effa1e0" name="accfdaedded34d223576bea363effa1e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accfdaedded34d223576bea363effa1e0">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_engine.html">Engine</a> &amp; Engine::getInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pobiera instancję singletona <a class="el" href="class_engine.html" title="Główny silnik grafiki 3D.">Engine</a>. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Referencja na instancję <a class="el" href="class_engine.html" title="Główny silnik grafiki 3D.">Engine</a> </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00210">210</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="main_8cpp_source.html#l00024">main()</a>.</p>
+
+</div>
+</div>
+<a id="a1befa06d8ceae1c190010809dc5f0bcb" name="a1befa06d8ceae1c190010809dc5f0bcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1befa06d8ceae1c190010809dc5f0bcb">&#9670;&#160;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::init </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **</td>          <td class="paramname"><span class="paramname"><em>argv</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>h</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicjalizuje silnik. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Liczba argumentów wiersza poleceń </td></tr>
+    <tr><td class="paramname">argv</td><td>Argumenty wiersza poleceń </td></tr>
+    <tr><td class="paramname">w</td><td>Szerokość okna </td></tr>
+    <tr><td class="paramname">h</td><td>Wysokość okna </td></tr>
+    <tr><td class="paramname">title</td><td>Tytuł okna </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00248">248</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8cpp_source.html#l00299">kbUpWrapper()</a>, <a class="el" href="_engine_8cpp_source.html#l00298">kbWrapper()</a>, <a class="el" href="_engine_8cpp_source.html#l00078">loadTexture()</a>, <a class="el" href="_engine_8cpp_source.html#l00302">mouseWrapper()</a>, <a class="el" href="_engine_8cpp_source.html#l00295">renderWrapper()</a>, <a class="el" href="_engine_8cpp_source.html#l00297">reshapeWrapper()</a>, <a class="el" href="_engine_8cpp_source.html#l00301">specUpWrapper()</a> i <a class="el" href="_engine_8cpp_source.html#l00300">specWrapper()</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="main_8cpp_source.html#l00024">main()</a>.</p>
+
+</div>
+</div>
+<a id="ad2aba00209f3c36f21ec6b91335811ce" name="ad2aba00209f3c36f21ec6b91335811ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2aba00209f3c36f21ec6b91335811ce">&#9670;&#160;</a></span>kbUpWrapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::kbUpWrapper </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00299">299</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00154">instance</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00248">init()</a>.</p>
+
+</div>
+</div>
+<a id="a40a31727e31c2d56ae5f6665e2611dc2" name="a40a31727e31c2d56ae5f6665e2611dc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40a31727e31c2d56ae5f6665e2611dc2">&#9670;&#160;</a></span>kbWrapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::kbWrapper </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00298">298</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00154">instance</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00248">init()</a>.</p>
+
+</div>
+</div>
+<a id="a23f86b2a9ddd50e49f61a9ca22998efc" name="a23f86b2a9ddd50e49f61a9ca22998efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23f86b2a9ddd50e49f61a9ca22998efc">&#9670;&#160;</a></span>keyboard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::keyboard </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00122">122</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00141">keys</a>, <a class="el" href="_engine_8h_source.html#l00148">lightEnabled</a>, <a class="el" href="_engine_8h_source.html#l00145">objects</a>, <a class="el" href="_engine_8h_source.html#l00146">selectedIdx</a>, <a class="el" href="_engine_8h_source.html#l00149">smoothShading</a>, <a class="el" href="_engine_8cpp_source.html#l00084">spawnCube()</a>, <a class="el" href="_engine_8cpp_source.html#l00091">spawnPyramid()</a>, <a class="el" href="_engine_8cpp_source.html#l00098">spawnSphere()</a>, <a class="el" href="_engine_8cpp_source.html#l00106">spawnTeapot()</a>, <a class="el" href="_engine_8cpp_source.html#l00114">spawnTorus()</a> i <a class="el" href="_engine_8h_source.html#l00140">targetFPS</a>.</p>
+
+</div>
+</div>
+<a id="ac0a89024d843d71e9c6f72dde0fcf996" name="ac0a89024d843d71e9c6f72dde0fcf996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0a89024d843d71e9c6f72dde0fcf996">&#9670;&#160;</a></span>keyboardUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::keyboardUp </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00161">161</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00141">keys</a>.</p>
+
+</div>
+</div>
+<a id="a46ae0bb0f7cd96354503f2a69f5cb7d9" name="a46ae0bb0f7cd96354503f2a69f5cb7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46ae0bb0f7cd96354503f2a69f5cb7d9">&#9670;&#160;</a></span>loadTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::loadTexture </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ładuje tekstury z plików. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00078">78</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00151">textureCrate</a> i <a class="el" href="_engine_8h_source.html#l00152">textureWall</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00248">init()</a>.</p>
+
+</div>
+</div>
+<a id="a663340eb9d199b16179037bc0ffeb637" name="a663340eb9d199b16179037bc0ffeb637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a663340eb9d199b16179037bc0ffeb637">&#9670;&#160;</a></span>mouseMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::mouseMove </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1126d1c569b052cf9c04769d1b66ce2e" name="a1126d1c569b052cf9c04769d1b66ce2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1126d1c569b052cf9c04769d1b66ce2e">&#9670;&#160;</a></span>mouseWrapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::mouseWrapper </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00302">302</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00154">instance</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00248">init()</a>.</p>
+
+</div>
+</div>
+<a id="aa1aec35d59f1364a79c7a62c29640226" name="aa1aec35d59f1364a79c7a62c29640226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1aec35d59f1364a79c7a62c29640226">&#9670;&#160;</a></span>processInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::processInput </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przetwarza wejście użytkownika. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00168">168</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_camera_8h_source.html#l00022">BACKWARD</a>, <a class="el" href="_engine_8h_source.html#l00143">camera</a>, <a class="el" href="_camera_8h_source.html#l00021">FORWARD</a>, <a class="el" href="_engine_8h_source.html#l00141">keys</a>, <a class="el" href="_camera_8h_source.html#l00023">LEFT</a>, <a class="el" href="_engine_8h_source.html#l00145">objects</a>, <a class="el" href="_engine_8h_source.html#l00029">GameObject::pos</a>, <a class="el" href="_camera_8h_source.html#l00024">RIGHT</a>, <a class="el" href="_engine_8h_source.html#l00030">GameObject::rot</a>, <a class="el" href="_engine_8h_source.html#l00031">GameObject::scale</a>, <a class="el" href="_engine_8h_source.html#l00146">selectedIdx</a> i <a class="el" href="_engine_8h_source.html#l00142">specialKeys</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00271">update()</a>.</p>
+
+</div>
+</div>
+<a id="a7960743aefd62e846e7f3cd92c18bc73" name="a7960743aefd62e846e7f3cd92c18bc73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7960743aefd62e846e7f3cd92c18bc73">&#9670;&#160;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::render </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renderuje scenę </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00199">199</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00143">camera</a>, <a class="el" href="_engine_8h_source.html#l00032">GameObject::color</a>, <a class="el" href="_engine_8h_source.html#l00037">GameObject::draw()</a>, <a class="el" href="class_game_object.html#af7b4f1c7ef162e3ac77c564fe88f9a0a">GameObject::drawGeometry()</a>, <a class="el" href="_engine_8cpp_source.html#l00277">drawInterface()</a>, <a class="el" href="_engine_8h_source.html#l00148">lightEnabled</a>, <a class="el" href="_engine_8h_source.html#l00145">objects</a>, <a class="el" href="_engine_8h_source.html#l00029">GameObject::pos</a>, <a class="el" href="_engine_8h_source.html#l00030">GameObject::rot</a>, <a class="el" href="_engine_8h_source.html#l00031">GameObject::scale</a>, <a class="el" href="_engine_8h_source.html#l00146">selectedIdx</a> i <a class="el" href="_engine_8h_source.html#l00149">smoothShading</a>.</p>
+
+</div>
+</div>
+<a id="a87ea1cf40a002568437c2b407dd979aa" name="a87ea1cf40a002568437c2b407dd979aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87ea1cf40a002568437c2b407dd979aa">&#9670;&#160;</a></span>renderWrapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::renderWrapper </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00295">295</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00154">instance</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00248">init()</a>.</p>
+
+</div>
+</div>
+<a id="ab89b0964c80e43695a030b8093750f84" name="ab89b0964c80e43695a030b8093750f84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab89b0964c80e43695a030b8093750f84">&#9670;&#160;</a></span>reshape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::reshape </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>h</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zmienia rozmiar okna. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>Nowa szerokość okna </td></tr>
+    <tr><td class="paramname">h</td><td>Nowa wysokość okna </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00308">308</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00139">windowHeight</a> i <a class="el" href="_engine_8h_source.html#l00138">windowWidth</a>.</p>
+
+</div>
+</div>
+<a id="aa4f3992de607c6d030ac456e47003bc3" name="aa4f3992de607c6d030ac456e47003bc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f3992de607c6d030ac456e47003bc3">&#9670;&#160;</a></span>reshapeWrapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::reshapeWrapper </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>h</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00297">297</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00154">instance</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00248">init()</a>.</p>
+
+</div>
+</div>
+<a id="a1a210cf30d6bd330b3649439ecd6d6cc" name="a1a210cf30d6bd330b3649439ecd6d6cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a210cf30d6bd330b3649439ecd6d6cc">&#9670;&#160;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::run </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uruchamia główną pętlę silnika. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00294">294</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00140">targetFPS</a> i <a class="el" href="_engine_8cpp_source.html#l00296">updateWrapper()</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="main_8cpp_source.html#l00024">main()</a>.</p>
+
+</div>
+</div>
+<a id="abaf6dd0375fcfeb33079ae7d0e63b689" name="abaf6dd0375fcfeb33079ae7d0e63b689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaf6dd0375fcfeb33079ae7d0e63b689">&#9670;&#160;</a></span>specialFunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::specialFunc </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00165">165</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00142">specialKeys</a>.</p>
+
+</div>
+</div>
+<a id="a086fe548346df5666cf6b755a77dcf1a" name="a086fe548346df5666cf6b755a77dcf1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a086fe548346df5666cf6b755a77dcf1a">&#9670;&#160;</a></span>specialUpFunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::specialUpFunc </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00166">166</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00142">specialKeys</a>.</p>
+
+</div>
+</div>
+<a id="ae2e05884849e469bd884676c464ba70a" name="ae2e05884849e469bd884676c464ba70a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2e05884849e469bd884676c464ba70a">&#9670;&#160;</a></span>specUpWrapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::specUpWrapper </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00301">301</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00154">instance</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00248">init()</a>.</p>
+
+</div>
+</div>
+<a id="a677842e4ffa6561b707665fb2c190ab4" name="a677842e4ffa6561b707665fb2c190ab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a677842e4ffa6561b707665fb2c190ab4">&#9670;&#160;</a></span>specWrapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::specWrapper </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00300">300</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00154">instance</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00248">init()</a>.</p>
+
+</div>
+</div>
+<a id="a829f8269b1c0fd26748eaedd04ebc47b" name="a829f8269b1c0fd26748eaedd04ebc47b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a829f8269b1c0fd26748eaedd04ebc47b">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::update </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje stan silnika. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Parametr timera </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00271">271</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8cpp_source.html#l00168">processInput()</a>, <a class="el" href="_engine_8h_source.html#l00140">targetFPS</a> i <a class="el" href="_engine_8cpp_source.html#l00296">updateWrapper()</a>.</p>
+
+</div>
+</div>
+<a id="a8a4bb856bcf1f397db3f2243b8439901" name="a8a4bb856bcf1f397db3f2243b8439901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a4bb856bcf1f397db3f2243b8439901">&#9670;&#160;</a></span>updateWrapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::updateWrapper </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8cpp_source.html#l00296">296</a> pliku <a class="el" href="_engine_8cpp_source.html">Engine.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00154">instance</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00294">run()</a> i <a class="el" href="_engine_8cpp_source.html#l00271">update()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="a922e7ff328db4522ed555911627dcb8f" name="a922e7ff328db4522ed555911627dcb8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a922e7ff328db4522ed555911627dcb8f">&#9670;&#160;</a></span>camera</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_camera.html">Camera</a>* Engine::camera</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wskaźnik na instancję kamery. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00143">143</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a>, <a class="el" href="_engine_8cpp_source.html#l00168">processInput()</a>, <a class="el" href="_engine_8cpp_source.html#l00199">render()</a>, <a class="el" href="_engine_8cpp_source.html#l00084">spawnCube()</a>, <a class="el" href="_engine_8cpp_source.html#l00091">spawnPyramid()</a>, <a class="el" href="_engine_8cpp_source.html#l00098">spawnSphere()</a>, <a class="el" href="_engine_8cpp_source.html#l00106">spawnTeapot()</a>, <a class="el" href="_engine_8cpp_source.html#l00114">spawnTorus()</a> i <a class="el" href="_engine_8cpp_source.html#l00070">~Engine()</a>.</p>
+
+</div>
+</div>
+<a id="a51493b63c58390f775dd2bc6f72a2b75" name="a51493b63c58390f775dd2bc6f72a2b75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51493b63c58390f775dd2bc6f72a2b75">&#9670;&#160;</a></span>instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_engine.html">Engine</a> * Engine::instance = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Statyczna instancja singletona. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00154">154</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a>, <a class="el" href="_engine_8cpp_source.html#l00299">kbUpWrapper()</a>, <a class="el" href="_engine_8cpp_source.html#l00298">kbWrapper()</a>, <a class="el" href="_engine_8cpp_source.html#l00302">mouseWrapper()</a>, <a class="el" href="_engine_8cpp_source.html#l00295">renderWrapper()</a>, <a class="el" href="_engine_8cpp_source.html#l00297">reshapeWrapper()</a>, <a class="el" href="_engine_8cpp_source.html#l00301">specUpWrapper()</a>, <a class="el" href="_engine_8cpp_source.html#l00300">specWrapper()</a> i <a class="el" href="_engine_8cpp_source.html#l00296">updateWrapper()</a>.</p>
+
+</div>
+</div>
+<a id="a4ecc1d75cbe50953b43759686ce21b83" name="a4ecc1d75cbe50953b43759686ce21b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ecc1d75cbe50953b43759686ce21b83">&#9670;&#160;</a></span>keys</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Engine::keys[256]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tablica stanu klawiszy zwykłych. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00141">141</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a>, <a class="el" href="_engine_8cpp_source.html#l00122">keyboard()</a>, <a class="el" href="_engine_8cpp_source.html#l00161">keyboardUp()</a> i <a class="el" href="_engine_8cpp_source.html#l00168">processInput()</a>.</p>
+
+</div>
+</div>
+<a id="ad793397bd96300483ddc8a493814560e" name="ad793397bd96300483ddc8a493814560e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad793397bd96300483ddc8a493814560e">&#9670;&#160;</a></span>lightEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Engine::lightEnabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flaga włączenia oświetlenia. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00148">148</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00277">drawInterface()</a>, <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a>, <a class="el" href="_engine_8cpp_source.html#l00122">keyboard()</a> i <a class="el" href="_engine_8cpp_source.html#l00199">render()</a>.</p>
+
+</div>
+</div>
+<a id="a8d483ecdc54d8fd999c0384dedebecea" name="a8d483ecdc54d8fd999c0384dedebecea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d483ecdc54d8fd999c0384dedebecea">&#9670;&#160;</a></span>objects</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_game_object.html">GameObject</a>*&gt; Engine::objects</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wektor wszystkich obiektów w scenie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00145">145</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00277">drawInterface()</a>, <a class="el" href="_engine_8cpp_source.html#l00122">keyboard()</a>, <a class="el" href="_engine_8cpp_source.html#l00168">processInput()</a>, <a class="el" href="_engine_8cpp_source.html#l00199">render()</a>, <a class="el" href="_engine_8cpp_source.html#l00084">spawnCube()</a>, <a class="el" href="_engine_8cpp_source.html#l00091">spawnPyramid()</a>, <a class="el" href="_engine_8cpp_source.html#l00098">spawnSphere()</a>, <a class="el" href="_engine_8cpp_source.html#l00106">spawnTeapot()</a>, <a class="el" href="_engine_8cpp_source.html#l00114">spawnTorus()</a> i <a class="el" href="_engine_8cpp_source.html#l00070">~Engine()</a>.</p>
+
+</div>
+</div>
+<a id="addc3357ad9068350a461cd666ff46c4b" name="addc3357ad9068350a461cd666ff46c4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addc3357ad9068350a461cd666ff46c4b">&#9670;&#160;</a></span>selectedIdx</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Engine::selectedIdx</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indeks obecnie wybranego obiektu. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00146">146</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00277">drawInterface()</a>, <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a>, <a class="el" href="_engine_8cpp_source.html#l00122">keyboard()</a>, <a class="el" href="_engine_8cpp_source.html#l00168">processInput()</a>, <a class="el" href="_engine_8cpp_source.html#l00199">render()</a>, <a class="el" href="_engine_8cpp_source.html#l00084">spawnCube()</a>, <a class="el" href="_engine_8cpp_source.html#l00091">spawnPyramid()</a>, <a class="el" href="_engine_8cpp_source.html#l00098">spawnSphere()</a>, <a class="el" href="_engine_8cpp_source.html#l00106">spawnTeapot()</a> i <a class="el" href="_engine_8cpp_source.html#l00114">spawnTorus()</a>.</p>
+
+</div>
+</div>
+<a id="a675c54b3df57926dd20349d9fe906512" name="a675c54b3df57926dd20349d9fe906512"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a675c54b3df57926dd20349d9fe906512">&#9670;&#160;</a></span>smoothShading</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Engine::smoothShading</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flaga włączenia smooth shadingu. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00149">149</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a>, <a class="el" href="_engine_8cpp_source.html#l00122">keyboard()</a> i <a class="el" href="_engine_8cpp_source.html#l00199">render()</a>.</p>
+
+</div>
+</div>
+<a id="a686b5b209aa7fd4d0073f3e14736efc6" name="a686b5b209aa7fd4d0073f3e14736efc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a686b5b209aa7fd4d0073f3e14736efc6">&#9670;&#160;</a></span>specialKeys</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Engine::specialKeys[256]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tablica stanu klawiszy specjalnych. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00142">142</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a>, <a class="el" href="_engine_8cpp_source.html#l00168">processInput()</a>, <a class="el" href="_engine_8cpp_source.html#l00165">specialFunc()</a> i <a class="el" href="_engine_8cpp_source.html#l00166">specialUpFunc()</a>.</p>
+
+</div>
+</div>
+<a id="a04c0191a54fc9baa22cbe96bc481557a" name="a04c0191a54fc9baa22cbe96bc481557a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04c0191a54fc9baa22cbe96bc481557a">&#9670;&#160;</a></span>targetFPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Engine::targetFPS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Docelowa liczba klatek na sekundę </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00140">140</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00277">drawInterface()</a>, <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a>, <a class="el" href="_engine_8cpp_source.html#l00122">keyboard()</a>, <a class="el" href="_engine_8cpp_source.html#l00294">run()</a> i <a class="el" href="_engine_8cpp_source.html#l00271">update()</a>.</p>
+
+</div>
+</div>
+<a id="a29c168f4d05145a4a3280b0fcd8d2cdd" name="a29c168f4d05145a4a3280b0fcd8d2cdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c168f4d05145a4a3280b0fcd8d2cdd">&#9670;&#160;</a></span>textureCrate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_bitmap_handler.html">BitmapHandler</a>* Engine::textureCrate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura skrzyni. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00151">151</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a>, <a class="el" href="_engine_8cpp_source.html#l00078">loadTexture()</a>, <a class="el" href="_engine_8cpp_source.html#l00084">spawnCube()</a> i <a class="el" href="_engine_8cpp_source.html#l00070">~Engine()</a>.</p>
+
+</div>
+</div>
+<a id="ad25708e637a9e9c1908fefcb0c62fcac" name="ad25708e637a9e9c1908fefcb0c62fcac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad25708e637a9e9c1908fefcb0c62fcac">&#9670;&#160;</a></span>textureWall</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_bitmap_handler.html">BitmapHandler</a>* Engine::textureWall</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura ściany. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00152">152</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a>, <a class="el" href="_engine_8cpp_source.html#l00078">loadTexture()</a>, <a class="el" href="_engine_8cpp_source.html#l00091">spawnPyramid()</a> i <a class="el" href="_engine_8cpp_source.html#l00070">~Engine()</a>.</p>
+
+</div>
+</div>
+<a id="a0ac480c63e98dd9b1fe4c4a3c9e6a7ca" name="a0ac480c63e98dd9b1fe4c4a3c9e6a7ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ac480c63e98dd9b1fe4c4a3c9e6a7ca">&#9670;&#160;</a></span>windowHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Engine::windowHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wysokość okna aplikacji. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00139">139</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00277">drawInterface()</a>, <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a> i <a class="el" href="_engine_8cpp_source.html#l00308">reshape()</a>.</p>
+
+</div>
+</div>
+<a id="a541d921b6b97e8756522958a58814344" name="a541d921b6b97e8756522958a58814344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a541d921b6b97e8756522958a58814344">&#9670;&#160;</a></span>windowWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Engine::windowWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Szerokość okna aplikacji. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00138">138</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00277">drawInterface()</a>, <a class="el" href="_engine_8cpp_source.html#l00061">Engine()</a> i <a class="el" href="_engine_8cpp_source.html#l00308">reshape()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>src/<a class="el" href="_engine_8h_source.html">Engine.h</a></li>
+<li>src/<a class="el" href="_engine_8cpp_source.html">Engine.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_engine.html">Engine</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

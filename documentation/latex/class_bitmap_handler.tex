@@ -1,0 +1,227 @@
+\doxysection{Dokumentacja klasy Bitmap\+Handler}
+\hypertarget{class_bitmap_handler}{}\label{class_bitmap_handler}\index{BitmapHandler@{BitmapHandler}}
+
+
+Menedżer tekstur do renderowania Open\+GL.  
+
+
+
+
+{\ttfamily \#include $<$Bitmap\+Handler.\+h$>$}
+
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bitmap_handler_a4b651f24d44bd3fb0223c6963ab4e7ce}{Bitmap\+Handler}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Konstruktor -\/ ładuje teksturę z pliku. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_bitmap_handler_a1f3e49ed094cc684909c97d3b56fa2e9}{\texorpdfstring{$\sim$}{\string~}\+Bitmap\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor -\/ zwalnia zasoby tekstury. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bitmap_handler_a283d17a36d21e78b601e6c49e3e39a80}{bind}} ()
+\begin{DoxyCompactList}\small\item\em Wiąże teksturę z kontekstem Open\+GL. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_bitmap_handler_a24657f3c6af15239324fb292ba2d94c5}{get\+Texture\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca identyfikator tekstury. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+GLuint \mbox{\hyperlink{class_bitmap_handler_afb7ed757ac3c8969e59dc12f60de80c5}{texture\+ID}}
+\begin{DoxyCompactList}\small\item\em Identyfikator tekstury Open\+GL. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bitmap_handler_aad204798965e06a3564981c7eca49e9e}{width}}
+\item 
+int \mbox{\hyperlink{class_bitmap_handler_a3a1df71b7300646c1d12a01becc530a4}{height}}
+\item 
+int \mbox{\hyperlink{class_bitmap_handler_abebac76b3eff5ac142aef3d372178c4b}{channels}}
+\begin{DoxyCompactList}\small\item\em Wymiary i liczba kanałów obrazu. \end{DoxyCompactList}\item 
+unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bitmap_handler_a7fca78d378ebdd9dd391a1d9895aaad8}{data}}
+\begin{DoxyCompactList}\small\item\em Dane pikseli obrazu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Menedżer tekstur do renderowania Open\+GL. 
+
+Klasa \doxylink{class_bitmap_handler}{Bitmap\+Handler} odpowiada za ładowanie plików obrazów (BMP, PNG, JPG) i konwersję ich na tekstury Open\+GL. Obsługuje również wiązanie i odwiązanie tekstur podczas renderowania. 
+
+Definicja w linii \mbox{\hyperlink{_bitmap_handler_8h_source_l00021}{21}} pliku \mbox{\hyperlink{_bitmap_handler_8h_source}{Bitmap\+Handler.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_bitmap_handler_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_bitmap_handler_a4b651f24d44bd3fb0223c6963ab4e7ce}\index{BitmapHandler@{BitmapHandler}!BitmapHandler@{BitmapHandler}}
+\index{BitmapHandler@{BitmapHandler}!BitmapHandler@{BitmapHandler}}
+\doxysubsubsection{\texorpdfstring{BitmapHandler()}{BitmapHandler()}}
+{\footnotesize\ttfamily \label{class_bitmap_handler_a4b651f24d44bd3fb0223c6963ab4e7ce} 
+Bitmap\+Handler\+::\+Bitmap\+Handler (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor -\/ ładuje teksturę z pliku. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em filename} & Ścieżka do pliku z teksturą (BMP, PNG, JPG)\\
+\hline
+\end{DoxyParams}
+Ładuje obraz z dysku i konwertuje go do formatu tekstury Open\+GL. 
+
+Definicja w linii \mbox{\hyperlink{_bitmap_handler_8cpp_source_l00005}{5}} pliku \mbox{\hyperlink{_bitmap_handler_8cpp_source}{Bitmap\+Handler.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_bitmap_handler_8h_source_l00024}{channels}}, \mbox{\hyperlink{_bitmap_handler_8h_source_l00025}{data}}, \mbox{\hyperlink{_bitmap_handler_8h_source_l00024}{height}}, \mbox{\hyperlink{_bitmap_handler_8h_source_l00023}{texture\+ID}} i \mbox{\hyperlink{_bitmap_handler_8h_source_l00024}{width}}.
+
+\Hypertarget{class_bitmap_handler_a1f3e49ed094cc684909c97d3b56fa2e9}\index{BitmapHandler@{BitmapHandler}!````~BitmapHandler@{\texorpdfstring{$\sim$}{\string~}BitmapHandler}}
+\index{````~BitmapHandler@{\texorpdfstring{$\sim$}{\string~}BitmapHandler}!BitmapHandler@{BitmapHandler}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BitmapHandler()}{\string~BitmapHandler()}}
+{\footnotesize\ttfamily \label{class_bitmap_handler_a1f3e49ed094cc684909c97d3b56fa2e9} 
+Bitmap\+Handler\+::\texorpdfstring{$\sim$}{\string~}\+Bitmap\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destruktor -\/ zwalnia zasoby tekstury. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_bitmap_handler_8cpp_source_l00026}{26}} pliku \mbox{\hyperlink{_bitmap_handler_8cpp_source}{Bitmap\+Handler.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_bitmap_handler_8h_source_l00025}{data}} i \mbox{\hyperlink{_bitmap_handler_8h_source_l00023}{texture\+ID}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_bitmap_handler_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_bitmap_handler_a283d17a36d21e78b601e6c49e3e39a80}\index{BitmapHandler@{BitmapHandler}!bind@{bind}}
+\index{bind@{bind}!BitmapHandler@{BitmapHandler}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily \label{class_bitmap_handler_a283d17a36d21e78b601e6c49e3e39a80} 
+void Bitmap\+Handler\+::bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Wiąże teksturę z kontekstem Open\+GL. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_bitmap_handler_8cpp_source_l00031}{31}} pliku \mbox{\hyperlink{_bitmap_handler_8cpp_source}{Bitmap\+Handler.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_bitmap_handler_8h_source_l00023}{texture\+ID}}.
+
+\Hypertarget{class_bitmap_handler_a24657f3c6af15239324fb292ba2d94c5}\index{BitmapHandler@{BitmapHandler}!getTextureID@{getTextureID}}
+\index{getTextureID@{getTextureID}!BitmapHandler@{BitmapHandler}}
+\doxysubsubsection{\texorpdfstring{getTextureID()}{getTextureID()}}
+{\footnotesize\ttfamily \label{class_bitmap_handler_a24657f3c6af15239324fb292ba2d94c5} 
+GLuint Bitmap\+Handler\+::get\+Texture\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca identyfikator tekstury. 
+
+\begin{DoxyReturn}{Zwraca}
+Identyfikator tekstury Open\+GL 
+\end{DoxyReturn}
+
+
+Definicja w linii \mbox{\hyperlink{_bitmap_handler_8h_source_l00050}{50}} pliku \mbox{\hyperlink{_bitmap_handler_8h_source}{Bitmap\+Handler.\+h}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_bitmap_handler_8h_source_l00023}{texture\+ID}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_bitmap_handler_doc-variable-members}
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{class_bitmap_handler_abebac76b3eff5ac142aef3d372178c4b}\index{BitmapHandler@{BitmapHandler}!channels@{channels}}
+\index{channels@{channels}!BitmapHandler@{BitmapHandler}}
+\doxysubsubsection{\texorpdfstring{channels}{channels}}
+{\footnotesize\ttfamily \label{class_bitmap_handler_abebac76b3eff5ac142aef3d372178c4b} 
+int Bitmap\+Handler\+::channels\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wymiary i liczba kanałów obrazu. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_bitmap_handler_8h_source_l00024}{24}} pliku \mbox{\hyperlink{_bitmap_handler_8h_source}{Bitmap\+Handler.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_bitmap_handler_8cpp_source_l00005}{Bitmap\+Handler()}}.
+
+\Hypertarget{class_bitmap_handler_a7fca78d378ebdd9dd391a1d9895aaad8}\index{BitmapHandler@{BitmapHandler}!data@{data}}
+\index{data@{data}!BitmapHandler@{BitmapHandler}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{class_bitmap_handler_a7fca78d378ebdd9dd391a1d9895aaad8} 
+unsigned char\texorpdfstring{$\ast$}{*} Bitmap\+Handler\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dane pikseli obrazu. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_bitmap_handler_8h_source_l00025}{25}} pliku \mbox{\hyperlink{_bitmap_handler_8h_source}{Bitmap\+Handler.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_bitmap_handler_8cpp_source_l00005}{Bitmap\+Handler()}} i \mbox{\hyperlink{_bitmap_handler_8cpp_source_l00026}{\texorpdfstring{$\sim$}{\string~}\+Bitmap\+Handler()}}.
+
+\Hypertarget{class_bitmap_handler_a3a1df71b7300646c1d12a01becc530a4}\index{BitmapHandler@{BitmapHandler}!height@{height}}
+\index{height@{height}!BitmapHandler@{BitmapHandler}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{class_bitmap_handler_a3a1df71b7300646c1d12a01becc530a4} 
+int Bitmap\+Handler\+::height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_bitmap_handler_8h_source_l00024}{24}} pliku \mbox{\hyperlink{_bitmap_handler_8h_source}{Bitmap\+Handler.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_bitmap_handler_8cpp_source_l00005}{Bitmap\+Handler()}}.
+
+\Hypertarget{class_bitmap_handler_afb7ed757ac3c8969e59dc12f60de80c5}\index{BitmapHandler@{BitmapHandler}!textureID@{textureID}}
+\index{textureID@{textureID}!BitmapHandler@{BitmapHandler}}
+\doxysubsubsection{\texorpdfstring{textureID}{textureID}}
+{\footnotesize\ttfamily \label{class_bitmap_handler_afb7ed757ac3c8969e59dc12f60de80c5} 
+GLuint Bitmap\+Handler\+::texture\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Identyfikator tekstury Open\+GL. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_bitmap_handler_8h_source_l00023}{23}} pliku \mbox{\hyperlink{_bitmap_handler_8h_source}{Bitmap\+Handler.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_bitmap_handler_8cpp_source_l00031}{bind()}}, \mbox{\hyperlink{_bitmap_handler_8cpp_source_l00005}{Bitmap\+Handler()}}, \mbox{\hyperlink{_bitmap_handler_8h_source_l00050}{get\+Texture\+ID()}} i \mbox{\hyperlink{_bitmap_handler_8cpp_source_l00026}{\texorpdfstring{$\sim$}{\string~}\+Bitmap\+Handler()}}.
+
+\Hypertarget{class_bitmap_handler_aad204798965e06a3564981c7eca49e9e}\index{BitmapHandler@{BitmapHandler}!width@{width}}
+\index{width@{width}!BitmapHandler@{BitmapHandler}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{class_bitmap_handler_aad204798965e06a3564981c7eca49e9e} 
+int Bitmap\+Handler\+::width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_bitmap_handler_8h_source_l00024}{24}} pliku \mbox{\hyperlink{_bitmap_handler_8h_source}{Bitmap\+Handler.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_bitmap_handler_8cpp_source_l00005}{Bitmap\+Handler()}}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_bitmap_handler_8h}{Bitmap\+Handler.\+h}}\item 
+src/\mbox{\hyperlink{_bitmap_handler_8cpp}{Bitmap\+Handler.\+cpp}}\end{DoxyCompactItemize}

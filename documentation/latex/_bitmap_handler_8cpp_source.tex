@@ -1,0 +1,39 @@
+\doxysection{Bitmap\+Handler.\+cpp}
+\hypertarget{_bitmap_handler_8cpp_source}{}\label{_bitmap_handler_8cpp_source}\index{src/BitmapHandler.cpp@{src/BitmapHandler.cpp}}
+\mbox{\hyperlink{_bitmap_handler_8cpp}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bitmap_handler_8h}{BitmapHandler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}stb\_image.h"{}}\ }
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00005}\mbox{\hyperlink{class_bitmap_handler_a4b651f24d44bd3fb0223c6963ab4e7ce}{00005}}\ \mbox{\hyperlink{class_bitmap_handler_a4b651f24d44bd3fb0223c6963ab4e7ce}{BitmapHandler::BitmapHandler}}(\textcolor{keyword}{const}\ std::string\&\ filename)\ \{}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00006}00006\ \ \ \ \ glGenTextures(1,\ \&\mbox{\hyperlink{class_bitmap_handler_afb7ed757ac3c8969e59dc12f60de80c5}{textureID}});}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00007}00007\ \ \ \ \ glBindTexture(GL\_TEXTURE\_2D,\ \mbox{\hyperlink{class_bitmap_handler_afb7ed757ac3c8969e59dc12f60de80c5}{textureID}});}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00009}00009\ \ \ \ \ glTexParameteri(GL\_TEXTURE\_2D,\ GL\_TEXTURE\_WRAP\_S,\ GL\_REPEAT);}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00010}00010\ \ \ \ \ glTexParameteri(GL\_TEXTURE\_2D,\ GL\_TEXTURE\_WRAP\_T,\ GL\_REPEAT);}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00011}00011\ \ \ \ \ glTexParameteri(GL\_TEXTURE\_2D,\ GL\_TEXTURE\_MIN\_FILTER,\ GL\_LINEAR);}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00012}00012\ \ \ \ \ glTexParameteri(GL\_TEXTURE\_2D,\ GL\_TEXTURE\_MAG\_FILTER,\ GL\_LINEAR);}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00014}00014\ \ \ \ \ stbi\_set\_flip\_vertically\_on\_load(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{class_bitmap_handler_a7fca78d378ebdd9dd391a1d9895aaad8}{data}}\ =\ stbi\_load(filename.c\_str(),\ \&\mbox{\hyperlink{class_bitmap_handler_aad204798965e06a3564981c7eca49e9e}{width}},\ \&\mbox{\hyperlink{class_bitmap_handler_a3a1df71b7300646c1d12a01becc530a4}{height}},\ \&\mbox{\hyperlink{class_bitmap_handler_abebac76b3eff5ac142aef3d372178c4b}{channels}},\ 0);}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bitmap_handler_a7fca78d378ebdd9dd391a1d9895aaad8}{data}})\ \{}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ GLenum\ format\ =\ (\mbox{\hyperlink{class_bitmap_handler_abebac76b3eff5ac142aef3d372178c4b}{channels}}\ ==\ 4)\ ?\ GL\_RGBA\ :\ GL\_RGB;}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ glTexImage2D(GL\_TEXTURE\_2D,\ 0,\ format,\ \mbox{\hyperlink{class_bitmap_handler_aad204798965e06a3564981c7eca49e9e}{width}},\ \mbox{\hyperlink{class_bitmap_handler_a3a1df71b7300646c1d12a01becc530a4}{height}},\ 0,\ format,\ GL\_UNSIGNED\_BYTE,\ \mbox{\hyperlink{class_bitmap_handler_a7fca78d378ebdd9dd391a1d9895aaad8}{data}});}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Texture\ loaded:\ "{}}\ <<\ filename\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00021}00021\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ load\ texture:\ "{}}\ <<\ filename\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00026}\mbox{\hyperlink{class_bitmap_handler_a1f3e49ed094cc684909c97d3b56fa2e9}{00026}}\ \mbox{\hyperlink{class_bitmap_handler_a1f3e49ed094cc684909c97d3b56fa2e9}{BitmapHandler::\string~BitmapHandler}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bitmap_handler_a7fca78d378ebdd9dd391a1d9895aaad8}{data}})\ stbi\_image\_free(\mbox{\hyperlink{class_bitmap_handler_a7fca78d378ebdd9dd391a1d9895aaad8}{data}});}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00028}00028\ \ \ \ \ glDeleteTextures(1,\ \&\mbox{\hyperlink{class_bitmap_handler_afb7ed757ac3c8969e59dc12f60de80c5}{textureID}});}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00031}\mbox{\hyperlink{class_bitmap_handler_a283d17a36d21e78b601e6c49e3e39a80}{00031}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bitmap_handler_a283d17a36d21e78b601e6c49e3e39a80}{BitmapHandler::bind}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00032}00032\ \ \ \ \ glBindTexture(GL\_TEXTURE\_2D,\ \mbox{\hyperlink{class_bitmap_handler_afb7ed757ac3c8969e59dc12f60de80c5}{textureID}});}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8cpp_source_l00033}00033\ \}}
+
+\end{DoxyCode}

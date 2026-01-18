@@ -1,0 +1,834 @@
+\doxysection{Dokumentacja klasy Engine}
+\hypertarget{class_engine}{}\label{class_engine}\index{Engine@{Engine}}
+
+
+Główny silnik grafiki 3D.  
+
+
+
+
+{\ttfamily \#include $<$Engine.\+h$>$}
+
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}{Engine}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor \doxylink{class_engine}{Engine}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_a8ef7030a089ecb30bbfcb9e43094717a}{\texorpdfstring{$\sim$}{\string~}\+Engine}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor \doxylink{class_engine}{Engine}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_a1befa06d8ceae1c190010809dc5f0bcb}{init}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv, int w, int h, const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em Inicjalizuje silnik. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_a1a210cf30d6bd330b3649439ecd6d6cc}{run}} ()
+\begin{DoxyCompactList}\small\item\em Uruchamia główną pętlę silnika. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___spawn_functions_ga488effead8a74c9e7d69f3f1b09d1ae6}{spawn\+Cube}} ()
+\begin{DoxyCompactList}\small\item\em Tworzy sześcian i dodaje go do sceny. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___spawn_functions_ga6eec716a49b05f66d14b782d15a00ad9}{spawn\+Pyramid}} ()
+\begin{DoxyCompactList}\small\item\em Tworzy piramidę i dodaje ją do sceny. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___spawn_functions_gaf3e12291a10deaa16074dc79caf71f22}{spawn\+Sphere}} ()
+\begin{DoxyCompactList}\small\item\em Tworzy sferę i dodaje ją do sceny. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___spawn_functions_ga5952e27fba1f42211350b82b2b9beb01}{spawn\+Teapot}} ()
+\begin{DoxyCompactList}\small\item\em Tworzy czajnik Utah i dodaje go do sceny. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___spawn_functions_gae26858ce255c5fd23b52bedb194a813a}{spawn\+Torus}} ()
+\begin{DoxyCompactList}\small\item\em Tworzy torus i dodaje go do sceny. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Statyczne metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_engine}{Engine}} \& \mbox{\hyperlink{class_engine_accfdaedded34d223576bea363effa1e0}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Pobiera instancję singletona \doxylink{class_engine}{Engine}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_engine_a87ea1cf40a002568437c2b407dd979aa}{render\+Wrapper}} ()
+\item 
+static void \mbox{\hyperlink{class_engine_a8a4bb856bcf1f397db3f2243b8439901}{update\+Wrapper}} (int v)
+\item 
+static void \mbox{\hyperlink{class_engine_aa4f3992de607c6d030ac456e47003bc3}{reshape\+Wrapper}} (int w, int h)
+\item 
+static void \mbox{\hyperlink{class_engine_a40a31727e31c2d56ae5f6665e2611dc2}{kb\+Wrapper}} (unsigned char k, int x, int y)
+\item 
+static void \mbox{\hyperlink{class_engine_ad2aba00209f3c36f21ec6b91335811ce}{kb\+Up\+Wrapper}} (unsigned char k, int x, int y)
+\item 
+static void \mbox{\hyperlink{class_engine_a677842e4ffa6561b707665fb2c190ab4}{spec\+Wrapper}} (int k, int x, int y)
+\item 
+static void \mbox{\hyperlink{class_engine_ae2e05884849e469bd884676c464ba70a}{spec\+Up\+Wrapper}} (int k, int x, int y)
+\item 
+static void \mbox{\hyperlink{class_engine_a1126d1c569b052cf9c04769d1b66ce2e}{mouse\+Wrapper}} (int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_engine_a7960743aefd62e846e7f3cd92c18bc73}{render}} ()
+\begin{DoxyCompactList}\small\item\em Renderuje scenę \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_a829f8269b1c0fd26748eaedd04ebc47b}{update}} (int value)
+\begin{DoxyCompactList}\small\item\em Aktualizuje stan silnika. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_ab89b0964c80e43695a030b8093750f84}{reshape}} (int w, int h)
+\begin{DoxyCompactList}\small\item\em Zmienia rozmiar okna. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_aa1aec35d59f1364a79c7a62c29640226}{process\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Przetwarza wejście użytkownika. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_a46ae0bb0f7cd96354503f2a69f5cb7d9}{load\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Ładuje tekstury z plików. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_ae179eea3b1578db6eac14c817ef5b866}{draw\+Interface}} ()
+\begin{DoxyCompactList}\small\item\em Rysuje interfejs użytkownika. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_a23f86b2a9ddd50e49f61a9ca22998efc}{keyboard}} (unsigned char key, int x, int y)
+\item 
+void \mbox{\hyperlink{class_engine_ac0a89024d843d71e9c6f72dde0fcf996}{keyboard\+Up}} (unsigned char key, int x, int y)
+\item 
+void \mbox{\hyperlink{class_engine_abaf6dd0375fcfeb33079ae7d0e63b689}{special\+Func}} (int key, int x, int y)
+\item 
+void \mbox{\hyperlink{class_engine_a086fe548346df5666cf6b755a77dcf1a}{special\+Up\+Func}} (int key, int x, int y)
+\item 
+void \mbox{\hyperlink{class_engine_a663340eb9d199b16179037bc0ffeb637}{mouse\+Move}} (int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_engine_a541d921b6b97e8756522958a58814344}{window\+Width}}
+\begin{DoxyCompactList}\small\item\em Szerokość okna aplikacji. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_engine_a0ac480c63e98dd9b1fe4c4a3c9e6a7ca}{window\+Height}}
+\begin{DoxyCompactList}\small\item\em Wysokość okna aplikacji. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_engine_a04c0191a54fc9baa22cbe96bc481557a}{target\+FPS}}
+\begin{DoxyCompactList}\small\item\em Docelowa liczba klatek na sekundę \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_engine_a4ecc1d75cbe50953b43759686ce21b83}{keys}} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em Tablica stanu klawiszy zwykłych. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_engine_a686b5b209aa7fd4d0073f3e14736efc6}{special\+Keys}} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em Tablica stanu klawiszy specjalnych. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_camera}{Camera}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_a922e7ff328db4522ed555911627dcb8f}{camera}}
+\begin{DoxyCompactList}\small\item\em Wskaźnik na instancję kamery. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_engine_a8d483ecdc54d8fd999c0384dedebecea}{objects}}
+\begin{DoxyCompactList}\small\item\em Wektor wszystkich obiektów w scenie. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_engine_addc3357ad9068350a461cd666ff46c4b}{selected\+Idx}}
+\begin{DoxyCompactList}\small\item\em Indeks obecnie wybranego obiektu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_engine_ad793397bd96300483ddc8a493814560e}{light\+Enabled}}
+\begin{DoxyCompactList}\small\item\em Flaga włączenia oświetlenia. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_engine_a675c54b3df57926dd20349d9fe906512}{smooth\+Shading}}
+\begin{DoxyCompactList}\small\item\em Flaga włączenia smooth shadingu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_a29c168f4d05145a4a3280b0fcd8d2cdd}{texture\+Crate}}
+\begin{DoxyCompactList}\small\item\em Tekstura skrzyni. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_ad25708e637a9e9c1908fefcb0c62fcac}{texture\+Wall}}
+\begin{DoxyCompactList}\small\item\em Tekstura ściany. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Statyczne atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_engine}{Engine}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_a51493b63c58390f775dd2bc6f72a2b75}{instance}} = nullptr
+\begin{DoxyCompactList}\small\item\em Statyczna instancja singletona. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Główny silnik grafiki 3D. 
+
+Singleton zarządzający całym systemem renderowania Open\+GL. Odpowiada za inicjalizację, pętlę główną, obsługę zdarzeń oraz zarządzanie sceną 3D i obiektami. 
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00136}{136}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_engine_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_engine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}\index{Engine@{Engine}!Engine@{Engine}}
+\index{Engine@{Engine}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Engine()}{Engine()}}
+{\footnotesize\ttfamily \label{class_engine_a8c98683b0a3aa28d8ab72a8bcd0d52f2} 
+Engine\+::\+Engine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor \doxylink{class_engine}{Engine}. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00056}{56}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00143}{camera}}, \mbox{\hyperlink{_engine_8h_source_l00154}{instance}}, \mbox{\hyperlink{_engine_8h_source_l00141}{keys}}, \mbox{\hyperlink{_engine_8h_source_l00148}{light\+Enabled}}, \mbox{\hyperlink{_engine_8h_source_l00146}{selected\+Idx}}, \mbox{\hyperlink{_engine_8h_source_l00149}{smooth\+Shading}}, \mbox{\hyperlink{_engine_8h_source_l00142}{special\+Keys}}, \mbox{\hyperlink{_engine_8h_source_l00140}{target\+FPS}}, \mbox{\hyperlink{_engine_8h_source_l00151}{texture\+Crate}}, \mbox{\hyperlink{_engine_8h_source_l00152}{texture\+Wall}}, \mbox{\hyperlink{_engine_8h_source_l00139}{window\+Height}} i \mbox{\hyperlink{_engine_8h_source_l00138}{window\+Width}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8h_source_l00210}{get\+Instance()}}.
+
+\Hypertarget{class_engine_a8ef7030a089ecb30bbfcb9e43094717a}\index{Engine@{Engine}!````~Engine@{\texorpdfstring{$\sim$}{\string~}Engine}}
+\index{````~Engine@{\texorpdfstring{$\sim$}{\string~}Engine}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Engine()}{\string~Engine()}}
+{\footnotesize\ttfamily \label{class_engine_a8ef7030a089ecb30bbfcb9e43094717a} 
+Engine\+::\texorpdfstring{$\sim$}{\string~}\+Engine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destruktor \doxylink{class_engine}{Engine}. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00065}{65}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00143}{camera}}, \mbox{\hyperlink{_engine_8h_source_l00145}{objects}}, \mbox{\hyperlink{_engine_8h_source_l00151}{texture\+Crate}} i \mbox{\hyperlink{_engine_8h_source_l00152}{texture\+Wall}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_engine_ae179eea3b1578db6eac14c817ef5b866}\index{Engine@{Engine}!drawInterface@{drawInterface}}
+\index{drawInterface@{drawInterface}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{drawInterface()}{drawInterface()}}
+{\footnotesize\ttfamily \label{class_engine_ae179eea3b1578db6eac14c817ef5b866} 
+void Engine\+::draw\+Interface (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Rysuje interfejs użytkownika. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00272}{272}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00148}{light\+Enabled}}, \mbox{\hyperlink{_engine_8h_source_l00145}{objects}}, \mbox{\hyperlink{_engine_8h_source_l00146}{selected\+Idx}}, \mbox{\hyperlink{_engine_8h_source_l00140}{target\+FPS}}, \mbox{\hyperlink{_engine_8h_source_l00139}{window\+Height}} i \mbox{\hyperlink{_engine_8h_source_l00138}{window\+Width}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00194}{render()}}.
+
+\Hypertarget{class_engine_accfdaedded34d223576bea363effa1e0}\index{Engine@{Engine}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_engine_accfdaedded34d223576bea363effa1e0} 
+\mbox{\hyperlink{class_engine}{Engine}} \& Engine\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Pobiera instancję singletona \doxylink{class_engine}{Engine}. 
+
+\begin{DoxyReturn}{Zwraca}
+Referencja na instancję \doxylink{class_engine}{Engine} 
+\end{DoxyReturn}
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00210}{210}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}}.
+
+
+
+Odwołania w \mbox{\hyperlink{main_8cpp_source_l00024}{main()}}.
+
+\Hypertarget{class_engine_a1befa06d8ceae1c190010809dc5f0bcb}\index{Engine@{Engine}!init@{init}}
+\index{init@{init}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_engine_a1befa06d8ceae1c190010809dc5f0bcb} 
+void Engine\+::init (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{, }\item[{int}]{w}{, }\item[{int}]{h}{, }\item[{const std\+::string \&}]{title}{}\end{DoxyParamCaption})}
+
+
+
+Inicjalizuje silnik. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em argc} & Liczba argumentów wiersza poleceń \\
+\hline
+{\em argv} & Argumenty wiersza poleceń \\
+\hline
+{\em w} & Szerokość okna \\
+\hline
+{\em h} & Wysokość okna \\
+\hline
+{\em title} & Tytuł okna \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00243}{243}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8cpp_source_l00294}{kb\+Up\+Wrapper()}}, \mbox{\hyperlink{_engine_8cpp_source_l00293}{kb\+Wrapper()}}, \mbox{\hyperlink{_engine_8cpp_source_l00073}{load\+Texture()}}, \mbox{\hyperlink{_engine_8cpp_source_l00297}{mouse\+Wrapper()}}, \mbox{\hyperlink{_engine_8cpp_source_l00290}{render\+Wrapper()}}, \mbox{\hyperlink{_engine_8cpp_source_l00292}{reshape\+Wrapper()}}, \mbox{\hyperlink{_engine_8cpp_source_l00296}{spec\+Up\+Wrapper()}} i \mbox{\hyperlink{_engine_8cpp_source_l00295}{spec\+Wrapper()}}.
+
+
+
+Odwołania w \mbox{\hyperlink{main_8cpp_source_l00024}{main()}}.
+
+\Hypertarget{class_engine_ad2aba00209f3c36f21ec6b91335811ce}\index{Engine@{Engine}!kbUpWrapper@{kbUpWrapper}}
+\index{kbUpWrapper@{kbUpWrapper}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{kbUpWrapper()}{kbUpWrapper()}}
+{\footnotesize\ttfamily \label{class_engine_ad2aba00209f3c36f21ec6b91335811ce} 
+void Engine\+::kb\+Up\+Wrapper (\begin{DoxyParamCaption}\item[{unsigned char}]{k}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00294}{294}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00154}{instance}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00243}{init()}}.
+
+\Hypertarget{class_engine_a40a31727e31c2d56ae5f6665e2611dc2}\index{Engine@{Engine}!kbWrapper@{kbWrapper}}
+\index{kbWrapper@{kbWrapper}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{kbWrapper()}{kbWrapper()}}
+{\footnotesize\ttfamily \label{class_engine_a40a31727e31c2d56ae5f6665e2611dc2} 
+void Engine\+::kb\+Wrapper (\begin{DoxyParamCaption}\item[{unsigned char}]{k}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00293}{293}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00154}{instance}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00243}{init()}}.
+
+\Hypertarget{class_engine_a23f86b2a9ddd50e49f61a9ca22998efc}\index{Engine@{Engine}!keyboard@{keyboard}}
+\index{keyboard@{keyboard}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{keyboard()}{keyboard()}}
+{\footnotesize\ttfamily \label{class_engine_a23f86b2a9ddd50e49f61a9ca22998efc} 
+void Engine\+::keyboard (\begin{DoxyParamCaption}\item[{unsigned char}]{key}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00117}{117}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00141}{keys}}, \mbox{\hyperlink{_engine_8h_source_l00148}{light\+Enabled}}, \mbox{\hyperlink{_engine_8h_source_l00145}{objects}}, \mbox{\hyperlink{_engine_8h_source_l00146}{selected\+Idx}}, \mbox{\hyperlink{_engine_8h_source_l00149}{smooth\+Shading}}, \mbox{\hyperlink{_engine_8cpp_source_l00079}{spawn\+Cube()}}, \mbox{\hyperlink{_engine_8cpp_source_l00086}{spawn\+Pyramid()}}, \mbox{\hyperlink{_engine_8cpp_source_l00093}{spawn\+Sphere()}}, \mbox{\hyperlink{_engine_8cpp_source_l00101}{spawn\+Teapot()}}, \mbox{\hyperlink{_engine_8cpp_source_l00109}{spawn\+Torus()}} i \mbox{\hyperlink{_engine_8h_source_l00140}{target\+FPS}}.
+
+\Hypertarget{class_engine_ac0a89024d843d71e9c6f72dde0fcf996}\index{Engine@{Engine}!keyboardUp@{keyboardUp}}
+\index{keyboardUp@{keyboardUp}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{keyboardUp()}{keyboardUp()}}
+{\footnotesize\ttfamily \label{class_engine_ac0a89024d843d71e9c6f72dde0fcf996} 
+void Engine\+::keyboard\+Up (\begin{DoxyParamCaption}\item[{unsigned char}]{key}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00156}{156}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00141}{keys}}.
+
+\Hypertarget{class_engine_a46ae0bb0f7cd96354503f2a69f5cb7d9}\index{Engine@{Engine}!loadTexture@{loadTexture}}
+\index{loadTexture@{loadTexture}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{loadTexture()}{loadTexture()}}
+{\footnotesize\ttfamily \label{class_engine_a46ae0bb0f7cd96354503f2a69f5cb7d9} 
+void Engine\+::load\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ładuje tekstury z plików. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00073}{73}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00151}{texture\+Crate}} i \mbox{\hyperlink{_engine_8h_source_l00152}{texture\+Wall}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00243}{init()}}.
+
+\Hypertarget{class_engine_a663340eb9d199b16179037bc0ffeb637}\index{Engine@{Engine}!mouseMove@{mouseMove}}
+\index{mouseMove@{mouseMove}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{mouseMove()}{mouseMove()}}
+{\footnotesize\ttfamily \label{class_engine_a663340eb9d199b16179037bc0ffeb637} 
+void Engine\+::mouse\+Move (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_engine_a1126d1c569b052cf9c04769d1b66ce2e}\index{Engine@{Engine}!mouseWrapper@{mouseWrapper}}
+\index{mouseWrapper@{mouseWrapper}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{mouseWrapper()}{mouseWrapper()}}
+{\footnotesize\ttfamily \label{class_engine_a1126d1c569b052cf9c04769d1b66ce2e} 
+void Engine\+::mouse\+Wrapper (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00297}{297}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00154}{instance}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00243}{init()}}.
+
+\Hypertarget{class_engine_aa1aec35d59f1364a79c7a62c29640226}\index{Engine@{Engine}!processInput@{processInput}}
+\index{processInput@{processInput}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{processInput()}{processInput()}}
+{\footnotesize\ttfamily \label{class_engine_aa1aec35d59f1364a79c7a62c29640226} 
+void Engine\+::process\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Przetwarza wejście użytkownika. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00163}{163}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_camera_8h_source_l00022}{BACKWARD}}, \mbox{\hyperlink{_engine_8h_source_l00143}{camera}}, \mbox{\hyperlink{_camera_8h_source_l00021}{FORWARD}}, \mbox{\hyperlink{_engine_8h_source_l00141}{keys}}, \mbox{\hyperlink{_camera_8h_source_l00023}{LEFT}}, \mbox{\hyperlink{_engine_8h_source_l00145}{objects}}, \mbox{\hyperlink{_engine_8h_source_l00029}{Game\+Object\+::pos}}, \mbox{\hyperlink{_camera_8h_source_l00024}{RIGHT}}, \mbox{\hyperlink{_engine_8h_source_l00030}{Game\+Object\+::rot}}, \mbox{\hyperlink{_engine_8h_source_l00031}{Game\+Object\+::scale}}, \mbox{\hyperlink{_engine_8h_source_l00146}{selected\+Idx}} i \mbox{\hyperlink{_engine_8h_source_l00142}{special\+Keys}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00266}{update()}}.
+
+\Hypertarget{class_engine_a7960743aefd62e846e7f3cd92c18bc73}\index{Engine@{Engine}!render@{render}}
+\index{render@{render}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_engine_a7960743aefd62e846e7f3cd92c18bc73} 
+void Engine\+::render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Renderuje scenę 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00194}{194}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00143}{camera}}, \mbox{\hyperlink{_engine_8h_source_l00032}{Game\+Object\+::color}}, \mbox{\hyperlink{_engine_8h_source_l00037}{Game\+Object\+::draw()}}, \mbox{\hyperlink{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a}{Game\+Object\+::draw\+Geometry()}}, \mbox{\hyperlink{_engine_8cpp_source_l00272}{draw\+Interface()}}, \mbox{\hyperlink{_engine_8h_source_l00148}{light\+Enabled}}, \mbox{\hyperlink{_engine_8h_source_l00145}{objects}}, \mbox{\hyperlink{_engine_8h_source_l00029}{Game\+Object\+::pos}}, \mbox{\hyperlink{_engine_8h_source_l00030}{Game\+Object\+::rot}}, \mbox{\hyperlink{_engine_8h_source_l00031}{Game\+Object\+::scale}}, \mbox{\hyperlink{_engine_8h_source_l00146}{selected\+Idx}} i \mbox{\hyperlink{_engine_8h_source_l00149}{smooth\+Shading}}.
+
+\Hypertarget{class_engine_a87ea1cf40a002568437c2b407dd979aa}\index{Engine@{Engine}!renderWrapper@{renderWrapper}}
+\index{renderWrapper@{renderWrapper}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{renderWrapper()}{renderWrapper()}}
+{\footnotesize\ttfamily \label{class_engine_a87ea1cf40a002568437c2b407dd979aa} 
+void Engine\+::render\+Wrapper (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00290}{290}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00154}{instance}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00243}{init()}}.
+
+\Hypertarget{class_engine_ab89b0964c80e43695a030b8093750f84}\index{Engine@{Engine}!reshape@{reshape}}
+\index{reshape@{reshape}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{reshape()}{reshape()}}
+{\footnotesize\ttfamily \label{class_engine_ab89b0964c80e43695a030b8093750f84} 
+void Engine\+::reshape (\begin{DoxyParamCaption}\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Zmienia rozmiar okna. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em w} & Nowa szerokość okna \\
+\hline
+{\em h} & Nowa wysokość okna \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00303}{303}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00139}{window\+Height}} i \mbox{\hyperlink{_engine_8h_source_l00138}{window\+Width}}.
+
+\Hypertarget{class_engine_aa4f3992de607c6d030ac456e47003bc3}\index{Engine@{Engine}!reshapeWrapper@{reshapeWrapper}}
+\index{reshapeWrapper@{reshapeWrapper}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{reshapeWrapper()}{reshapeWrapper()}}
+{\footnotesize\ttfamily \label{class_engine_aa4f3992de607c6d030ac456e47003bc3} 
+void Engine\+::reshape\+Wrapper (\begin{DoxyParamCaption}\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00292}{292}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00154}{instance}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00243}{init()}}.
+
+\Hypertarget{class_engine_a1a210cf30d6bd330b3649439ecd6d6cc}\index{Engine@{Engine}!run@{run}}
+\index{run@{run}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{class_engine_a1a210cf30d6bd330b3649439ecd6d6cc} 
+void Engine\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Uruchamia główną pętlę silnika. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00289}{289}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00140}{target\+FPS}} i \mbox{\hyperlink{_engine_8cpp_source_l00291}{update\+Wrapper()}}.
+
+
+
+Odwołania w \mbox{\hyperlink{main_8cpp_source_l00024}{main()}}.
+
+\Hypertarget{class_engine_abaf6dd0375fcfeb33079ae7d0e63b689}\index{Engine@{Engine}!specialFunc@{specialFunc}}
+\index{specialFunc@{specialFunc}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{specialFunc()}{specialFunc()}}
+{\footnotesize\ttfamily \label{class_engine_abaf6dd0375fcfeb33079ae7d0e63b689} 
+void Engine\+::special\+Func (\begin{DoxyParamCaption}\item[{int}]{key}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00160}{160}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00142}{special\+Keys}}.
+
+\Hypertarget{class_engine_a086fe548346df5666cf6b755a77dcf1a}\index{Engine@{Engine}!specialUpFunc@{specialUpFunc}}
+\index{specialUpFunc@{specialUpFunc}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{specialUpFunc()}{specialUpFunc()}}
+{\footnotesize\ttfamily \label{class_engine_a086fe548346df5666cf6b755a77dcf1a} 
+void Engine\+::special\+Up\+Func (\begin{DoxyParamCaption}\item[{int}]{key}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00161}{161}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00142}{special\+Keys}}.
+
+\Hypertarget{class_engine_ae2e05884849e469bd884676c464ba70a}\index{Engine@{Engine}!specUpWrapper@{specUpWrapper}}
+\index{specUpWrapper@{specUpWrapper}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{specUpWrapper()}{specUpWrapper()}}
+{\footnotesize\ttfamily \label{class_engine_ae2e05884849e469bd884676c464ba70a} 
+void Engine\+::spec\+Up\+Wrapper (\begin{DoxyParamCaption}\item[{int}]{k}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00296}{296}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00154}{instance}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00243}{init()}}.
+
+\Hypertarget{class_engine_a677842e4ffa6561b707665fb2c190ab4}\index{Engine@{Engine}!specWrapper@{specWrapper}}
+\index{specWrapper@{specWrapper}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{specWrapper()}{specWrapper()}}
+{\footnotesize\ttfamily \label{class_engine_a677842e4ffa6561b707665fb2c190ab4} 
+void Engine\+::spec\+Wrapper (\begin{DoxyParamCaption}\item[{int}]{k}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00295}{295}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00154}{instance}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00243}{init()}}.
+
+\Hypertarget{class_engine_a829f8269b1c0fd26748eaedd04ebc47b}\index{Engine@{Engine}!update@{update}}
+\index{update@{update}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_engine_a829f8269b1c0fd26748eaedd04ebc47b} 
+void Engine\+::update (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Aktualizuje stan silnika. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em value} & Parametr timera \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00266}{266}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8cpp_source_l00163}{process\+Input()}}, \mbox{\hyperlink{_engine_8h_source_l00140}{target\+FPS}} i \mbox{\hyperlink{_engine_8cpp_source_l00291}{update\+Wrapper()}}.
+
+\Hypertarget{class_engine_a8a4bb856bcf1f397db3f2243b8439901}\index{Engine@{Engine}!updateWrapper@{updateWrapper}}
+\index{updateWrapper@{updateWrapper}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{updateWrapper()}{updateWrapper()}}
+{\footnotesize\ttfamily \label{class_engine_a8a4bb856bcf1f397db3f2243b8439901} 
+void Engine\+::update\+Wrapper (\begin{DoxyParamCaption}\item[{int}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00291}{291}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00154}{instance}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00289}{run()}} i \mbox{\hyperlink{_engine_8cpp_source_l00266}{update()}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_engine_doc-variable-members}
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{class_engine_a922e7ff328db4522ed555911627dcb8f}\index{Engine@{Engine}!camera@{camera}}
+\index{camera@{camera}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily \label{class_engine_a922e7ff328db4522ed555911627dcb8f} 
+\mbox{\hyperlink{class_camera}{Camera}}\texorpdfstring{$\ast$}{*} Engine\+::camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wskaźnik na instancję kamery. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00143}{143}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}}, \mbox{\hyperlink{_engine_8cpp_source_l00163}{process\+Input()}}, \mbox{\hyperlink{_engine_8cpp_source_l00194}{render()}}, \mbox{\hyperlink{_engine_8cpp_source_l00079}{spawn\+Cube()}}, \mbox{\hyperlink{_engine_8cpp_source_l00086}{spawn\+Pyramid()}}, \mbox{\hyperlink{_engine_8cpp_source_l00093}{spawn\+Sphere()}}, \mbox{\hyperlink{_engine_8cpp_source_l00101}{spawn\+Teapot()}}, \mbox{\hyperlink{_engine_8cpp_source_l00109}{spawn\+Torus()}} i \mbox{\hyperlink{_engine_8cpp_source_l00065}{\texorpdfstring{$\sim$}{\string~}\+Engine()}}.
+
+\Hypertarget{class_engine_a51493b63c58390f775dd2bc6f72a2b75}\index{Engine@{Engine}!instance@{instance}}
+\index{instance@{instance}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \label{class_engine_a51493b63c58390f775dd2bc6f72a2b75} 
+\mbox{\hyperlink{class_engine}{Engine}} \texorpdfstring{$\ast$}{*} Engine\+::instance = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Statyczna instancja singletona. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00154}{154}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}}, \mbox{\hyperlink{_engine_8cpp_source_l00294}{kb\+Up\+Wrapper()}}, \mbox{\hyperlink{_engine_8cpp_source_l00293}{kb\+Wrapper()}}, \mbox{\hyperlink{_engine_8cpp_source_l00297}{mouse\+Wrapper()}}, \mbox{\hyperlink{_engine_8cpp_source_l00290}{render\+Wrapper()}}, \mbox{\hyperlink{_engine_8cpp_source_l00292}{reshape\+Wrapper()}}, \mbox{\hyperlink{_engine_8cpp_source_l00296}{spec\+Up\+Wrapper()}}, \mbox{\hyperlink{_engine_8cpp_source_l00295}{spec\+Wrapper()}} i \mbox{\hyperlink{_engine_8cpp_source_l00291}{update\+Wrapper()}}.
+
+\Hypertarget{class_engine_a4ecc1d75cbe50953b43759686ce21b83}\index{Engine@{Engine}!keys@{keys}}
+\index{keys@{keys}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{keys}{keys}}
+{\footnotesize\ttfamily \label{class_engine_a4ecc1d75cbe50953b43759686ce21b83} 
+bool Engine\+::keys\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tablica stanu klawiszy zwykłych. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00141}{141}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}}, \mbox{\hyperlink{_engine_8cpp_source_l00117}{keyboard()}}, \mbox{\hyperlink{_engine_8cpp_source_l00156}{keyboard\+Up()}} i \mbox{\hyperlink{_engine_8cpp_source_l00163}{process\+Input()}}.
+
+\Hypertarget{class_engine_ad793397bd96300483ddc8a493814560e}\index{Engine@{Engine}!lightEnabled@{lightEnabled}}
+\index{lightEnabled@{lightEnabled}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{lightEnabled}{lightEnabled}}
+{\footnotesize\ttfamily \label{class_engine_ad793397bd96300483ddc8a493814560e} 
+bool Engine\+::light\+Enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flaga włączenia oświetlenia. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00148}{148}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00272}{draw\+Interface()}}, \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}}, \mbox{\hyperlink{_engine_8cpp_source_l00117}{keyboard()}} i \mbox{\hyperlink{_engine_8cpp_source_l00194}{render()}}.
+
+\Hypertarget{class_engine_a8d483ecdc54d8fd999c0384dedebecea}\index{Engine@{Engine}!objects@{objects}}
+\index{objects@{objects}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{objects}{objects}}
+{\footnotesize\ttfamily \label{class_engine_a8d483ecdc54d8fd999c0384dedebecea} 
+std\+::vector$<$\mbox{\hyperlink{class_game_object}{Game\+Object}}\texorpdfstring{$\ast$}{*}$>$ Engine\+::objects\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wektor wszystkich obiektów w scenie. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00145}{145}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00272}{draw\+Interface()}}, \mbox{\hyperlink{_engine_8cpp_source_l00117}{keyboard()}}, \mbox{\hyperlink{_engine_8cpp_source_l00163}{process\+Input()}}, \mbox{\hyperlink{_engine_8cpp_source_l00194}{render()}}, \mbox{\hyperlink{_engine_8cpp_source_l00079}{spawn\+Cube()}}, \mbox{\hyperlink{_engine_8cpp_source_l00086}{spawn\+Pyramid()}}, \mbox{\hyperlink{_engine_8cpp_source_l00093}{spawn\+Sphere()}}, \mbox{\hyperlink{_engine_8cpp_source_l00101}{spawn\+Teapot()}}, \mbox{\hyperlink{_engine_8cpp_source_l00109}{spawn\+Torus()}} i \mbox{\hyperlink{_engine_8cpp_source_l00065}{\texorpdfstring{$\sim$}{\string~}\+Engine()}}.
+
+\Hypertarget{class_engine_addc3357ad9068350a461cd666ff46c4b}\index{Engine@{Engine}!selectedIdx@{selectedIdx}}
+\index{selectedIdx@{selectedIdx}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{selectedIdx}{selectedIdx}}
+{\footnotesize\ttfamily \label{class_engine_addc3357ad9068350a461cd666ff46c4b} 
+int Engine\+::selected\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indeks obecnie wybranego obiektu. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00146}{146}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00272}{draw\+Interface()}}, \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}}, \mbox{\hyperlink{_engine_8cpp_source_l00117}{keyboard()}}, \mbox{\hyperlink{_engine_8cpp_source_l00163}{process\+Input()}}, \mbox{\hyperlink{_engine_8cpp_source_l00194}{render()}}, \mbox{\hyperlink{_engine_8cpp_source_l00079}{spawn\+Cube()}}, \mbox{\hyperlink{_engine_8cpp_source_l00086}{spawn\+Pyramid()}}, \mbox{\hyperlink{_engine_8cpp_source_l00093}{spawn\+Sphere()}}, \mbox{\hyperlink{_engine_8cpp_source_l00101}{spawn\+Teapot()}} i \mbox{\hyperlink{_engine_8cpp_source_l00109}{spawn\+Torus()}}.
+
+\Hypertarget{class_engine_a675c54b3df57926dd20349d9fe906512}\index{Engine@{Engine}!smoothShading@{smoothShading}}
+\index{smoothShading@{smoothShading}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{smoothShading}{smoothShading}}
+{\footnotesize\ttfamily \label{class_engine_a675c54b3df57926dd20349d9fe906512} 
+bool Engine\+::smooth\+Shading\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flaga włączenia smooth shadingu. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00149}{149}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}}, \mbox{\hyperlink{_engine_8cpp_source_l00117}{keyboard()}} i \mbox{\hyperlink{_engine_8cpp_source_l00194}{render()}}.
+
+\Hypertarget{class_engine_a686b5b209aa7fd4d0073f3e14736efc6}\index{Engine@{Engine}!specialKeys@{specialKeys}}
+\index{specialKeys@{specialKeys}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{specialKeys}{specialKeys}}
+{\footnotesize\ttfamily \label{class_engine_a686b5b209aa7fd4d0073f3e14736efc6} 
+bool Engine\+::special\+Keys\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tablica stanu klawiszy specjalnych. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00142}{142}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}}, \mbox{\hyperlink{_engine_8cpp_source_l00163}{process\+Input()}}, \mbox{\hyperlink{_engine_8cpp_source_l00160}{special\+Func()}} i \mbox{\hyperlink{_engine_8cpp_source_l00161}{special\+Up\+Func()}}.
+
+\Hypertarget{class_engine_a04c0191a54fc9baa22cbe96bc481557a}\index{Engine@{Engine}!targetFPS@{targetFPS}}
+\index{targetFPS@{targetFPS}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{targetFPS}{targetFPS}}
+{\footnotesize\ttfamily \label{class_engine_a04c0191a54fc9baa22cbe96bc481557a} 
+int Engine\+::target\+FPS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Docelowa liczba klatek na sekundę 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00140}{140}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00272}{draw\+Interface()}}, \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}}, \mbox{\hyperlink{_engine_8cpp_source_l00117}{keyboard()}}, \mbox{\hyperlink{_engine_8cpp_source_l00289}{run()}} i \mbox{\hyperlink{_engine_8cpp_source_l00266}{update()}}.
+
+\Hypertarget{class_engine_a29c168f4d05145a4a3280b0fcd8d2cdd}\index{Engine@{Engine}!textureCrate@{textureCrate}}
+\index{textureCrate@{textureCrate}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{textureCrate}{textureCrate}}
+{\footnotesize\ttfamily \label{class_engine_a29c168f4d05145a4a3280b0fcd8d2cdd} 
+\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}}\texorpdfstring{$\ast$}{*} Engine\+::texture\+Crate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tekstura skrzyni. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00151}{151}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}}, \mbox{\hyperlink{_engine_8cpp_source_l00073}{load\+Texture()}}, \mbox{\hyperlink{_engine_8cpp_source_l00079}{spawn\+Cube()}} i \mbox{\hyperlink{_engine_8cpp_source_l00065}{\texorpdfstring{$\sim$}{\string~}\+Engine()}}.
+
+\Hypertarget{class_engine_ad25708e637a9e9c1908fefcb0c62fcac}\index{Engine@{Engine}!textureWall@{textureWall}}
+\index{textureWall@{textureWall}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{textureWall}{textureWall}}
+{\footnotesize\ttfamily \label{class_engine_ad25708e637a9e9c1908fefcb0c62fcac} 
+\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}}\texorpdfstring{$\ast$}{*} Engine\+::texture\+Wall\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tekstura ściany. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00152}{152}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}}, \mbox{\hyperlink{_engine_8cpp_source_l00073}{load\+Texture()}}, \mbox{\hyperlink{_engine_8cpp_source_l00086}{spawn\+Pyramid()}} i \mbox{\hyperlink{_engine_8cpp_source_l00065}{\texorpdfstring{$\sim$}{\string~}\+Engine()}}.
+
+\Hypertarget{class_engine_a0ac480c63e98dd9b1fe4c4a3c9e6a7ca}\index{Engine@{Engine}!windowHeight@{windowHeight}}
+\index{windowHeight@{windowHeight}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{windowHeight}{windowHeight}}
+{\footnotesize\ttfamily \label{class_engine_a0ac480c63e98dd9b1fe4c4a3c9e6a7ca} 
+int Engine\+::window\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wysokość okna aplikacji. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00139}{139}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00272}{draw\+Interface()}}, \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}} i \mbox{\hyperlink{_engine_8cpp_source_l00303}{reshape()}}.
+
+\Hypertarget{class_engine_a541d921b6b97e8756522958a58814344}\index{Engine@{Engine}!windowWidth@{windowWidth}}
+\index{windowWidth@{windowWidth}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{windowWidth}{windowWidth}}
+{\footnotesize\ttfamily \label{class_engine_a541d921b6b97e8756522958a58814344} 
+int Engine\+::window\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Szerokość okna aplikacji. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00138}{138}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00272}{draw\+Interface()}}, \mbox{\hyperlink{_engine_8cpp_source_l00056}{Engine()}} i \mbox{\hyperlink{_engine_8cpp_source_l00303}{reshape()}}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_engine_8h}{Engine.\+h}}\item 
+src/\mbox{\hyperlink{_engine_8cpp}{Engine.\+cpp}}\end{DoxyCompactItemize}

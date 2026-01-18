@@ -1,0 +1,57 @@
+\doxysection{Bitmap\+Handler.\+h}
+\hypertarget{_bitmap_handler_8h_source}{}\label{_bitmap_handler_8h_source}\index{src/BitmapHandler.h@{src/BitmapHandler.h}}
+\mbox{\hyperlink{_bitmap_handler_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00001}00001\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00002}00002\ \textcolor{comment}{\ *\ @file\ BitmapHandler.h}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ Obsługa\ ładowania\ i\ zarządzania\ teksturami}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00004}00004\ \textcolor{comment}{\ *\ @author\ 3D\ Engine\ Project}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00005}00005\ \textcolor{comment}{\ *\ @version\ 1.0}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00006}00006\ \textcolor{comment}{\ *\ @date\ 2026}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00007}00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00009}00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <GL/freeglut.h>}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00012}00012\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00013}00013\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00014}00014\ \textcolor{comment}{\ *\ @class\ BitmapHandler}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00015}00015\ \textcolor{comment}{\ *\ @brief\ Menedżer\ tekstur\ do\ renderowania\ OpenGL}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00016}00016\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00017}00017\ \textcolor{comment}{\ *\ Klasa\ BitmapHandler\ odpowiada\ za\ ładowanie\ plików\ obrazów}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00018}00018\ \textcolor{comment}{\ *\ (BMP,\ PNG,\ JPG)\ i\ konwersję\ ich\ na\ tekstury\ OpenGL.}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00019}00019\ \textcolor{comment}{\ *\ Obsługuje\ również\ wiązanie\ i\ odwiązanie\ tekstur\ podczas\ renderowania.}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00020}00020\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00021}\mbox{\hyperlink{class_bitmap_handler}{00021}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bitmap_handler_a4b651f24d44bd3fb0223c6963ab4e7ce}{BitmapHandler}}\ \{}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00022}00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00023}\mbox{\hyperlink{class_bitmap_handler_afb7ed757ac3c8969e59dc12f60de80c5}{00023}}\ \ \ \ \ GLuint\ \mbox{\hyperlink{class_bitmap_handler_afb7ed757ac3c8969e59dc12f60de80c5}{textureID}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Identyfikator\ tekstury\ OpenGL}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00024}\mbox{\hyperlink{class_bitmap_handler_abebac76b3eff5ac142aef3d372178c4b}{00024}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bitmap_handler_aad204798965e06a3564981c7eca49e9e}{width}},\ \mbox{\hyperlink{class_bitmap_handler_a3a1df71b7300646c1d12a01becc530a4}{height}},\ \mbox{\hyperlink{class_bitmap_handler_abebac76b3eff5ac142aef3d372178c4b}{channels}};\ \textcolor{comment}{///<\ Wymiary\ i\ liczba\ kanałów\ obrazu}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00025}\mbox{\hyperlink{class_bitmap_handler_a7fca78d378ebdd9dd391a1d9895aaad8}{00025}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_bitmap_handler_a7fca78d378ebdd9dd391a1d9895aaad8}{data}};\ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Dane\ pikseli\ obrazu}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00027}00027\ \textcolor{keyword}{public}:\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00028}00028\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00029}00029\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Konstruktor\ -\/\ ładuje\ teksturę\ z\ pliku}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00030}00030\ \textcolor{comment}{\ \ \ \ \ *\ @param\ filename\ Ścieżka\ do\ pliku\ z\ teksturą\ (BMP,\ PNG,\ JPG)}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00031}00031\ \textcolor{comment}{\ \ \ \ \ *\ }}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00032}00032\ \textcolor{comment}{\ \ \ \ \ *\ Ładuje\ obraz\ z\ dysku\ i\ konwertuje\ go\ do\ formatu\ tekstury\ OpenGL.}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00033}00033\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{class_bitmap_handler_a4b651f24d44bd3fb0223c6963ab4e7ce}{BitmapHandler}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00035}00035\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00036}00036\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00037}00037\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Destruktor\ -\/\ zwalnia\ zasoby\ tekstury}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00038}00038\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_bitmap_handler_a1f3e49ed094cc684909c97d3b56fa2e9}{\string~BitmapHandler}}();}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00040}00040\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00041}00041\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00042}00042\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Wiąże\ teksturę\ z\ kontekstem\ OpenGL}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00043}00043\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bitmap_handler_a283d17a36d21e78b601e6c49e3e39a80}{bind}}();\ }
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00045}00045\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00046}00046\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00047}00047\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Zwraca\ identyfikator\ tekstury}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00048}00048\ \textcolor{comment}{\ \ \ \ \ *\ @return\ Identyfikator\ tekstury\ OpenGL}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00049}00049\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00050}\mbox{\hyperlink{class_bitmap_handler_a24657f3c6af15239324fb292ba2d94c5}{00050}}\ \ \ \ \ GLuint\ \mbox{\hyperlink{class_bitmap_handler_a24657f3c6af15239324fb292ba2d94c5}{getTextureID}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bitmap_handler_afb7ed757ac3c8969e59dc12f60de80c5}{textureID}};\ \}}
+\DoxyCodeLine{\Hypertarget{_bitmap_handler_8h_source_l00051}00051\ \};}
+
+\end{DoxyCode}

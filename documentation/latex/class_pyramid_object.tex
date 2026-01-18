@@ -1,0 +1,116 @@
+\doxysection{Dokumentacja klasy Pyramid\+Object}
+\hypertarget{class_pyramid_object}{}\label{class_pyramid_object}\index{PyramidObject@{PyramidObject}}
+
+
+Obiekt piramidy z teksturą  
+
+
+
+
+{\ttfamily \#include $<$Engine.\+h$>$}
+
+Diagram dziedziczenia dla Pyramid\+Object\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_pyramid_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pyramid_object_a85951c524ae422c1ca4037b9dd35460a}{Pyramid\+Object}} (\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*}tex)
+\item 
+void \mbox{\hyperlink{class_pyramid_object_a20d20a672788378373ed050b3f35943b}{draw\+Geometry}} () override
+\begin{DoxyCompactList}\small\item\em Rysuje geometrię piramidy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_textured_object}{Textured\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_textured_object_a0cf5e97a2c630b87090072b300d003ae}{Textured\+Object}} (\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*}tex)
+\item 
+void \mbox{\hyperlink{class_textured_object_a8bdc512831bcc43c802457e7f5cfab95}{draw}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{Game\+Object}} ()
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Dodatkowe dziedziczone składowe}
+\doxysubsection*{Atrybuty publiczne dziedziczone z \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_object_a6f153bcbb96d97edae09db51ebf824c3}{pos}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_object_a1b4631038a8c760183c259e385b260c7}{rot}}
+\item 
+float \mbox{\hyperlink{class_game_object_a27fda2aabd44d4bc0dd2ed3bfe9a503b}{scale}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_object_a3a3cb49f7d67386167bbe9049ce2d3fd}{color}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty chronione dziedziczone z \mbox{\hyperlink{class_textured_object}{Textured\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_textured_object_a585a0a5377fcc08ab607e26dbdc82fd1}{texture}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Obiekt piramidy z teksturą 
+
+Reprezentuje piramidę 3D z możliwością nałożenia tekstury. 
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00089}{89}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_pyramid_object_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_pyramid_object_a85951c524ae422c1ca4037b9dd35460a}\index{PyramidObject@{PyramidObject}!PyramidObject@{PyramidObject}}
+\index{PyramidObject@{PyramidObject}!PyramidObject@{PyramidObject}}
+\doxysubsubsection{\texorpdfstring{PyramidObject()}{PyramidObject()}}
+{\footnotesize\ttfamily \label{class_pyramid_object_a85951c524ae422c1ca4037b9dd35460a} 
+Pyramid\+Object\+::\+Pyramid\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bitmap_handler}{Bitmap\+Handler}} \texorpdfstring{$\ast$}{*}}]{tex}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00091}{91}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00054}{Textured\+Object\+::\+Textured\+Object()}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_pyramid_object_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_pyramid_object_a20d20a672788378373ed050b3f35943b}\index{PyramidObject@{PyramidObject}!drawGeometry@{drawGeometry}}
+\index{drawGeometry@{drawGeometry}!PyramidObject@{PyramidObject}}
+\doxysubsubsection{\texorpdfstring{drawGeometry()}{drawGeometry()}}
+{\footnotesize\ttfamily \label{class_pyramid_object_a20d20a672788378373ed050b3f35943b} 
+void Pyramid\+Object\+::draw\+Geometry (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Rysuje geometrię piramidy. 
+
+
+
+Implementuje \mbox{\hyperlink{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a}{Game\+Object}}.
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8cpp_source_l00029}{29}} pliku \mbox{\hyperlink{_engine_8cpp_source}{Engine.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_pyramid_8cpp_source_l00021}{Pyramid\+::draw()}}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_engine_8h}{Engine.\+h}}\item 
+src/\mbox{\hyperlink{_engine_8cpp}{Engine.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,380 @@
+\doxysection{Dokumentacja klasy Camera}
+\hypertarget{class_camera}{}\label{class_camera}\index{Camera@{Camera}}
+
+
+Kamera do obserwacji sceny 3D.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camera_adad6423186f3d7e4c461cff7274f2c87}{Camera}} (glm\+::vec3 position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 up=glm\+::vec3(0.\+0f, 1.\+0f, 0.\+0f), float yaw=\mbox{\hyperlink{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d}{YAW}}, float pitch=\mbox{\hyperlink{_camera_8h_ab32939bf039c742431f67a815575ed21}{PITCH}})
+\begin{DoxyCompactList}\small\item\em Konstruktor kamery. \end{DoxyCompactList}\item 
+glm\+::mat4 \mbox{\hyperlink{class_camera_affa333055635aed96518c4c66be9a70c}{Get\+View\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Oblicza i zwraca macierz widoku. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_aac6b3608f197242a8e459ef89a58e36f}{Process\+Keyboard}} (\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}{Camera\+\_\+\+Movement}} direction, float velocity)
+\begin{DoxyCompactList}\small\item\em Przetwarza wejście klawiatury. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a12293c3b3d9d162523c94afadb1c11c4}{Process\+Mouse\+Movement}} (float xoffset, float yoffset, bool constrain\+Pitch=true)
+\begin{DoxyCompactList}\small\item\em Przetwarza ruch myszy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_a9733b59f5340f6f1bca24d52a6679039}{Position}}
+\begin{DoxyCompactList}\small\item\em Pozycja kamery w przestrzeni 3D. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_ac95b3737115ffe9a6ff9128344d5b963}{Front}}
+\begin{DoxyCompactList}\small\item\em Wektor kierunku przodu kamery. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_ad74c4a490bc8865e67e27a2036d0a72d}{Up}}
+\begin{DoxyCompactList}\small\item\em Wektor kierunku góry kamery. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_a6624f9f4228f6299a3d4ccb81e28da0a}{Right}}
+\begin{DoxyCompactList}\small\item\em Wektor kierunku prawa kamery. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_a340d30b833954b87fd016ce0e724c723}{World\+Up}}
+\begin{DoxyCompactList}\small\item\em Globalny wektor kierunku góry. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_a1a1354a2bd2df7f18ef82924e671d241}{Yaw}}
+\begin{DoxyCompactList}\small\item\em Kąt odchylenia kamery (lewo-\/prawo). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_af9c8f223bb06bb74fc77c586545e7e67}{Pitch}}
+\begin{DoxyCompactList}\small\item\em Kąt nachylenia kamery (góra-\/dół). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_a63221392d762df6a74f45bc9d43a2f61}{Movement\+Speed}}
+\begin{DoxyCompactList}\small\item\em Prędkość ruchu kamery. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_a73e88844b31d5111eeb76327dfbb2d68}{Mouse\+Sensitivity}}
+\begin{DoxyCompactList}\small\item\em Czułość myszy. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_a2becf27d08eb7e6da9c597c73ea95b5d}{Zoom}}
+\begin{DoxyCompactList}\small\item\em Kąt pola widzenia (FOV). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_camera_ad424b8b92e580508caf21337b69b93fa}{update\+Camera\+Vectors}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Kamera do obserwacji sceny 3D. 
+
+Klasa \doxylink{class_camera}{Camera} implementuje system kamery perspektywicznej z obsługą ruchu klawiatury i myszy. Wykorzystuje macierze widoku Open\+GL do transformacji sceny. 
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00052}{52}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_camera_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_camera_adad6423186f3d7e4c461cff7274f2c87}\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily \label{class_camera_adad6423186f3d7e4c461cff7274f2c87} 
+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{position}{ = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)}, }\item[{glm\+::vec3}]{up}{ = {\ttfamily glm\+:\+:vec3(0.0f,~1.0f,~0.0f)}, }\item[{float}]{yaw}{ = {\ttfamily \mbox{\hyperlink{_camera_8h_a57aec1b0a28f813c2d4b84a11af5f08d}{YAW}}}, }\item[{float}]{pitch}{ = {\ttfamily \mbox{\hyperlink{_camera_8h_ab32939bf039c742431f67a815575ed21}{PITCH}}}}\end{DoxyParamCaption})}
+
+
+
+Konstruktor kamery. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em position} & Początkowa pozycja kamery \\
+\hline
+{\em up} & Globalny wektor góry \\
+\hline
+{\em yaw} & Początkowy kąt odchylenia \\
+\hline
+{\em pitch} & Początkowy kąt nachylenia \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8cpp_source_l00004}{4}} pliku \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_camera_8h_source_l00056}{Front}}, \mbox{\hyperlink{_camera_8h_source_l00065}{Mouse\+Sensitivity}}, \mbox{\hyperlink{_camera_8h_source_l00064}{Movement\+Speed}}, \mbox{\hyperlink{_camera_8h_source_l00062}{Pitch}}, \mbox{\hyperlink{_camera_8h_source_l00055}{Position}}, \mbox{\hyperlink{_camera_8h_source_l00039}{SENSITIVITY}}, \mbox{\hyperlink{_camera_8h_source_l00036}{SPEED}}, \mbox{\hyperlink{_camera_8cpp_source_l00054}{update\+Camera\+Vectors()}}, \mbox{\hyperlink{_camera_8h_source_l00059}{World\+Up}}, \mbox{\hyperlink{_camera_8h_source_l00061}{Yaw}}, \mbox{\hyperlink{_camera_8h_source_l00042}{ZOOM}} i \mbox{\hyperlink{_camera_8h_source_l00066}{Zoom}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_camera_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_camera_affa333055635aed96518c4c66be9a70c}\index{Camera@{Camera}!GetViewMatrix@{GetViewMatrix}}
+\index{GetViewMatrix@{GetViewMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetViewMatrix()}{GetViewMatrix()}}
+{\footnotesize\ttfamily \label{class_camera_affa333055635aed96518c4c66be9a70c} 
+glm\+::mat4 Camera\+::\+Get\+View\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Oblicza i zwraca macierz widoku. 
+
+\begin{DoxyReturn}{Zwraca}
+Macierz widoku (view matrix) 
+\end{DoxyReturn}
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8cpp_source_l00014}{14}} pliku \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_camera_8h_source_l00056}{Front}}, \mbox{\hyperlink{_camera_8h_source_l00055}{Position}} i \mbox{\hyperlink{_camera_8h_source_l00057}{Up}}.
+
+\Hypertarget{class_camera_aac6b3608f197242a8e459ef89a58e36f}\index{Camera@{Camera}!ProcessKeyboard@{ProcessKeyboard}}
+\index{ProcessKeyboard@{ProcessKeyboard}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{ProcessKeyboard()}{ProcessKeyboard()}}
+{\footnotesize\ttfamily \label{class_camera_aac6b3608f197242a8e459ef89a58e36f} 
+void Camera\+::\+Process\+Keyboard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_camera_8h_a605494501af59c9191e7e4d6f9a0ebcb}{Camera\+\_\+\+Movement}}}]{direction}{, }\item[{float}]{velocity}{}\end{DoxyParamCaption})}
+
+
+
+Przetwarza wejście klawiatury. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em direction} & Kierunek ruchu kamery \\
+\hline
+{\em velocity} & Prędkość ruchu \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8cpp_source_l00019}{19}} pliku \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_camera_8h_source_l00022}{BACKWARD}}, \mbox{\hyperlink{_camera_8h_source_l00026}{DOWN}}, \mbox{\hyperlink{_camera_8h_source_l00021}{FORWARD}}, \mbox{\hyperlink{_camera_8h_source_l00056}{Front}}, \mbox{\hyperlink{_camera_8h_source_l00023}{LEFT}}, \mbox{\hyperlink{_camera_8h_source_l00055}{Position}}, \mbox{\hyperlink{_camera_8h_source_l00024}{RIGHT}}, \mbox{\hyperlink{_camera_8h_source_l00058}{Right}}, \mbox{\hyperlink{_camera_8h_source_l00025}{UP}} i \mbox{\hyperlink{_camera_8h_source_l00059}{World\+Up}}.
+
+\Hypertarget{class_camera_a12293c3b3d9d162523c94afadb1c11c4}\index{Camera@{Camera}!ProcessMouseMovement@{ProcessMouseMovement}}
+\index{ProcessMouseMovement@{ProcessMouseMovement}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{ProcessMouseMovement()}{ProcessMouseMovement()}}
+{\footnotesize\ttfamily \label{class_camera_a12293c3b3d9d162523c94afadb1c11c4} 
+void Camera\+::\+Process\+Mouse\+Movement (\begin{DoxyParamCaption}\item[{float}]{xoffset}{, }\item[{float}]{yoffset}{, }\item[{bool}]{constrain\+Pitch}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Przetwarza ruch myszy. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em xoffset} & Przesunięcie X myszy \\
+\hline
+{\em yoffset} & Przesunięcie Y myszy \\
+\hline
+{\em constrain\+Pitch} & Czy ograniczyć pitch do \mbox{[}-\/90, 90\mbox{]} stopni \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8cpp_source_l00035}{35}} pliku \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_camera_8h_source_l00065}{Mouse\+Sensitivity}}, \mbox{\hyperlink{_camera_8h_source_l00062}{Pitch}}, \mbox{\hyperlink{_camera_8cpp_source_l00054}{update\+Camera\+Vectors()}} i \mbox{\hyperlink{_camera_8h_source_l00061}{Yaw}}.
+
+\Hypertarget{class_camera_ad424b8b92e580508caf21337b69b93fa}\index{Camera@{Camera}!updateCameraVectors@{updateCameraVectors}}
+\index{updateCameraVectors@{updateCameraVectors}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{updateCameraVectors()}{updateCameraVectors()}}
+{\footnotesize\ttfamily \label{class_camera_ad424b8b92e580508caf21337b69b93fa} 
+void Camera\+::update\+Camera\+Vectors (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8cpp_source_l00054}{54}} pliku \mbox{\hyperlink{_camera_8cpp_source}{Camera.\+cpp}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_camera_8h_source_l00056}{Front}}, \mbox{\hyperlink{_camera_8h_source_l00062}{Pitch}}, \mbox{\hyperlink{_camera_8h_source_l00058}{Right}}, \mbox{\hyperlink{_camera_8h_source_l00057}{Up}}, \mbox{\hyperlink{_camera_8h_source_l00059}{World\+Up}} i \mbox{\hyperlink{_camera_8h_source_l00061}{Yaw}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00004}{Camera()}} i \mbox{\hyperlink{_camera_8cpp_source_l00035}{Process\+Mouse\+Movement()}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_camera_doc-variable-members}
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{class_camera_ac95b3737115ffe9a6ff9128344d5b963}\index{Camera@{Camera}!Front@{Front}}
+\index{Front@{Front}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Front}{Front}}
+{\footnotesize\ttfamily \label{class_camera_ac95b3737115ffe9a6ff9128344d5b963} 
+glm\+::vec3 Camera\+::\+Front}
+
+
+
+Wektor kierunku przodu kamery. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00056}{56}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00004}{Camera()}}, \mbox{\hyperlink{_camera_8cpp_source_l00014}{Get\+View\+Matrix()}}, \mbox{\hyperlink{_camera_8cpp_source_l00019}{Process\+Keyboard()}} i \mbox{\hyperlink{_camera_8cpp_source_l00054}{update\+Camera\+Vectors()}}.
+
+\Hypertarget{class_camera_a73e88844b31d5111eeb76327dfbb2d68}\index{Camera@{Camera}!MouseSensitivity@{MouseSensitivity}}
+\index{MouseSensitivity@{MouseSensitivity}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{MouseSensitivity}{MouseSensitivity}}
+{\footnotesize\ttfamily \label{class_camera_a73e88844b31d5111eeb76327dfbb2d68} 
+float Camera\+::\+Mouse\+Sensitivity}
+
+
+
+Czułość myszy. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00065}{65}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00004}{Camera()}} i \mbox{\hyperlink{_camera_8cpp_source_l00035}{Process\+Mouse\+Movement()}}.
+
+\Hypertarget{class_camera_a63221392d762df6a74f45bc9d43a2f61}\index{Camera@{Camera}!MovementSpeed@{MovementSpeed}}
+\index{MovementSpeed@{MovementSpeed}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{MovementSpeed}{MovementSpeed}}
+{\footnotesize\ttfamily \label{class_camera_a63221392d762df6a74f45bc9d43a2f61} 
+float Camera\+::\+Movement\+Speed}
+
+
+
+Prędkość ruchu kamery. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00064}{64}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00004}{Camera()}}.
+
+\Hypertarget{class_camera_af9c8f223bb06bb74fc77c586545e7e67}\index{Camera@{Camera}!Pitch@{Pitch}}
+\index{Pitch@{Pitch}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Pitch}{Pitch}}
+{\footnotesize\ttfamily \label{class_camera_af9c8f223bb06bb74fc77c586545e7e67} 
+float Camera\+::\+Pitch}
+
+
+
+Kąt nachylenia kamery (góra-\/dół). 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00062}{62}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00004}{Camera()}}, \mbox{\hyperlink{_camera_8cpp_source_l00035}{Process\+Mouse\+Movement()}} i \mbox{\hyperlink{_camera_8cpp_source_l00054}{update\+Camera\+Vectors()}}.
+
+\Hypertarget{class_camera_a9733b59f5340f6f1bca24d52a6679039}\index{Camera@{Camera}!Position@{Position}}
+\index{Position@{Position}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily \label{class_camera_a9733b59f5340f6f1bca24d52a6679039} 
+glm\+::vec3 Camera\+::\+Position}
+
+
+
+Pozycja kamery w przestrzeni 3D. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00055}{55}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00004}{Camera()}}, \mbox{\hyperlink{_camera_8cpp_source_l00014}{Get\+View\+Matrix()}} i \mbox{\hyperlink{_camera_8cpp_source_l00019}{Process\+Keyboard()}}.
+
+\Hypertarget{class_camera_a6624f9f4228f6299a3d4ccb81e28da0a}\index{Camera@{Camera}!Right@{Right}}
+\index{Right@{Right}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Right}{Right}}
+{\footnotesize\ttfamily \label{class_camera_a6624f9f4228f6299a3d4ccb81e28da0a} 
+glm\+::vec3 Camera\+::\+Right}
+
+
+
+Wektor kierunku prawa kamery. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00058}{58}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00019}{Process\+Keyboard()}} i \mbox{\hyperlink{_camera_8cpp_source_l00054}{update\+Camera\+Vectors()}}.
+
+\Hypertarget{class_camera_ad74c4a490bc8865e67e27a2036d0a72d}\index{Camera@{Camera}!Up@{Up}}
+\index{Up@{Up}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Up}{Up}}
+{\footnotesize\ttfamily \label{class_camera_ad74c4a490bc8865e67e27a2036d0a72d} 
+glm\+::vec3 Camera\+::\+Up}
+
+
+
+Wektor kierunku góry kamery. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00057}{57}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00014}{Get\+View\+Matrix()}} i \mbox{\hyperlink{_camera_8cpp_source_l00054}{update\+Camera\+Vectors()}}.
+
+\Hypertarget{class_camera_a340d30b833954b87fd016ce0e724c723}\index{Camera@{Camera}!WorldUp@{WorldUp}}
+\index{WorldUp@{WorldUp}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{WorldUp}{WorldUp}}
+{\footnotesize\ttfamily \label{class_camera_a340d30b833954b87fd016ce0e724c723} 
+glm\+::vec3 Camera\+::\+World\+Up}
+
+
+
+Globalny wektor kierunku góry. 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00059}{59}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00004}{Camera()}}, \mbox{\hyperlink{_camera_8cpp_source_l00019}{Process\+Keyboard()}} i \mbox{\hyperlink{_camera_8cpp_source_l00054}{update\+Camera\+Vectors()}}.
+
+\Hypertarget{class_camera_a1a1354a2bd2df7f18ef82924e671d241}\index{Camera@{Camera}!Yaw@{Yaw}}
+\index{Yaw@{Yaw}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Yaw}{Yaw}}
+{\footnotesize\ttfamily \label{class_camera_a1a1354a2bd2df7f18ef82924e671d241} 
+float Camera\+::\+Yaw}
+
+
+
+Kąt odchylenia kamery (lewo-\/prawo). 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00061}{61}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00004}{Camera()}}, \mbox{\hyperlink{_camera_8cpp_source_l00035}{Process\+Mouse\+Movement()}} i \mbox{\hyperlink{_camera_8cpp_source_l00054}{update\+Camera\+Vectors()}}.
+
+\Hypertarget{class_camera_a2becf27d08eb7e6da9c597c73ea95b5d}\index{Camera@{Camera}!Zoom@{Zoom}}
+\index{Zoom@{Zoom}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Zoom}{Zoom}}
+{\footnotesize\ttfamily \label{class_camera_a2becf27d08eb7e6da9c597c73ea95b5d} 
+float Camera\+::\+Zoom}
+
+
+
+Kąt pola widzenia (FOV). 
+
+
+
+Definicja w linii \mbox{\hyperlink{_camera_8h_source_l00066}{66}} pliku \mbox{\hyperlink{_camera_8h_source}{Camera.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_camera_8cpp_source_l00004}{Camera()}}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_camera_8h}{Camera.\+h}}\item 
+src/\mbox{\hyperlink{_camera_8cpp}{Camera.\+cpp}}\end{DoxyCompactItemize}

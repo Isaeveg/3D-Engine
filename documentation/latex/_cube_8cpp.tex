@@ -1,0 +1,125 @@
+\doxysection{Dokumentacja pliku src/\+Cube.cpp}
+\hypertarget{_cube_8cpp}{}\label{_cube_8cpp}\index{src/Cube.cpp@{src/Cube.cpp}}
+{\ttfamily \#include "{}Cube.\+h"{}}\newline
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{_cube_8cpp_a93da589cdc3c84b28c4bcbc81338a2c3}{cube\+\_\+v}} \mbox{[}$\,$\mbox{]}
+\item 
+float \mbox{\hyperlink{_cube_8cpp_ad3dffe78b4937256e5d130e343ca2a82}{cube\+\_\+n}} \mbox{[}$\,$\mbox{]}
+\item 
+float \mbox{\hyperlink{_cube_8cpp_ae2563ce2cad5e161af48ce7db67d12d4}{cube\+\_\+uv}} \mbox{[}$\,$\mbox{]}
+\item 
+unsigned char \mbox{\hyperlink{_cube_8cpp_a1dfcf93984fb98b8659fa37eee1ff0b3}{cube\+\_\+i}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\label{doc-var-members}
+\Hypertarget{_cube_8cpp_doc-var-members}
+\doxysubsection{Dokumentacja zmiennych}
+\Hypertarget{_cube_8cpp_a1dfcf93984fb98b8659fa37eee1ff0b3}\index{Cube.cpp@{Cube.cpp}!cube\_i@{cube\_i}}
+\index{cube\_i@{cube\_i}!Cube.cpp@{Cube.cpp}}
+\doxysubsubsection{\texorpdfstring{cube\_i}{cube\_i}}
+{\footnotesize\ttfamily \label{_cube_8cpp_a1dfcf93984fb98b8659fa37eee1ff0b3} 
+unsigned char cube\+\_\+i\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Wartość początkowa\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ 0,1,2,\ 2,3,0,\ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ 4,5,6,\ 6,7,4,\ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ 8,9,10,\ 10,11,8,\ \ \ }
+\DoxyCodeLine{\ \ \ \ 12,13,14,\ 14,15,12,\ }
+\DoxyCodeLine{\ \ \ \ 16,17,18,\ 18,19,16,\ }
+\DoxyCodeLine{\ \ \ \ 20,21,22,\ 22,23,20\ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definicja w linii \mbox{\hyperlink{_cube_8cpp_source_l00032}{32}} pliku \mbox{\hyperlink{_cube_8cpp_source}{Cube.\+cpp}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_cube_8cpp_source_l00041}{Cube\+::draw()}}.
+
+\Hypertarget{_cube_8cpp_ad3dffe78b4937256e5d130e343ca2a82}\index{Cube.cpp@{Cube.cpp}!cube\_n@{cube\_n}}
+\index{cube\_n@{cube\_n}!Cube.cpp@{Cube.cpp}}
+\doxysubsubsection{\texorpdfstring{cube\_n}{cube\_n}}
+{\footnotesize\ttfamily \label{_cube_8cpp_ad3dffe78b4937256e5d130e343ca2a82} 
+float cube\+\_\+n\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Wartość początkowa\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ 0,0,1,\ 0,0,1,\ 0,0,1,\ 0,0,1,}
+\DoxyCodeLine{\ \ \ \ 0,0,-\/1,\ 0,0,-\/1,\ 0,0,-\/1,\ 0,0,-\/1,}
+\DoxyCodeLine{\ \ \ \ -\/1,0,0,\ -\/1,0,0,\ -\/1,0,0,\ -\/1,0,0,}
+\DoxyCodeLine{\ \ \ \ 1,0,0,\ 1,0,0,\ 1,0,0,\ 1,0,0,}
+\DoxyCodeLine{\ \ \ \ 0,1,0,\ 0,1,0,\ 0,1,0,\ 0,1,0,}
+\DoxyCodeLine{\ \ \ \ 0,-\/1,0,\ 0,-\/1,0,\ 0,-\/1,0,\ 0,-\/1,0}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definicja w linii \mbox{\hyperlink{_cube_8cpp_source_l00014}{14}} pliku \mbox{\hyperlink{_cube_8cpp_source}{Cube.\+cpp}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_cube_8cpp_source_l00041}{Cube\+::draw()}}.
+
+\Hypertarget{_cube_8cpp_ae2563ce2cad5e161af48ce7db67d12d4}\index{Cube.cpp@{Cube.cpp}!cube\_uv@{cube\_uv}}
+\index{cube\_uv@{cube\_uv}!Cube.cpp@{Cube.cpp}}
+\doxysubsubsection{\texorpdfstring{cube\_uv}{cube\_uv}}
+{\footnotesize\ttfamily \label{_cube_8cpp_ae2563ce2cad5e161af48ce7db67d12d4} 
+float cube\+\_\+uv\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Wartość początkowa\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ 0,0,\ 1,0,\ 1,1,\ 0,1,}
+\DoxyCodeLine{\ \ \ \ 0,0,\ 1,0,\ 1,1,\ 0,1,}
+\DoxyCodeLine{\ \ \ \ 0,0,\ 1,0,\ 1,1,\ 0,1,}
+\DoxyCodeLine{\ \ \ \ 0,0,\ 1,0,\ 1,1,\ 0,1,}
+\DoxyCodeLine{\ \ \ \ 0,0,\ 1,0,\ 1,1,\ 0,1,}
+\DoxyCodeLine{\ \ \ \ 0,0,\ 1,0,\ 1,1,\ 0,1}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definicja w linii \mbox{\hyperlink{_cube_8cpp_source_l00023}{23}} pliku \mbox{\hyperlink{_cube_8cpp_source}{Cube.\+cpp}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_cube_8cpp_source_l00041}{Cube\+::draw()}}.
+
+\Hypertarget{_cube_8cpp_a93da589cdc3c84b28c4bcbc81338a2c3}\index{Cube.cpp@{Cube.cpp}!cube\_v@{cube\_v}}
+\index{cube\_v@{cube\_v}!Cube.cpp@{Cube.cpp}}
+\doxysubsubsection{\texorpdfstring{cube\_v}{cube\_v}}
+{\footnotesize\ttfamily \label{_cube_8cpp_a93da589cdc3c84b28c4bcbc81338a2c3} 
+float cube\+\_\+v\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Wartość początkowa\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ -\/1,-\/1,\ 1,\ \ \ 1,-\/1,\ 1,\ \ \ 1,\ 1,\ 1,\ \ -\/1,\ 1,\ 1,}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ 1,-\/1,-\/1,\ \ -\/1,-\/1,-\/1,\ \ -\/1,\ 1,-\/1,\ \ \ 1,\ 1,-\/1,}
+\DoxyCodeLine{\ \ \ \ -\/1,-\/1,-\/1,\ \ -\/1,-\/1,\ 1,\ \ -\/1,\ 1,\ 1,\ \ -\/1,\ 1,-\/1,}
+\DoxyCodeLine{\ \ \ \ \ 1,-\/1,\ 1,\ \ \ 1,-\/1,-\/1,\ \ \ 1,\ 1,-\/1,\ \ \ 1,\ 1,\ 1,}
+\DoxyCodeLine{\ \ \ \ -\/1,\ 1,\ 1,\ \ \ 1,\ 1,\ 1,\ \ \ 1,\ 1,-\/1,\ \ -\/1,\ 1,-\/1,}
+\DoxyCodeLine{\ \ \ \ -\/1,-\/1,-\/1,\ \ \ 1,-\/1,-\/1,\ \ \ 1,-\/1,\ 1,\ \ -\/1,-\/1,\ 1}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definicja w linii \mbox{\hyperlink{_cube_8cpp_source_l00003}{3}} pliku \mbox{\hyperlink{_cube_8cpp_source}{Cube.\+cpp}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_cube_8cpp_source_l00041}{Cube\+::draw()}}.
+

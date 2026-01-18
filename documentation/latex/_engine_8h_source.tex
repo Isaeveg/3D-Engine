@@ -1,0 +1,276 @@
+\doxysection{Engine.\+h}
+\hypertarget{_engine_8h_source}{}\label{_engine_8h_source}\index{src/Engine.h@{src/Engine.h}}
+\mbox{\hyperlink{_engine_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00001}00001\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00002}00002\ \textcolor{comment}{\ *\ @file\ Engine.h}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ Główny\ silnik\ 3D\ projektu}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00004}00004\ \textcolor{comment}{\ *\ @author\ 3D\ Engine\ Project}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00005}00005\ \textcolor{comment}{\ *\ @version\ 1.0}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00006}00006\ \textcolor{comment}{\ *\ @date\ 2026}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00007}00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00009}00009\ \textcolor{preprocessor}{\#ifndef\ ENGINE\_H}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00010}00010\ \textcolor{preprocessor}{\#define\ ENGINE\_H}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <GL/freeglut.h>}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_camera_8h}{Camera.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bitmap_handler_8h}{BitmapHandler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00018}00018\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00019}00019\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00020}00020\ \textcolor{comment}{\ *\ @class\ GameObject}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00021}00021\ \textcolor{comment}{\ *\ @brief\ Bazowa\ klasa\ dla\ wszystkich\ obiektów\ w\ scenie\ 3D}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00022}00022\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00023}00023\ \textcolor{comment}{\ *\ Klasa\ GameObject\ stanowi\ fundament\ dla\ każdego\ obiektu,}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00024}00024\ \textcolor{comment}{\ *\ który\ ma\ być\ rysowany\ w\ przestrzeni\ 3D.\ Przechowuje\ informacje}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00025}00025\ \textcolor{comment}{\ *\ o\ pozycji,\ rotacji,\ skali\ i\ kolorze\ obiektu.}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00026}00026\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00027}\mbox{\hyperlink{class_game_object}{00027}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{GameObject}}\ \{}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00028}00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00029}\mbox{\hyperlink{class_game_object_a6f153bcbb96d97edae09db51ebf824c3}{00029}}\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_game_object_a6f153bcbb96d97edae09db51ebf824c3}{pos}};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00030}\mbox{\hyperlink{class_game_object_a1b4631038a8c760183c259e385b260c7}{00030}}\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_game_object_a1b4631038a8c760183c259e385b260c7}{rot}};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00031}\mbox{\hyperlink{class_game_object_a27fda2aabd44d4bc0dd2ed3bfe9a503b}{00031}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_object_a27fda2aabd44d4bc0dd2ed3bfe9a503b}{scale}};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00032}\mbox{\hyperlink{class_game_object_a3a3cb49f7d67386167bbe9049ce2d3fd}{00032}}\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_game_object_a3a3cb49f7d67386167bbe9049ce2d3fd}{color}};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00033}00033\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00034}\mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{00034}}\ \ \ \ \ \mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{GameObject}}()\ :\ \mbox{\hyperlink{class_game_object_a6f153bcbb96d97edae09db51ebf824c3}{pos}}(0),\ \mbox{\hyperlink{class_game_object_a1b4631038a8c760183c259e385b260c7}{rot}}(0),\ \mbox{\hyperlink{class_game_object_a27fda2aabd44d4bc0dd2ed3bfe9a503b}{scale}}(1.0f),\ \mbox{\hyperlink{class_game_object_a3a3cb49f7d67386167bbe9049ce2d3fd}{color}}(1)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00035}\mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{00035}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\string~GameObject}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00036}00036\ \ \ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00037}\mbox{\hyperlink{class_game_object_a1e6ed94137e78089b2413fe2e2a0b91f}{00037}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_object_a1e6ed94137e78089b2413fe2e2a0b91f}{draw}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a}{drawGeometry}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00040}\mbox{\hyperlink{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a}{00040}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a}{drawGeometry}}()\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00041}00041\ \};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00042}00042\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00043}00043\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00044}00044\ \textcolor{comment}{\ *\ @class\ TexturedObject}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00045}00045\ \textcolor{comment}{\ *\ @brief\ Klasa\ reprezentująca\ obiekt\ z\ teksturą}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00046}00046\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00047}00047\ \textcolor{comment}{\ *\ Rozszerza\ GameObject\ o\ obsługę\ tekstur.\ Umożliwia}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00048}00048\ \textcolor{comment}{\ *\ rysowanie\ obiektów\ 3D\ z\ nałożonymi\ teksturami.}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00049}00049\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00050}\mbox{\hyperlink{class_textured_object}{00050}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_textured_object_a0cf5e97a2c630b87090072b300d003ae}{TexturedObject}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{GameObject}}\ \{}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00051}00051\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00052}\mbox{\hyperlink{class_textured_object_a585a0a5377fcc08ab607e26dbdc82fd1}{00052}}\ \ \ \ \ \mbox{\hyperlink{class_bitmap_handler}{BitmapHandler}}*\ \mbox{\hyperlink{class_textured_object_a585a0a5377fcc08ab607e26dbdc82fd1}{texture}};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00053}00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00054}\mbox{\hyperlink{class_textured_object_a0cf5e97a2c630b87090072b300d003ae}{00054}}\ \ \ \ \ \mbox{\hyperlink{class_textured_object_a0cf5e97a2c630b87090072b300d003ae}{TexturedObject}}(\mbox{\hyperlink{class_bitmap_handler}{BitmapHandler}}*\ tex)\ :\ \mbox{\hyperlink{class_textured_object_a585a0a5377fcc08ab607e26dbdc82fd1}{texture}}(tex)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00055}00055\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00056}\mbox{\hyperlink{class_textured_object_a8bdc512831bcc43c802457e7f5cfab95}{00056}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_textured_object_a8bdc512831bcc43c802457e7f5cfab95}{draw}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_textured_object_a585a0a5377fcc08ab607e26dbdc82fd1}{texture}})\ \{}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ glEnable(GL\_TEXTURE\_2D);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ glBindTexture(GL\_TEXTURE\_2D,\ \mbox{\hyperlink{class_textured_object_a585a0a5377fcc08ab607e26dbdc82fd1}{texture}}-\/>getTextureID());}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ glColor3f(1,1,1);\ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a}{drawGeometry}}();\ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_textured_object_a585a0a5377fcc08ab607e26dbdc82fd1}{texture}})\ \{}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ glDisable(GL\_TEXTURE\_2D);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00069}00069\ \};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00070}00070\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00071}00071\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00072}00072\ \textcolor{comment}{\ *\ @class\ CubeObject}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00073}00073\ \textcolor{comment}{\ *\ @brief\ Obiekt\ sześcianu\ z\ teksturą}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00074}00074\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00075}00075\ \textcolor{comment}{\ *\ Reprezentuje\ sześcian\ 3D\ z\ możliwością\ nałożenia\ tekstury.}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00076}00076\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00077}\mbox{\hyperlink{class_cube_object}{00077}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cube_object_a61f2b828b000403012c699b192f1a05f}{CubeObject}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_textured_object_a0cf5e97a2c630b87090072b300d003ae}{TexturedObject}}\ \{}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00078}00078\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00079}\mbox{\hyperlink{class_cube_object_a61f2b828b000403012c699b192f1a05f}{00079}}\ \ \ \ \ \mbox{\hyperlink{class_cube_object_a61f2b828b000403012c699b192f1a05f}{CubeObject}}(\mbox{\hyperlink{class_bitmap_handler}{BitmapHandler}}*\ tex)\ :\ \mbox{\hyperlink{class_textured_object_a0cf5e97a2c630b87090072b300d003ae}{TexturedObject}}(tex)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cube_object_a29b7b9105a1a82992a32d77fae1a70ed}{drawGeometry}}()\ \textcolor{keyword}{override};\ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00081}00081\ \};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00082}00082\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00083}00083\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00084}00084\ \textcolor{comment}{\ *\ @class\ PyramidObject}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00085}00085\ \textcolor{comment}{\ *\ @brief\ Obiekt\ piramidy\ z\ teksturą}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00086}00086\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00087}00087\ \textcolor{comment}{\ *\ Reprezentuje\ piramidę\ 3D\ z\ możliwością\ nałożenia\ tekstury.}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00088}00088\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00089}\mbox{\hyperlink{class_pyramid_object}{00089}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pyramid_object_a85951c524ae422c1ca4037b9dd35460a}{PyramidObject}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_textured_object_a0cf5e97a2c630b87090072b300d003ae}{TexturedObject}}\ \{}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00090}00090\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00091}\mbox{\hyperlink{class_pyramid_object_a85951c524ae422c1ca4037b9dd35460a}{00091}}\ \ \ \ \ \mbox{\hyperlink{class_pyramid_object_a85951c524ae422c1ca4037b9dd35460a}{PyramidObject}}(\mbox{\hyperlink{class_bitmap_handler}{BitmapHandler}}*\ tex)\ :\ \mbox{\hyperlink{class_textured_object_a0cf5e97a2c630b87090072b300d003ae}{TexturedObject}}(tex)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pyramid_object_a20d20a672788378373ed050b3f35943b}{drawGeometry}}()\ \textcolor{keyword}{override};\ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00093}00093\ \};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00094}00094\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00095}00095\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00096}00096\ \textcolor{comment}{\ *\ @class\ SphereObject}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00097}00097\ \textcolor{comment}{\ *\ @brief\ Obiekt\ sfery\ 3D}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00098}00098\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00099}00099\ \textcolor{comment}{\ *\ Reprezentuje\ kulę\ renderowaną\ za\ pomocą\ FreeGLUT.}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00100}00100\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00101}\mbox{\hyperlink{class_sphere_object}{00101}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sphere_object}{SphereObject}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{GameObject}}\ \{}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00102}00102\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sphere_object_aa845763a3e6509a97ab0b90ad057d7f8}{drawGeometry}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00104}00104\ \};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00105}00105\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00106}00106\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00107}00107\ \textcolor{comment}{\ *\ @class\ TeapotObject}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00108}00108\ \textcolor{comment}{\ *\ @brief\ Obiekt\ czajnika\ Utah\ (Utah\ Teapot)}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00109}00109\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00110}00110\ \textcolor{comment}{\ *\ Klasyczny\ testowy\ model\ 3D\ do\ demonstracji\ renderingu.}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00111}00111\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00112}\mbox{\hyperlink{class_teapot_object}{00112}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_teapot_object}{TeapotObject}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{GameObject}}\ \{}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00113}00113\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_teapot_object_a6f68c2a9fe79ae8959c3b00f614020b7}{drawGeometry}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00115}00115\ \};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00116}00116\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00117}00117\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00118}00118\ \textcolor{comment}{\ *\ @class\ TorusObject}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00119}00119\ \textcolor{comment}{\ *\ @brief\ Obiekt\ torusa\ (powierzchni\ obrotowej)}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00120}00120\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00121}00121\ \textcolor{comment}{\ *\ Reprezentuje\ toroidalny\ kształt\ geometryczny.}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00122}00122\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00123}\mbox{\hyperlink{class_torus_object}{00123}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_torus_object}{TorusObject}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{GameObject}}\ \{}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00124}00124\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00125}00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_torus_object_ab9fb94aeb559a73308fb74a945f349ba}{drawGeometry}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00126}00126\ \};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00127}00127\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00128}00128\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00129}00129\ \textcolor{comment}{\ *\ @class\ Engine}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00130}00130\ \textcolor{comment}{\ *\ @brief\ Główny\ silnik\ grafiki\ 3D}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00131}00131\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00132}00132\ \textcolor{comment}{\ *\ Singleton\ zarządzający\ całym\ systemem\ renderowania\ OpenGL.}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00133}00133\ \textcolor{comment}{\ *\ Odpowiada\ za\ inicjalizację,\ pętlę\ główną,\ obsługę\ zdarzeń}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00134}00134\ \textcolor{comment}{\ *\ oraz\ zarządzanie\ sceną\ 3D\ i\ obiektami.}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00135}00135\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00136}\mbox{\hyperlink{class_engine}{00136}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}{Engine}}\ \{}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00137}00137\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00138}\mbox{\hyperlink{class_engine_a541d921b6b97e8756522958a58814344}{00138}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engine_a541d921b6b97e8756522958a58814344}{windowWidth}};\ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Szerokość\ okna\ aplikacji}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00139}\mbox{\hyperlink{class_engine_a0ac480c63e98dd9b1fe4c4a3c9e6a7ca}{00139}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engine_a0ac480c63e98dd9b1fe4c4a3c9e6a7ca}{windowHeight}};\ \ \ \ \ \ \ \textcolor{comment}{///<\ Wysokość\ okna\ aplikacji}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00140}\mbox{\hyperlink{class_engine_a04c0191a54fc9baa22cbe96bc481557a}{00140}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engine_a04c0191a54fc9baa22cbe96bc481557a}{targetFPS}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Docelowa\ liczba\ klatek\ na\ sekundę}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00141}\mbox{\hyperlink{class_engine_a4ecc1d75cbe50953b43759686ce21b83}{00141}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_engine_a4ecc1d75cbe50953b43759686ce21b83}{keys}}[256];\ \ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Tablica\ stanu\ klawiszy\ zwykłych}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00142}\mbox{\hyperlink{class_engine_a686b5b209aa7fd4d0073f3e14736efc6}{00142}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_engine_a686b5b209aa7fd4d0073f3e14736efc6}{specialKeys}}[256];\ \ \textcolor{comment}{///<\ Tablica\ stanu\ klawiszy\ specjalnych}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00143}\mbox{\hyperlink{class_engine_a922e7ff328db4522ed555911627dcb8f}{00143}}\ \ \ \ \ \mbox{\hyperlink{class_camera}{Camera}}*\ \mbox{\hyperlink{class_engine_a922e7ff328db4522ed555911627dcb8f}{camera}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Wskaźnik\ na\ instancję\ kamery}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00144}00144\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00145}\mbox{\hyperlink{class_engine_a8d483ecdc54d8fd999c0384dedebecea}{00145}}\ \ \ \ \ std::vector<GameObject*>\ \mbox{\hyperlink{class_engine_a8d483ecdc54d8fd999c0384dedebecea}{objects}};\ \ \ \textcolor{comment}{///<\ Wektor\ wszystkich\ obiektów\ w\ scenie}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00146}\mbox{\hyperlink{class_engine_addc3357ad9068350a461cd666ff46c4b}{00146}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engine_addc3357ad9068350a461cd666ff46c4b}{selectedIdx}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{///<\ Indeks\ obecnie\ wybranego\ obiektu}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00147}00147\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00148}\mbox{\hyperlink{class_engine_ad793397bd96300483ddc8a493814560e}{00148}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_engine_ad793397bd96300483ddc8a493814560e}{lightEnabled}};\ \ \ \ \ \ \textcolor{comment}{///<\ Flaga\ włączenia\ oświetlenia}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00149}\mbox{\hyperlink{class_engine_a675c54b3df57926dd20349d9fe906512}{00149}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_engine_a675c54b3df57926dd20349d9fe906512}{smoothShading}};\ \ \ \ \ \textcolor{comment}{///<\ Flaga\ włączenia\ smooth\ shadingu}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00150}00150\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00151}\mbox{\hyperlink{class_engine_a29c168f4d05145a4a3280b0fcd8d2cdd}{00151}}\ \ \ \ \ \mbox{\hyperlink{class_bitmap_handler}{BitmapHandler}}*\ \mbox{\hyperlink{class_engine_a29c168f4d05145a4a3280b0fcd8d2cdd}{textureCrate}};\ \ \ \ \textcolor{comment}{///<\ Tekstura\ skrzyni}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00152}\mbox{\hyperlink{class_engine_ad25708e637a9e9c1908fefcb0c62fcac}{00152}}\ \ \ \ \ \mbox{\hyperlink{class_bitmap_handler}{BitmapHandler}}*\ \mbox{\hyperlink{class_engine_ad25708e637a9e9c1908fefcb0c62fcac}{textureWall}};\ \ \ \ \ \textcolor{comment}{///<\ Tekstura\ ściany}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00154}\mbox{\hyperlink{class_engine_a51493b63c58390f775dd2bc6f72a2b75}{00154}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_engine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}{Engine}}*\ \mbox{\hyperlink{class_engine_a51493b63c58390f775dd2bc6f72a2b75}{instance}};\ \ \ \ \textcolor{comment}{///<\ Statyczna\ instancja\ singletona}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00155}00155\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00156}00156\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00157}00157\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Renderuje\ scenę}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00158}00158\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00159}00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a7960743aefd62e846e7f3cd92c18bc73}{render}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00160}00160\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00161}00161\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00162}00162\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Aktualizuje\ stan\ silnika}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00163}00163\ \textcolor{comment}{\ \ \ \ \ *\ @param\ value\ Parametr\ timera}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00164}00164\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00165}00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a829f8269b1c0fd26748eaedd04ebc47b}{update}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00166}00166\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00167}00167\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00168}00168\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Zmienia\ rozmiar\ okna}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00169}00169\ \textcolor{comment}{\ \ \ \ \ *\ @param\ w\ Nowa\ szerokość\ okna}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00170}00170\ \textcolor{comment}{\ \ \ \ \ *\ @param\ h\ Nowa\ wysokość\ okna}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00171}00171\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00172}00172\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_ab89b0964c80e43695a030b8093750f84}{reshape}}(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00173}00173\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00174}00174\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00175}00175\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Przetwarza\ wejście\ użytkownika}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00176}00176\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00177}00177\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_aa1aec35d59f1364a79c7a62c29640226}{processInput}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00178}00178\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00179}00179\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00180}00180\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Ładuje\ tekstury\ z\ plików}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00181}00181\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00182}00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a46ae0bb0f7cd96354503f2a69f5cb7d9}{loadTexture}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00183}00183\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00184}00184\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00185}00185\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Rysuje\ interfejs\ użytkownika}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00186}00186\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00187}00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_ae179eea3b1578db6eac14c817ef5b866}{drawInterface}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00189}00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a23f86b2a9ddd50e49f61a9ca22998efc}{keyboard}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ key,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00190}00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_ac0a89024d843d71e9c6f72dde0fcf996}{keyboardUp}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ key,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00191}00191\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_abaf6dd0375fcfeb33079ae7d0e63b689}{specialFunc}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00192}00192\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a086fe548346df5666cf6b755a77dcf1a}{specialUpFunc}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00193}\mbox{\hyperlink{class_engine_a663340eb9d199b16179037bc0ffeb637}{00193}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a663340eb9d199b16179037bc0ffeb637}{mouseMove}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00195}00195\ \textcolor{keyword}{public}:\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00196}00196\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00197}00197\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Konstruktor\ Engine}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00198}00198\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00199}00199\ \ \ \ \ \mbox{\hyperlink{class_engine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}{Engine}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00200}00200\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00201}00201\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00202}00202\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Destruktor\ Engine}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00203}00203\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00204}00204\ \ \ \ \ \mbox{\hyperlink{class_engine_a8ef7030a089ecb30bbfcb9e43094717a}{\string~Engine}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00205}00205\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00206}00206\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00207}00207\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Pobiera\ instancję\ singletona\ Engine}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00208}00208\ \textcolor{comment}{\ \ \ \ \ *\ @return\ Referencja\ na\ instancję\ Engine}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00209}00209\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00210}\mbox{\hyperlink{class_engine_accfdaedded34d223576bea363effa1e0}{00210}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_engine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}{Engine}}\&\ \mbox{\hyperlink{class_engine_accfdaedded34d223576bea363effa1e0}{getInstance}}()\ \{\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_engine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}{Engine}}\ inst;\ \textcolor{keywordflow}{return}\ inst;\ \}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00211}00211\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00212}00212\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00213}00213\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Inicjalizuje\ silnik}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00214}00214\ \textcolor{comment}{\ \ \ \ \ *\ @param\ argc\ Liczba\ argumentów\ wiersza\ poleceń}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00215}00215\ \textcolor{comment}{\ \ \ \ \ *\ @param\ argv\ Argumenty\ wiersza\ poleceń}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00216}00216\ \textcolor{comment}{\ \ \ \ \ *\ @param\ w\ Szerokość\ okna}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00217}00217\ \textcolor{comment}{\ \ \ \ \ *\ @param\ h\ Wysokość\ okna}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00218}00218\ \textcolor{comment}{\ \ \ \ \ *\ @param\ title\ Tytuł\ okna}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00219}00219\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00220}00220\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a1befa06d8ceae1c190010809dc5f0bcb}{init}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}**\ argv,\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h,\ \textcolor{keyword}{const}\ std::string\&\ title);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00221}00221\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00222}00222\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00223}00223\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Uruchamia\ główną\ pętlę\ silnika}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00224}00224\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00225}00225\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a1a210cf30d6bd330b3649439ecd6d6cc}{run}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00226}00226\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00227}00227\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00228}00228\ \textcolor{comment}{\ \ \ \ \ *\ @defgroup\ SpawnFunctions\ Funkcje\ tworzenia\ obiektów}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00229}00229\ \textcolor{comment}{\ \ \ \ \ *\ @\{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00230}00230\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00231}00231\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00232}00232\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00233}00233\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Tworzy\ sześcian\ i\ dodaje\ go\ do\ sceny}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00234}00234\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00235}00235\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___spawn_functions_ga488effead8a74c9e7d69f3f1b09d1ae6}{spawnCube}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00236}00236\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00237}00237\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00238}00238\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Tworzy\ piramidę\ i\ dodaje\ ją\ do\ sceny}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00239}00239\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00240}00240\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___spawn_functions_ga6eec716a49b05f66d14b782d15a00ad9}{spawnPyramid}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00241}00241\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00242}00242\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00243}00243\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Tworzy\ sferę\ i\ dodaje\ ją\ do\ sceny}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00244}00244\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00245}00245\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___spawn_functions_gaf3e12291a10deaa16074dc79caf71f22}{spawnSphere}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00246}00246\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00247}00247\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00248}00248\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Tworzy\ czajnik\ Utah\ i\ dodaje\ go\ do\ sceny}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00249}00249\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00250}00250\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___spawn_functions_ga5952e27fba1f42211350b82b2b9beb01}{spawnTeapot}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00251}00251\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00252}00252\ \textcolor{comment}{\ \ \ \ /**}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00253}00253\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Tworzy\ torus\ i\ dodaje\ go\ do\ sceny}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00254}00254\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00255}00255\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___spawn_functions_gae26858ce255c5fd23b52bedb194a813a}{spawnTorus}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00256}00256\ \ \ \ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00257}00257\ \textcolor{comment}{\ \ \ \ /**\ @\}\ */}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00259}00259\ \ \ \ \ \textcolor{comment}{//\ Wrapper\ functions\ dla\ FreeGLUT\ callbacks}}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00260}00260\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a87ea1cf40a002568437c2b407dd979aa}{renderWrapper}}();}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00261}00261\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a8a4bb856bcf1f397db3f2243b8439901}{updateWrapper}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00262}00262\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_aa4f3992de607c6d030ac456e47003bc3}{reshapeWrapper}}(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00263}00263\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a40a31727e31c2d56ae5f6665e2611dc2}{kbWrapper}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ k,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00264}00264\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_ad2aba00209f3c36f21ec6b91335811ce}{kbUpWrapper}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ k,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00265}00265\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a677842e4ffa6561b707665fb2c190ab4}{specWrapper}}(\textcolor{keywordtype}{int}\ k,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00266}00266\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_ae2e05884849e469bd884676c464ba70a}{specUpWrapper}}(\textcolor{keywordtype}{int}\ k,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00267}00267\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_a1126d1c569b052cf9c04769d1b66ce2e}{mouseWrapper}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00268}00268\ \};}
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{_engine_8h_source_l00270}00270\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

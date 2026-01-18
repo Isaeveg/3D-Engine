@@ -1,0 +1,184 @@
+\doxysection{Dokumentacja klasy Game\+Object}
+\hypertarget{class_game_object}{}\label{class_game_object}\index{GameObject@{GameObject}}
+
+
+Bazowa klasa dla wszystkich obiektów w scenie 3D.  
+
+
+
+
+{\ttfamily \#include $<$Engine.\+h$>$}
+
+Diagram dziedziczenia dla Game\+Object\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_game_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{Game\+Object}} ()
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\item 
+virtual void \mbox{\hyperlink{class_game_object_a1e6ed94137e78089b2413fe2e2a0b91f}{draw}} ()
+\item 
+virtual void \mbox{\hyperlink{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a}{draw\+Geometry}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_object_a6f153bcbb96d97edae09db51ebf824c3}{pos}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_object_a1b4631038a8c760183c259e385b260c7}{rot}}
+\item 
+float \mbox{\hyperlink{class_game_object_a27fda2aabd44d4bc0dd2ed3bfe9a503b}{scale}}
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_game_object_a3a3cb49f7d67386167bbe9049ce2d3fd}{color}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Bazowa klasa dla wszystkich obiektów w scenie 3D. 
+
+Klasa \doxylink{class_game_object}{Game\+Object} stanowi fundament dla każdego obiektu, który ma być rysowany w przestrzeni 3D. Przechowuje informacje o pozycji, rotacji, skali i kolorze obiektu. 
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00027}{27}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_game_object_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}}
+{\footnotesize\ttfamily \label{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4} 
+Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00034}{34}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{_engine_8h_source_l00032}{color}}, \mbox{\hyperlink{_engine_8h_source_l00029}{pos}}, \mbox{\hyperlink{_engine_8h_source_l00030}{rot}} i \mbox{\hyperlink{_engine_8h_source_l00031}{scale}}.
+
+\Hypertarget{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}\index{GameObject@{GameObject}!````~GameObject@{\texorpdfstring{$\sim$}{\string~}GameObject}}
+\index{````~GameObject@{\texorpdfstring{$\sim$}{\string~}GameObject}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameObject()}{\string~GameObject()}}
+{\footnotesize\ttfamily \label{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9} 
+virtual Game\+Object\+::\texorpdfstring{$\sim$}{\string~}\+Game\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00035}{35}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_game_object_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_game_object_a1e6ed94137e78089b2413fe2e2a0b91f}\index{GameObject@{GameObject}!draw@{draw}}
+\index{draw@{draw}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_game_object_a1e6ed94137e78089b2413fe2e2a0b91f} 
+virtual void Game\+Object\+::draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplementowana w \mbox{\hyperlink{class_textured_object_a8bdc512831bcc43c802457e7f5cfab95}{Textured\+Object}}.
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00037}{37}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołuje się do \mbox{\hyperlink{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a}{draw\+Geometry()}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8cpp_source_l00194}{Engine\+::render()}}.
+
+\Hypertarget{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a}\index{GameObject@{GameObject}!drawGeometry@{drawGeometry}}
+\index{drawGeometry@{drawGeometry}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{drawGeometry()}{drawGeometry()}}
+{\footnotesize\ttfamily \label{class_game_object_af7b4f1c7ef162e3ac77c564fe88f9a0a} 
+virtual void Game\+Object\+::draw\+Geometry (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implementowany w \mbox{\hyperlink{class_cube_object_a29b7b9105a1a82992a32d77fae1a70ed}{Cube\+Object}}, \mbox{\hyperlink{class_pyramid_object_a20d20a672788378373ed050b3f35943b}{Pyramid\+Object}}, \mbox{\hyperlink{class_sphere_object_aa845763a3e6509a97ab0b90ad057d7f8}{Sphere\+Object}}, \mbox{\hyperlink{class_teapot_object_a6f68c2a9fe79ae8959c3b00f614020b7}{Teapot\+Object}} i \mbox{\hyperlink{class_torus_object_ab9fb94aeb559a73308fb74a945f349ba}{Torus\+Object}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8h_source_l00037}{draw()}}, \mbox{\hyperlink{_engine_8h_source_l00056}{Textured\+Object\+::draw()}} i \mbox{\hyperlink{_engine_8cpp_source_l00194}{Engine\+::render()}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_game_object_doc-variable-members}
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{class_game_object_a3a3cb49f7d67386167bbe9049ce2d3fd}\index{GameObject@{GameObject}!color@{color}}
+\index{color@{color}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \label{class_game_object_a3a3cb49f7d67386167bbe9049ce2d3fd} 
+glm\+::vec3 Game\+Object\+::color}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00032}{32}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8h_source_l00034}{Game\+Object()}}, \mbox{\hyperlink{_engine_8cpp_source_l00194}{Engine\+::render()}}, \mbox{\hyperlink{_engine_8cpp_source_l00093}{Engine\+::spawn\+Sphere()}}, \mbox{\hyperlink{_engine_8cpp_source_l00101}{Engine\+::spawn\+Teapot()}} i \mbox{\hyperlink{_engine_8cpp_source_l00109}{Engine\+::spawn\+Torus()}}.
+
+\Hypertarget{class_game_object_a6f153bcbb96d97edae09db51ebf824c3}\index{GameObject@{GameObject}!pos@{pos}}
+\index{pos@{pos}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily \label{class_game_object_a6f153bcbb96d97edae09db51ebf824c3} 
+glm\+::vec3 Game\+Object\+::pos}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00029}{29}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8h_source_l00034}{Game\+Object()}}, \mbox{\hyperlink{_engine_8cpp_source_l00163}{Engine\+::process\+Input()}}, \mbox{\hyperlink{_engine_8cpp_source_l00194}{Engine\+::render()}}, \mbox{\hyperlink{_engine_8cpp_source_l00079}{Engine\+::spawn\+Cube()}}, \mbox{\hyperlink{_engine_8cpp_source_l00086}{Engine\+::spawn\+Pyramid()}}, \mbox{\hyperlink{_engine_8cpp_source_l00093}{Engine\+::spawn\+Sphere()}}, \mbox{\hyperlink{_engine_8cpp_source_l00101}{Engine\+::spawn\+Teapot()}} i \mbox{\hyperlink{_engine_8cpp_source_l00109}{Engine\+::spawn\+Torus()}}.
+
+\Hypertarget{class_game_object_a1b4631038a8c760183c259e385b260c7}\index{GameObject@{GameObject}!rot@{rot}}
+\index{rot@{rot}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{rot}{rot}}
+{\footnotesize\ttfamily \label{class_game_object_a1b4631038a8c760183c259e385b260c7} 
+glm\+::vec3 Game\+Object\+::rot}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00030}{30}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8h_source_l00034}{Game\+Object()}}, \mbox{\hyperlink{_engine_8cpp_source_l00163}{Engine\+::process\+Input()}} i \mbox{\hyperlink{_engine_8cpp_source_l00194}{Engine\+::render()}}.
+
+\Hypertarget{class_game_object_a27fda2aabd44d4bc0dd2ed3bfe9a503b}\index{GameObject@{GameObject}!scale@{scale}}
+\index{scale@{scale}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily \label{class_game_object_a27fda2aabd44d4bc0dd2ed3bfe9a503b} 
+float Game\+Object\+::scale}
+
+
+
+Definicja w linii \mbox{\hyperlink{_engine_8h_source_l00031}{31}} pliku \mbox{\hyperlink{_engine_8h_source}{Engine.\+h}}.
+
+
+
+Odwołania w \mbox{\hyperlink{_engine_8h_source_l00034}{Game\+Object()}}, \mbox{\hyperlink{_engine_8cpp_source_l00163}{Engine\+::process\+Input()}} i \mbox{\hyperlink{_engine_8cpp_source_l00194}{Engine\+::render()}}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_engine_8h}{Engine.\+h}}\end{DoxyCompactItemize}

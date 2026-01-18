@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>3D-Engine: Dokumentacja klasy GameObject</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">3D-Engine<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Silnik grafiki 3D napisany w C++ z wykorzystaniem OpenGL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_game_object.html','','class_game_object-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy GameObject<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Bazowa klasa dla wszystkich obiektów w scenie 3D.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_engine_8h_source.html">Engine.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla GameObject</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_game_object.png" usemap="#GameObject_map" alt=""/>
+  <map id="GameObject_map" name="GameObject_map">
+<area href="class_sphere_object.html" title="Obiekt sfery 3D." alt="SphereObject" shape="rect" coords="0,56,98,80"/>
+<area href="class_teapot_object.html" title="Obiekt czajnika Utah (Utah Teapot)." alt="TeapotObject" shape="rect" coords="108,56,206,80"/>
+<area href="class_textured_object.html" title="Klasa reprezentująca obiekt z teksturą" alt="TexturedObject" shape="rect" coords="216,56,314,80"/>
+<area href="class_torus_object.html" title="Obiekt torusa (powierzchni obrotowej)." alt="TorusObject" shape="rect" coords="324,56,422,80"/>
+<area href="class_cube_object.html" title="Obiekt sześcianu z teksturą" alt="CubeObject" shape="rect" coords="162,112,260,136"/>
+<area href="class_pyramid_object.html" title="Obiekt piramidy z teksturą" alt="PyramidObject" shape="rect" coords="270,112,368,136"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a0348e3ee2e83d56eafca7a3547f432c4" id="r_a0348e3ee2e83d56eafca7a3547f432c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0348e3ee2e83d56eafca7a3547f432c4">GameObject</a> ()</td></tr>
+<tr class="memitem:a224d4f6d9dd75c8a6f9d022eaf586fd9" id="r_a224d4f6d9dd75c8a6f9d022eaf586fd9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a224d4f6d9dd75c8a6f9d022eaf586fd9">~GameObject</a> ()</td></tr>
+<tr class="memitem:a1e6ed94137e78089b2413fe2e2a0b91f" id="r_a1e6ed94137e78089b2413fe2e2a0b91f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e6ed94137e78089b2413fe2e2a0b91f">draw</a> ()</td></tr>
+<tr class="memitem:af7b4f1c7ef162e3ac77c564fe88f9a0a" id="r_af7b4f1c7ef162e3ac77c564fe88f9a0a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7b4f1c7ef162e3ac77c564fe88f9a0a">drawGeometry</a> ()=0</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atrybuty publiczne</h2></td></tr>
+<tr class="memitem:a6f153bcbb96d97edae09db51ebf824c3" id="r_a6f153bcbb96d97edae09db51ebf824c3"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f153bcbb96d97edae09db51ebf824c3">pos</a></td></tr>
+<tr class="memitem:a1b4631038a8c760183c259e385b260c7" id="r_a1b4631038a8c760183c259e385b260c7"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b4631038a8c760183c259e385b260c7">rot</a></td></tr>
+<tr class="memitem:a27fda2aabd44d4bc0dd2ed3bfe9a503b" id="r_a27fda2aabd44d4bc0dd2ed3bfe9a503b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27fda2aabd44d4bc0dd2ed3bfe9a503b">scale</a></td></tr>
+<tr class="memitem:a3a3cb49f7d67386167bbe9049ce2d3fd" id="r_a3a3cb49f7d67386167bbe9049ce2d3fd"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a3cb49f7d67386167bbe9049ce2d3fd">color</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Bazowa klasa dla wszystkich obiektów w scenie 3D. </p>
+<p>Klasa <a class="el" href="class_game_object.html" title="Bazowa klasa dla wszystkich obiektów w scenie 3D.">GameObject</a> stanowi fundament dla każdego obiektu, który ma być rysowany w przestrzeni 3D. Przechowuje informacje o pozycji, rotacji, skali i kolorze obiektu. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00027">27</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a0348e3ee2e83d56eafca7a3547f432c4" name="a0348e3ee2e83d56eafca7a3547f432c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0348e3ee2e83d56eafca7a3547f432c4">&#9670;&#160;</a></span>GameObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject::GameObject </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00034">34</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="_engine_8h_source.html#l00032">color</a>, <a class="el" href="_engine_8h_source.html#l00029">pos</a>, <a class="el" href="_engine_8h_source.html#l00030">rot</a> i <a class="el" href="_engine_8h_source.html#l00031">scale</a>.</p>
+
+</div>
+</div>
+<a id="a224d4f6d9dd75c8a6f9d022eaf586fd9" name="a224d4f6d9dd75c8a6f9d022eaf586fd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a224d4f6d9dd75c8a6f9d022eaf586fd9">&#9670;&#160;</a></span>~GameObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual GameObject::~GameObject </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00035">35</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a1e6ed94137e78089b2413fe2e2a0b91f" name="a1e6ed94137e78089b2413fe2e2a0b91f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e6ed94137e78089b2413fe2e2a0b91f">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GameObject::draw </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplementowana w <a class="el" href="class_textured_object.html#a8bdc512831bcc43c802457e7f5cfab95">TexturedObject</a>.</p>
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00037">37</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="#af7b4f1c7ef162e3ac77c564fe88f9a0a">drawGeometry()</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8cpp_source.html#l00199">Engine::render()</a>.</p>
+
+</div>
+</div>
+<a id="af7b4f1c7ef162e3ac77c564fe88f9a0a" name="af7b4f1c7ef162e3ac77c564fe88f9a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7b4f1c7ef162e3ac77c564fe88f9a0a">&#9670;&#160;</a></span>drawGeometry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GameObject::drawGeometry </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implementowany w <a class="el" href="class_cube_object.html#a29b7b9105a1a82992a32d77fae1a70ed">CubeObject</a>, <a class="el" href="class_pyramid_object.html#a20d20a672788378373ed050b3f35943b">PyramidObject</a>, <a class="el" href="class_sphere_object.html#aa845763a3e6509a97ab0b90ad057d7f8">SphereObject</a>, <a class="el" href="class_teapot_object.html#a6f68c2a9fe79ae8959c3b00f614020b7">TeapotObject</a> i <a class="el" href="class_torus_object.html#ab9fb94aeb559a73308fb74a945f349ba">TorusObject</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8h_source.html#l00037">draw()</a>, <a class="el" href="_engine_8h_source.html#l00056">TexturedObject::draw()</a> i <a class="el" href="_engine_8cpp_source.html#l00199">Engine::render()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="a3a3cb49f7d67386167bbe9049ce2d3fd" name="a3a3cb49f7d67386167bbe9049ce2d3fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a3cb49f7d67386167bbe9049ce2d3fd">&#9670;&#160;</a></span>color</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 GameObject::color</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00032">32</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8h_source.html#l00034">GameObject()</a>, <a class="el" href="_engine_8cpp_source.html#l00199">Engine::render()</a>, <a class="el" href="_engine_8cpp_source.html#l00098">Engine::spawnSphere()</a>, <a class="el" href="_engine_8cpp_source.html#l00106">Engine::spawnTeapot()</a> i <a class="el" href="_engine_8cpp_source.html#l00114">Engine::spawnTorus()</a>.</p>
+
+</div>
+</div>
+<a id="a6f153bcbb96d97edae09db51ebf824c3" name="a6f153bcbb96d97edae09db51ebf824c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f153bcbb96d97edae09db51ebf824c3">&#9670;&#160;</a></span>pos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 GameObject::pos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00029">29</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8h_source.html#l00034">GameObject()</a>, <a class="el" href="_engine_8cpp_source.html#l00168">Engine::processInput()</a>, <a class="el" href="_engine_8cpp_source.html#l00199">Engine::render()</a>, <a class="el" href="_engine_8cpp_source.html#l00084">Engine::spawnCube()</a>, <a class="el" href="_engine_8cpp_source.html#l00091">Engine::spawnPyramid()</a>, <a class="el" href="_engine_8cpp_source.html#l00098">Engine::spawnSphere()</a>, <a class="el" href="_engine_8cpp_source.html#l00106">Engine::spawnTeapot()</a> i <a class="el" href="_engine_8cpp_source.html#l00114">Engine::spawnTorus()</a>.</p>
+
+</div>
+</div>
+<a id="a1b4631038a8c760183c259e385b260c7" name="a1b4631038a8c760183c259e385b260c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b4631038a8c760183c259e385b260c7">&#9670;&#160;</a></span>rot</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 GameObject::rot</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00030">30</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8h_source.html#l00034">GameObject()</a>, <a class="el" href="_engine_8cpp_source.html#l00168">Engine::processInput()</a> i <a class="el" href="_engine_8cpp_source.html#l00199">Engine::render()</a>.</p>
+
+</div>
+</div>
+<a id="a27fda2aabd44d4bc0dd2ed3bfe9a503b" name="a27fda2aabd44d4bc0dd2ed3bfe9a503b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27fda2aabd44d4bc0dd2ed3bfe9a503b">&#9670;&#160;</a></span>scale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GameObject::scale</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_engine_8h_source.html#l00031">31</a> pliku <a class="el" href="_engine_8h_source.html">Engine.h</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="_engine_8h_source.html#l00034">GameObject()</a>, <a class="el" href="_engine_8cpp_source.html#l00168">Engine::processInput()</a> i <a class="el" href="_engine_8cpp_source.html#l00199">Engine::render()</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z pliku:<ul>
+<li>src/<a class="el" href="_engine_8h_source.html">Engine.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_game_object.html">GameObject</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>
